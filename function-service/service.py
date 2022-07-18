@@ -21,8 +21,8 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         # impactor = request.impactor
         impactor = Impactor(diameter=request.diameter, density=request.density, velocity=request.velocity,
                             theta=request.theta, depth=request.depth, ttype=request.ttype)
-        kinetic_energy = kinetic_energy(impactor)
-        return impactEffect_pb2.KineticEnergy(kinetic_energy=kinetic_energy)
+        kn = kinetic_energy(impactor)
+        return impactEffect_pb2.KineticEnergy(kinetic_energy=kn)
 
 
 def serve():

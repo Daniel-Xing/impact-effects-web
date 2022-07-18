@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12impactEffect.proto\x12\x0cimpactEffect\"l\n\x08Impactor\x12\x10\n\x08\x64iameter\x18\x01 \x01(\x03\x12\x0f\n\x07\x64\x65nsity\x18\x02 \x01(\x03\x12\x10\n\x08velocity\x18\x03 \x01(\x03\x12\r\n\x05theta\x18\x04 \x01(\x03\x12\r\n\x05\x64\x65pth\x18\x05 \x01(\x03\x12\r\n\x05ttype\x18\x06 \x01(\x03\"\'\n\rKineticEnergy\x12\x16\n\x0ekinetic_energy\x18\x01 \x01(\x03\x32`\n\x13ImpactEffectService\x12I\n\x10GetKineticEnergy\x12\x16.impactEffect.Impactor\x1a\x1b.impactEffect.KineticEnergy\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12impactEffect.proto\x12\x0cimpactEffect\"l\n\x08Impactor\x12\x10\n\x08\x64iameter\x18\x01 \x01(\x03\x12\x0f\n\x07\x64\x65nsity\x18\x02 \x01(\x03\x12\x10\n\x08velocity\x18\x03 \x01(\x03\x12\r\n\x05theta\x18\x04 \x01(\x03\x12\r\n\x05\x64\x65pth\x18\x05 \x01(\x03\x12\r\n\x05ttype\x18\x06 \x01(\x03\"\'\n\rKineticEnergy\x12\x16\n\x0ekinetic_energy\x18\x01 \x01(\x02\x32`\n\x13ImpactEffectService\x12I\n\x10GetKineticEnergy\x12\x16.impactEffect.Impactor\x1a\x1b.impactEffect.KineticEnergy\"\x00\x42\x32Z0google.golang.org/grpc/impactEffect/impactEffectb\x06proto3')
 
 
 
@@ -38,6 +38,7 @@ _IMPACTEFFECTSERVICE = DESCRIPTOR.services_by_name['ImpactEffectService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z0google.golang.org/grpc/impactEffect/impactEffect'
   _IMPACTOR._serialized_start=36
   _IMPACTOR._serialized_end=144
   _KINETICENERGY._serialized_start=146
