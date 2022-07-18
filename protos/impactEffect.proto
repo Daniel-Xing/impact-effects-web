@@ -26,16 +26,79 @@ package impactEffect;
 service ImpactEffectService {
   // A simple the function of ImpactEffect for test
   // calculte the Kinetic_energy of the impactor
-  rpc GetKineticEnergy(Impactor) returns (KineticEnergy) {}
+  rpc cal_Kinetic_energy(Impactor) returns (KineticEnergy) {}
+
+  rpc cal_kinetic_energy_megatons(Impactor) returns (KineticEnergy) {}
+
+  rpc cal_rec_time(Impactor) returns (RecTime) {}
+
+  rpc cal_i_factor(SimpleRequest) returns (result) {}
+  rpc burst_velocity_at_zero(SimpleRequest) returns (result) {}
+  rpc altitude_of_breakup(SimpleRequest) returns (result) {}
+  rpc velocity_at_breakup(SimpleRequest) returns (result) {}
+  rpc dispersion_length_scale(SimpleRequest) returns (result) {}
+  rpc airburst_altitude(SimpleRequest) returns (result) {}
+  rpc brust_velocity(SimpleRequest) returns (result) {}
+  rpc dispersion_of_impactor(SimpleRequest) returns (result) {}
+  rpc fraction_of_momentum(SimpleRequest) returns (result) {}
+  rpc cal_trot_change(SimpleRequest) returns (result) {}
+  rpc cal_energy_atmosphere(SimpleRequest) returns (result) {}
+  rpc cal_energy_blast_surface(SimpleRequest) returns (result) {}
+  rpc cal_mass_of_water(SimpleRequest) returns (result) {}
+  rpc cal_velocity_projectile(SimpleRequest) returns (result) {}
+  rpc cal_ePIcentral_angle(SimpleRequest) returns (result) {}
+  rpc cal_scaling_diameter_constant(SimpleRequest) returns (result) {}
+  rpc cal_anglefac(SimpleRequest) returns (result) {}
+  rpc cal_wdiameter(SimpleRequest) returns (result) {}
+  rpc cal_transient_crater_diameter(SimpleRequest) returns (result) {}
+  rpc cal_depthr(SimpleRequest) returns (result) {}
+  rpc cal_cdiamater(SimpleRequest) returns (result) {}
+  rpc cal_depthfr(SimpleRequest) returns (result) {}
+  rpc cal_vCrater(SimpleRequest) returns (result) {}
+  rpc cal_vratio(SimpleRequest) returns (result) {}
+  rpc cal_vCrater_vRation(SimpleRequest) returns (result) {}
+  rpc cal_vMelt(SimpleRequest) returns (result) {}
+  rpc cal_mratio_and_mcratio(SimpleRequest) returns (result) {}
+  rpc cal_eject_arrival(SimpleRequest) returns (result) {}
+  rpc cal_ejecta_thickness(SimpleRequest) returns (result) {}
+  rpc cal_themal(SimpleRequest) returns (result) {}
+  rpc cal_magnitude(SimpleRequest) returns (result) {}
+  rpc cal_magnitude2(SimpleRequest) returns (result) {}
+  rpc cal_shock_arrival(SimpleRequest) returns (result) {}
+  rpc cal_vmax(SimpleRequest) returns (result) {}
+  rpc cal_dec_level(SimpleRequest) returns (result) {}
+  rpc cal_TsunamiArrivalTime(SimpleRequest) returns (result) {}
+  rpc cal_WaveAmplitudeUpperLimit(SimpleRequest) returns (result) {}
+  rpc cal_WaveAmplitudeLowerLimit(SimpleRequest) returns (result) {}
 }
 
 message Impactor {
-  int64 diameter = 1;
-  int64 density = 2;
-  int64 velocity = 3;
-  int64 theta = 4;
-  int64 depth = 5;
+  float diameter = 1;
+  float density = 2;
+  float velocity = 3;
+  float theta = 4;
+  float depth = 5;
   int64 ttype = 6;
+  int64 choice = 7;
+}
+
+message SimpleTargets {
+  float density = 1;
+  float rhoSurface = 2;
+  float dragCoefficient = 3;
+}
+
+message SimpleRequest {
+  Impactor impactor = 1;
+  SimpleTargets targets = 2;
+}
+
+message result {
+  float res = 1;
 }
 
 message KineticEnergy { float kinetic_energy = 1; }
+
+message RecTime { float rec_time = 1; }
+
+

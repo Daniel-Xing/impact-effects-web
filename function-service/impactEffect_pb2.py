@@ -14,18 +14,43 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12impactEffect.proto\x12\x0cimpactEffect\"l\n\x08Impactor\x12\x10\n\x08\x64iameter\x18\x01 \x01(\x03\x12\x0f\n\x07\x64\x65nsity\x18\x02 \x01(\x03\x12\x10\n\x08velocity\x18\x03 \x01(\x03\x12\r\n\x05theta\x18\x04 \x01(\x03\x12\r\n\x05\x64\x65pth\x18\x05 \x01(\x03\x12\r\n\x05ttype\x18\x06 \x01(\x03\"\'\n\rKineticEnergy\x12\x16\n\x0ekinetic_energy\x18\x01 \x01(\x02\x32`\n\x13ImpactEffectService\x12I\n\x10GetKineticEnergy\x12\x16.impactEffect.Impactor\x1a\x1b.impactEffect.KineticEnergy\"\x00\x42\x32Z0google.golang.org/grpc/impactEffect/impactEffectb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12impactEffect.proto\x12\x0cimpactEffect\"|\n\x08Impactor\x12\x10\n\x08\x64iameter\x18\x01 \x01(\x02\x12\x0f\n\x07\x64\x65nsity\x18\x02 \x01(\x02\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\r\n\x05theta\x18\x04 \x01(\x02\x12\r\n\x05\x64\x65pth\x18\x05 \x01(\x02\x12\r\n\x05ttype\x18\x06 \x01(\x03\x12\x0e\n\x06\x63hoice\x18\x07 \x01(\x03\"M\n\rSimpleTargets\x12\x0f\n\x07\x64\x65nsity\x18\x01 \x01(\x02\x12\x12\n\nrhoSurface\x18\x02 \x01(\x02\x12\x17\n\x0f\x64ragCoefficient\x18\x03 \x01(\x02\"g\n\rSimpleRequest\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12,\n\x07targets\x18\x02 \x01(\x0b\x32\x1b.impactEffect.SimpleTargets\"\x15\n\x06result\x12\x0b\n\x03res\x18\x01 \x01(\x02\"\'\n\rKineticEnergy\x12\x16\n\x0ekinetic_energy\x18\x01 \x01(\x02\"\x1b\n\x07RecTime\x12\x10\n\x08rec_time\x18\x01 \x01(\x02\x32\x87\x18\n\x13ImpactEffectService\x12K\n\x12\x63\x61l_Kinetic_energy\x12\x16.impactEffect.Impactor\x1a\x1b.impactEffect.KineticEnergy\"\x00\x12T\n\x1b\x63\x61l_kinetic_energy_megatons\x12\x16.impactEffect.Impactor\x1a\x1b.impactEffect.KineticEnergy\"\x00\x12?\n\x0c\x63\x61l_rec_time\x12\x16.impactEffect.Impactor\x1a\x15.impactEffect.RecTime\"\x00\x12\x43\n\x0c\x63\x61l_i_factor\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x62urst_velocity_at_zero\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12J\n\x13\x61ltitude_of_breakup\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12J\n\x13velocity_at_breakup\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12N\n\x17\x64ispersion_length_scale\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x61irburst_altitude\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x45\n\x0e\x62rust_velocity\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x64ispersion_of_impactor\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12K\n\x14\x66raction_of_momentum\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x46\n\x0f\x63\x61l_trot_change\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12L\n\x15\x63\x61l_energy_atmosphere\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12O\n\x18\x63\x61l_energy_blast_surface\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x63\x61l_mass_of_water\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12N\n\x17\x63\x61l_velocity_projectile\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12K\n\x14\x63\x61l_ePIcentral_angle\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12T\n\x1d\x63\x61l_scaling_diameter_constant\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x43\n\x0c\x63\x61l_anglefac\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_wdiameter\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12T\n\x1d\x63\x61l_transient_crater_diameter\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x41\n\ncal_depthr\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_cdiamater\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x42\n\x0b\x63\x61l_depthfr\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x42\n\x0b\x63\x61l_vCrater\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x41\n\ncal_vratio\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12J\n\x13\x63\x61l_vCrater_vRation\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12@\n\tcal_vMelt\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x63\x61l_mratio_and_mcratio\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x63\x61l_eject_arrival\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12K\n\x14\x63\x61l_ejecta_thickness\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x41\n\ncal_themal\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_magnitude\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x45\n\x0e\x63\x61l_magnitude2\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x63\x61l_shock_arrival\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12?\n\x08\x63\x61l_vmax\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_dec_level\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x63\x61l_TsunamiArrivalTime\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12R\n\x1b\x63\x61l_WaveAmplitudeUpperLimit\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12R\n\x1b\x63\x61l_WaveAmplitudeLowerLimit\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x42\x32Z0google.golang.org/grpc/impactEffect/impactEffectb\x06proto3')
 
 
 
 _IMPACTOR = DESCRIPTOR.message_types_by_name['Impactor']
+_SIMPLETARGETS = DESCRIPTOR.message_types_by_name['SimpleTargets']
+_SIMPLEREQUEST = DESCRIPTOR.message_types_by_name['SimpleRequest']
+_RESULT = DESCRIPTOR.message_types_by_name['result']
 _KINETICENERGY = DESCRIPTOR.message_types_by_name['KineticEnergy']
+_RECTIME = DESCRIPTOR.message_types_by_name['RecTime']
 Impactor = _reflection.GeneratedProtocolMessageType('Impactor', (_message.Message,), {
   'DESCRIPTOR' : _IMPACTOR,
   '__module__' : 'impactEffect_pb2'
   # @@protoc_insertion_point(class_scope:impactEffect.Impactor)
   })
 _sym_db.RegisterMessage(Impactor)
+
+SimpleTargets = _reflection.GeneratedProtocolMessageType('SimpleTargets', (_message.Message,), {
+  'DESCRIPTOR' : _SIMPLETARGETS,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.SimpleTargets)
+  })
+_sym_db.RegisterMessage(SimpleTargets)
+
+SimpleRequest = _reflection.GeneratedProtocolMessageType('SimpleRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SIMPLEREQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.SimpleRequest)
+  })
+_sym_db.RegisterMessage(SimpleRequest)
+
+result = _reflection.GeneratedProtocolMessageType('result', (_message.Message,), {
+  'DESCRIPTOR' : _RESULT,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.result)
+  })
+_sym_db.RegisterMessage(result)
 
 KineticEnergy = _reflection.GeneratedProtocolMessageType('KineticEnergy', (_message.Message,), {
   'DESCRIPTOR' : _KINETICENERGY,
@@ -34,15 +59,30 @@ KineticEnergy = _reflection.GeneratedProtocolMessageType('KineticEnergy', (_mess
   })
 _sym_db.RegisterMessage(KineticEnergy)
 
+RecTime = _reflection.GeneratedProtocolMessageType('RecTime', (_message.Message,), {
+  'DESCRIPTOR' : _RECTIME,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.RecTime)
+  })
+_sym_db.RegisterMessage(RecTime)
+
 _IMPACTEFFECTSERVICE = DESCRIPTOR.services_by_name['ImpactEffectService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z0google.golang.org/grpc/impactEffect/impactEffect'
   _IMPACTOR._serialized_start=36
-  _IMPACTOR._serialized_end=144
-  _KINETICENERGY._serialized_start=146
-  _KINETICENERGY._serialized_end=185
-  _IMPACTEFFECTSERVICE._serialized_start=187
-  _IMPACTEFFECTSERVICE._serialized_end=283
+  _IMPACTOR._serialized_end=160
+  _SIMPLETARGETS._serialized_start=162
+  _SIMPLETARGETS._serialized_end=239
+  _SIMPLEREQUEST._serialized_start=241
+  _SIMPLEREQUEST._serialized_end=344
+  _RESULT._serialized_start=346
+  _RESULT._serialized_end=367
+  _KINETICENERGY._serialized_start=369
+  _KINETICENERGY._serialized_end=408
+  _RECTIME._serialized_start=410
+  _RECTIME._serialized_end=437
+  _IMPACTEFFECTSERVICE._serialized_start=440
+  _IMPACTEFFECTSERVICE._serialized_end=3519
 # @@protoc_insertion_point(module_scope)

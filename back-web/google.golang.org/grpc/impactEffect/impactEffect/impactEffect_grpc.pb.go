@@ -25,6 +25,7 @@ type ImpactEffectServiceClient interface {
 	// A simple the function of ImpactEffect for test
 	// calculte the Kinetic_energy of the impactor
 	GetKineticEnergy(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*KineticEnergy, error)
+	GetKineticEnergyMegatons(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*KineticEnergy, error)
 }
 
 type impactEffectServiceClient struct {
@@ -44,6 +45,15 @@ func (c *impactEffectServiceClient) GetKineticEnergy(ctx context.Context, in *Im
 	return out, nil
 }
 
+func (c *impactEffectServiceClient) GetKineticEnergyMegatons(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*KineticEnergy, error) {
+	out := new(KineticEnergy)
+	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/Get_kinetic_energy_megatons", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ImpactEffectServiceServer is the server API for ImpactEffectService service.
 // All implementations must embed UnimplementedImpactEffectServiceServer
 // for forward compatibility
@@ -51,6 +61,7 @@ type ImpactEffectServiceServer interface {
 	// A simple the function of ImpactEffect for test
 	// calculte the Kinetic_energy of the impactor
 	GetKineticEnergy(context.Context, *Impactor) (*KineticEnergy, error)
+	GetKineticEnergyMegatons(context.Context, *Impactor) (*KineticEnergy, error)
 	mustEmbedUnimplementedImpactEffectServiceServer()
 }
 
@@ -60,6 +71,9 @@ type UnimplementedImpactEffectServiceServer struct {
 
 func (UnimplementedImpactEffectServiceServer) GetKineticEnergy(context.Context, *Impactor) (*KineticEnergy, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKineticEnergy not implemented")
+}
+func (UnimplementedImpactEffectServiceServer) GetKineticEnergyMegatons(context.Context, *Impactor) (*KineticEnergy, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetKineticEnergyMegatons not implemented")
 }
 func (UnimplementedImpactEffectServiceServer) mustEmbedUnimplementedImpactEffectServiceServer() {}
 
@@ -92,6 +106,24 @@ func _ImpactEffectService_GetKineticEnergy_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ImpactEffectService_GetKineticEnergyMegatons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Impactor)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImpactEffectServiceServer).GetKineticEnergyMegatons(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/impactEffect.ImpactEffectService/Get_kinetic_energy_megatons",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImpactEffectServiceServer).GetKineticEnergyMegatons(ctx, req.(*Impactor))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ImpactEffectService_ServiceDesc is the grpc.ServiceDesc for ImpactEffectService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -102,6 +134,10 @@ var ImpactEffectService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetKineticEnergy",
 			Handler:    _ImpactEffectService_GetKineticEnergy_Handler,
+		},
+		{
+			MethodName: "Get_kinetic_energy_megatons",
+			Handler:    _ImpactEffectService_GetKineticEnergyMegatons_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
