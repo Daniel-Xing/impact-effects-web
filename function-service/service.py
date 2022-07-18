@@ -16,7 +16,7 @@ from impactEffects.instances import ImpactorClass, TargetClass
 
 class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
 
-    def GetKineticEnergy(self, request, context):
+    def cal_Kinetic_energy(self, request, context):
         print("-------------- GetKineticEnergy --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.diameter, density=request.density, velocity=request.velocity,

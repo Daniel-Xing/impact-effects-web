@@ -43,24 +43,12 @@ var (
 	serverHostOverride = flag.String("server_host_override", "x.test.example.com", "The server name used to verify the hostname returned by the TLS handshake")
 )
 
-// // printFeature gets the feature for the given point.
-// func printFeature(client pb.RouteGuideClient, point *pb.Point) {
-// 	log.Printf("Getting feature for point (%d, %d)", point.Latitude, point.Longitude)
-// 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-// 	defer cancel()
-// 	feature, err := client.GetFeature(ctx, point)
-// 	if err != nil {
-// 		log.Fatalf("client.GetFeature failed: %v", err)
-// 	}
-// 	log.Println(feature)
-// }
-
 //
 func printEnergy(client impactEffect.ImpactEffectServiceClient, impactor *impactEffect.Impactor) {
-	log.Printf("Getting feature for point (%d, %d)", impactor.Diameter, impactor.Density)
+	log.Printf("Getting feature for point (%f, %f)", impactor.Diameter, impactor.Density)
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	feature, err := client.GetKineticEnergy(ctx, impactor)
+	feature, err := client.Cal_KineticEnergy(ctx, impactor)
 	if err != nil {
 		log.Fatalf("client.GetFeature failed: %v", err)
 	}
