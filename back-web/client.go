@@ -84,5 +84,6 @@ func main() {
 	impactor.Theta = 45
 	impactor.Depth = 0
 	impactor.Ttype = 3
+
 	printEnergy(client, impactor)
 }
