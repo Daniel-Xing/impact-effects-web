@@ -17,208 +17,223 @@ class ImpactEffectServiceStub(object):
         """
         self.cal_Kinetic_energy = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_Kinetic_energy',
-                request_serializer=impactEffect__pb2.Impactor.SerializeToString,
-                response_deserializer=impactEffect__pb2.KineticEnergy.FromString,
+                request_serializer=impactEffect__pb2.cal_Kinetic_energy_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_Kinetic_energy_response.FromString,
                 )
         self.cal_kinetic_energy_megatons = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_kinetic_energy_megatons',
-                request_serializer=impactEffect__pb2.Impactor.SerializeToString,
-                response_deserializer=impactEffect__pb2.KineticEnergy.FromString,
+                request_serializer=impactEffect__pb2.cal_kinetic_energy_megatons_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_kinetic_energy_megatons_response.FromString,
                 )
         self.cal_rec_time = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_rec_time',
-                request_serializer=impactEffect__pb2.Impactor.SerializeToString,
-                response_deserializer=impactEffect__pb2.RecTime.FromString,
+                request_serializer=impactEffect__pb2.cal_rec_time_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_rec_time_response.FromString,
                 )
         self.cal_i_factor = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_i_factor',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_i_factor_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_i_factor_response.FromString,
                 )
         self.burst_velocity_at_zero = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/burst_velocity_at_zero',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.burst_velocity_at_zero_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.burst_velocity_at_zero_response.FromString,
                 )
         self.altitude_of_breakup = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/altitude_of_breakup',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.altitude_of_breakup_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.altitude_of_breakup_response.FromString,
                 )
         self.velocity_at_breakup = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/velocity_at_breakup',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.velocity_at_breakup_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.velocity_at_breakup_response.FromString,
                 )
         self.dispersion_length_scale = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/dispersion_length_scale',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.dispersion_length_scale_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.dispersion_length_scale_response.FromString,
                 )
         self.airburst_altitude = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/airburst_altitude',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.airburst_altitude_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.airburst_altitude_response.FromString,
                 )
         self.brust_velocity = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/brust_velocity',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.brust_velocity_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.brust_velocity_response.FromString,
                 )
         self.dispersion_of_impactor = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/dispersion_of_impactor',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.dispersion_of_impactor_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.dispersion_of_impactor_response.FromString,
                 )
         self.fraction_of_momentum = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/fraction_of_momentum',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.fraction_of_momentum_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.fraction_of_momentum_response.FromString,
                 )
         self.cal_trot_change = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_trot_change',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_trot_change_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_trot_change_response.FromString,
                 )
         self.cal_energy_atmosphere = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_energy_atmosphere',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_energy_atmosphere_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_energy_atmosphere_response.FromString,
                 )
         self.cal_energy_blast_surface = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_energy_blast_surface',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_energy_blast_surface_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_energy_blast_surface_response.FromString,
                 )
         self.cal_mass_of_water = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_mass_of_water',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_mass_of_water_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_mass_of_water_response.FromString,
                 )
         self.cal_velocity_projectile = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_velocity_projectile',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_velocity_projectile_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_velocity_projectile_response.FromString,
+                )
+        self.cal_energy_at_seafloor = channel.unary_unary(
+                '/impactEffect.ImpactEffectService/cal_energy_at_seafloor',
+                request_serializer=impactEffect__pb2.cal_energy_at_seafloor_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_energy_at_seafloor_response.FromString,
                 )
         self.cal_ePIcentral_angle = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_ePIcentral_angle',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_ePIcentral_angle_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_ePIcentral_angle_response.FromString,
                 )
         self.cal_scaling_diameter_constant = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_scaling_diameter_constant',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_scaling_diameter_constant_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_scaling_diameter_constant_response.FromString,
                 )
         self.cal_anglefac = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_anglefac',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_anglefac_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_anglefac_response.FromString,
                 )
         self.cal_wdiameter = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_wdiameter',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_wdiameter_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_wdiameter_response.FromString,
                 )
         self.cal_transient_crater_diameter = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_transient_crater_diameter',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_transient_crater_diameter_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_transient_crater_diameter_response.FromString,
                 )
         self.cal_depthr = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_depthr',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_depthr_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_depthr_response.FromString,
                 )
         self.cal_cdiamater = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_cdiamater',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_cdiamater_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_cdiamater_response.FromString,
                 )
         self.cal_depthfr = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_depthfr',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_depthfr_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_depthfr_response.FromString,
                 )
         self.cal_vCrater = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_vCrater',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_vCrater_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_vCrater_response.FromString,
                 )
         self.cal_vratio = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_vratio',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_vratio_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_vratio_response.FromString,
                 )
         self.cal_vCrater_vRation = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_vCrater_vRation',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_vCrater_vRation_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_vCrater_vRation_response.FromString,
                 )
         self.cal_vMelt = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_vMelt',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_vMelt_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_vMelt_response.FromString,
                 )
         self.cal_mratio_and_mcratio = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_mratio_and_mcratio',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_mratio_and_mcratio_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_mratio_and_mcratio_response.FromString,
                 )
         self.cal_eject_arrival = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_eject_arrival',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_eject_arrival_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_eject_arrival_response.FromString,
                 )
         self.cal_ejecta_thickness = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_ejecta_thickness',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_ejecta_thickness_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_ejecta_thickness_response.FromString,
+                )
+        self.cal_d_frag = channel.unary_unary(
+                '/impactEffect.ImpactEffectService/cal_d_frag',
+                request_serializer=impactEffect__pb2.cal_d_frag_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_d_frag_response.FromString,
                 )
         self.cal_themal = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_themal',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_themal_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_themal_response.FromString,
                 )
         self.cal_magnitude = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_magnitude',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_magnitude_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_magnitude_response.FromString,
                 )
         self.cal_magnitude2 = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_magnitude2',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_magnitude2_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_magnitude2_response.FromString,
                 )
         self.cal_shock_arrival = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_shock_arrival',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_shock_arrival_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_shock_arrival_response.FromString,
                 )
         self.cal_vmax = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_vmax',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_vmax_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_vmax_response.FromString,
+                )
+        self.cal_shock_damage = channel.unary_unary(
+                '/impactEffect.ImpactEffectService/cal_shock_damage',
+                request_serializer=impactEffect__pb2.cal_shock_damage_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_shock_damage_response.FromString,
                 )
         self.cal_dec_level = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_dec_level',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_dec_level_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_dec_level_response.FromString,
                 )
         self.cal_TsunamiArrivalTime = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_TsunamiArrivalTime',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_TsunamiArrivalTime_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_TsunamiArrivalTime_response.FromString,
                 )
         self.cal_WaveAmplitudeUpperLimit = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_WaveAmplitudeUpperLimit',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_WaveAmplitudeUpperLimit_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_WaveAmplitudeUpperLimit_response.FromString,
                 )
         self.cal_WaveAmplitudeLowerLimit = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_WaveAmplitudeLowerLimit',
-                request_serializer=impactEffect__pb2.SimpleRequest.SerializeToString,
-                response_deserializer=impactEffect__pb2.result.FromString,
+                request_serializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_response.FromString,
                 )
 
 
@@ -235,19 +250,22 @@ class ImpactEffectServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def cal_kinetic_energy_megatons(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """calculate the Kinetic_energy of the impactor
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def cal_rec_time(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """calculate the rec time of the impactor
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def cal_i_factor(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """calculate the i_factor of the impactor
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -325,6 +343,12 @@ class ImpactEffectServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def cal_velocity_projectile(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def cal_energy_at_seafloor(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -420,6 +444,12 @@ class ImpactEffectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def cal_d_frag(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def cal_themal(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -445,6 +475,12 @@ class ImpactEffectServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def cal_vmax(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def cal_shock_damage(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -479,208 +515,223 @@ def add_ImpactEffectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'cal_Kinetic_energy': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_Kinetic_energy,
-                    request_deserializer=impactEffect__pb2.Impactor.FromString,
-                    response_serializer=impactEffect__pb2.KineticEnergy.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_Kinetic_energy_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_Kinetic_energy_response.SerializeToString,
             ),
             'cal_kinetic_energy_megatons': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_kinetic_energy_megatons,
-                    request_deserializer=impactEffect__pb2.Impactor.FromString,
-                    response_serializer=impactEffect__pb2.KineticEnergy.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_kinetic_energy_megatons_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_kinetic_energy_megatons_response.SerializeToString,
             ),
             'cal_rec_time': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_rec_time,
-                    request_deserializer=impactEffect__pb2.Impactor.FromString,
-                    response_serializer=impactEffect__pb2.RecTime.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_rec_time_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_rec_time_response.SerializeToString,
             ),
             'cal_i_factor': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_i_factor,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_i_factor_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_i_factor_response.SerializeToString,
             ),
             'burst_velocity_at_zero': grpc.unary_unary_rpc_method_handler(
                     servicer.burst_velocity_at_zero,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.burst_velocity_at_zero_request.FromString,
+                    response_serializer=impactEffect__pb2.burst_velocity_at_zero_response.SerializeToString,
             ),
             'altitude_of_breakup': grpc.unary_unary_rpc_method_handler(
                     servicer.altitude_of_breakup,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.altitude_of_breakup_request.FromString,
+                    response_serializer=impactEffect__pb2.altitude_of_breakup_response.SerializeToString,
             ),
             'velocity_at_breakup': grpc.unary_unary_rpc_method_handler(
                     servicer.velocity_at_breakup,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.velocity_at_breakup_request.FromString,
+                    response_serializer=impactEffect__pb2.velocity_at_breakup_response.SerializeToString,
             ),
             'dispersion_length_scale': grpc.unary_unary_rpc_method_handler(
                     servicer.dispersion_length_scale,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.dispersion_length_scale_request.FromString,
+                    response_serializer=impactEffect__pb2.dispersion_length_scale_response.SerializeToString,
             ),
             'airburst_altitude': grpc.unary_unary_rpc_method_handler(
                     servicer.airburst_altitude,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.airburst_altitude_request.FromString,
+                    response_serializer=impactEffect__pb2.airburst_altitude_response.SerializeToString,
             ),
             'brust_velocity': grpc.unary_unary_rpc_method_handler(
                     servicer.brust_velocity,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.brust_velocity_request.FromString,
+                    response_serializer=impactEffect__pb2.brust_velocity_response.SerializeToString,
             ),
             'dispersion_of_impactor': grpc.unary_unary_rpc_method_handler(
                     servicer.dispersion_of_impactor,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.dispersion_of_impactor_request.FromString,
+                    response_serializer=impactEffect__pb2.dispersion_of_impactor_response.SerializeToString,
             ),
             'fraction_of_momentum': grpc.unary_unary_rpc_method_handler(
                     servicer.fraction_of_momentum,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.fraction_of_momentum_request.FromString,
+                    response_serializer=impactEffect__pb2.fraction_of_momentum_response.SerializeToString,
             ),
             'cal_trot_change': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_trot_change,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_trot_change_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_trot_change_response.SerializeToString,
             ),
             'cal_energy_atmosphere': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_energy_atmosphere,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_energy_atmosphere_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_energy_atmosphere_response.SerializeToString,
             ),
             'cal_energy_blast_surface': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_energy_blast_surface,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_energy_blast_surface_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_energy_blast_surface_response.SerializeToString,
             ),
             'cal_mass_of_water': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_mass_of_water,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_mass_of_water_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_mass_of_water_response.SerializeToString,
             ),
             'cal_velocity_projectile': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_velocity_projectile,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_velocity_projectile_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_velocity_projectile_response.SerializeToString,
+            ),
+            'cal_energy_at_seafloor': grpc.unary_unary_rpc_method_handler(
+                    servicer.cal_energy_at_seafloor,
+                    request_deserializer=impactEffect__pb2.cal_energy_at_seafloor_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_energy_at_seafloor_response.SerializeToString,
             ),
             'cal_ePIcentral_angle': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_ePIcentral_angle,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_ePIcentral_angle_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_ePIcentral_angle_response.SerializeToString,
             ),
             'cal_scaling_diameter_constant': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_scaling_diameter_constant,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_scaling_diameter_constant_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_scaling_diameter_constant_response.SerializeToString,
             ),
             'cal_anglefac': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_anglefac,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_anglefac_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_anglefac_response.SerializeToString,
             ),
             'cal_wdiameter': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_wdiameter,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_wdiameter_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_wdiameter_response.SerializeToString,
             ),
             'cal_transient_crater_diameter': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_transient_crater_diameter,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_transient_crater_diameter_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_transient_crater_diameter_response.SerializeToString,
             ),
             'cal_depthr': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_depthr,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_depthr_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_depthr_response.SerializeToString,
             ),
             'cal_cdiamater': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_cdiamater,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_cdiamater_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_cdiamater_response.SerializeToString,
             ),
             'cal_depthfr': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_depthfr,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_depthfr_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_depthfr_response.SerializeToString,
             ),
             'cal_vCrater': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_vCrater,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_vCrater_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_vCrater_response.SerializeToString,
             ),
             'cal_vratio': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_vratio,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_vratio_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_vratio_response.SerializeToString,
             ),
             'cal_vCrater_vRation': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_vCrater_vRation,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_vCrater_vRation_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_vCrater_vRation_response.SerializeToString,
             ),
             'cal_vMelt': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_vMelt,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_vMelt_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_vMelt_response.SerializeToString,
             ),
             'cal_mratio_and_mcratio': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_mratio_and_mcratio,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_mratio_and_mcratio_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_mratio_and_mcratio_response.SerializeToString,
             ),
             'cal_eject_arrival': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_eject_arrival,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_eject_arrival_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_eject_arrival_response.SerializeToString,
             ),
             'cal_ejecta_thickness': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_ejecta_thickness,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_ejecta_thickness_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_ejecta_thickness_response.SerializeToString,
+            ),
+            'cal_d_frag': grpc.unary_unary_rpc_method_handler(
+                    servicer.cal_d_frag,
+                    request_deserializer=impactEffect__pb2.cal_d_frag_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_d_frag_response.SerializeToString,
             ),
             'cal_themal': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_themal,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_themal_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_themal_response.SerializeToString,
             ),
             'cal_magnitude': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_magnitude,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_magnitude_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_magnitude_response.SerializeToString,
             ),
             'cal_magnitude2': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_magnitude2,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_magnitude2_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_magnitude2_response.SerializeToString,
             ),
             'cal_shock_arrival': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_shock_arrival,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_shock_arrival_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_shock_arrival_response.SerializeToString,
             ),
             'cal_vmax': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_vmax,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_vmax_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_vmax_response.SerializeToString,
+            ),
+            'cal_shock_damage': grpc.unary_unary_rpc_method_handler(
+                    servicer.cal_shock_damage,
+                    request_deserializer=impactEffect__pb2.cal_shock_damage_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_shock_damage_response.SerializeToString,
             ),
             'cal_dec_level': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_dec_level,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_dec_level_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_dec_level_response.SerializeToString,
             ),
             'cal_TsunamiArrivalTime': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_TsunamiArrivalTime,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_TsunamiArrivalTime_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_TsunamiArrivalTime_response.SerializeToString,
             ),
             'cal_WaveAmplitudeUpperLimit': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_WaveAmplitudeUpperLimit,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_WaveAmplitudeUpperLimit_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_WaveAmplitudeUpperLimit_response.SerializeToString,
             ),
             'cal_WaveAmplitudeLowerLimit': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_WaveAmplitudeLowerLimit,
-                    request_deserializer=impactEffect__pb2.SimpleRequest.FromString,
-                    response_serializer=impactEffect__pb2.result.SerializeToString,
+                    request_deserializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_response.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -705,8 +756,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_Kinetic_energy',
-            impactEffect__pb2.Impactor.SerializeToString,
-            impactEffect__pb2.KineticEnergy.FromString,
+            impactEffect__pb2.cal_Kinetic_energy_request.SerializeToString,
+            impactEffect__pb2.cal_Kinetic_energy_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -722,8 +773,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_kinetic_energy_megatons',
-            impactEffect__pb2.Impactor.SerializeToString,
-            impactEffect__pb2.KineticEnergy.FromString,
+            impactEffect__pb2.cal_kinetic_energy_megatons_request.SerializeToString,
+            impactEffect__pb2.cal_kinetic_energy_megatons_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -739,8 +790,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_rec_time',
-            impactEffect__pb2.Impactor.SerializeToString,
-            impactEffect__pb2.RecTime.FromString,
+            impactEffect__pb2.cal_rec_time_request.SerializeToString,
+            impactEffect__pb2.cal_rec_time_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -756,8 +807,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_i_factor',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_i_factor_request.SerializeToString,
+            impactEffect__pb2.cal_i_factor_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -773,8 +824,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/burst_velocity_at_zero',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.burst_velocity_at_zero_request.SerializeToString,
+            impactEffect__pb2.burst_velocity_at_zero_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -790,8 +841,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/altitude_of_breakup',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.altitude_of_breakup_request.SerializeToString,
+            impactEffect__pb2.altitude_of_breakup_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -807,8 +858,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/velocity_at_breakup',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.velocity_at_breakup_request.SerializeToString,
+            impactEffect__pb2.velocity_at_breakup_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -824,8 +875,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/dispersion_length_scale',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.dispersion_length_scale_request.SerializeToString,
+            impactEffect__pb2.dispersion_length_scale_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -841,8 +892,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/airburst_altitude',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.airburst_altitude_request.SerializeToString,
+            impactEffect__pb2.airburst_altitude_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -858,8 +909,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/brust_velocity',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.brust_velocity_request.SerializeToString,
+            impactEffect__pb2.brust_velocity_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -875,8 +926,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/dispersion_of_impactor',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.dispersion_of_impactor_request.SerializeToString,
+            impactEffect__pb2.dispersion_of_impactor_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -892,8 +943,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/fraction_of_momentum',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.fraction_of_momentum_request.SerializeToString,
+            impactEffect__pb2.fraction_of_momentum_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -909,8 +960,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_trot_change',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_trot_change_request.SerializeToString,
+            impactEffect__pb2.cal_trot_change_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -926,8 +977,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_energy_atmosphere',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_energy_atmosphere_request.SerializeToString,
+            impactEffect__pb2.cal_energy_atmosphere_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -943,8 +994,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_energy_blast_surface',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_energy_blast_surface_request.SerializeToString,
+            impactEffect__pb2.cal_energy_blast_surface_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -960,8 +1011,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_mass_of_water',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_mass_of_water_request.SerializeToString,
+            impactEffect__pb2.cal_mass_of_water_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -977,8 +1028,25 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_velocity_projectile',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_velocity_projectile_request.SerializeToString,
+            impactEffect__pb2.cal_velocity_projectile_response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def cal_energy_at_seafloor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_energy_at_seafloor',
+            impactEffect__pb2.cal_energy_at_seafloor_request.SerializeToString,
+            impactEffect__pb2.cal_energy_at_seafloor_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -994,8 +1062,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_ePIcentral_angle',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_ePIcentral_angle_request.SerializeToString,
+            impactEffect__pb2.cal_ePIcentral_angle_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1011,8 +1079,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_scaling_diameter_constant',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_scaling_diameter_constant_request.SerializeToString,
+            impactEffect__pb2.cal_scaling_diameter_constant_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1028,8 +1096,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_anglefac',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_anglefac_request.SerializeToString,
+            impactEffect__pb2.cal_anglefac_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1045,8 +1113,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_wdiameter',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_wdiameter_request.SerializeToString,
+            impactEffect__pb2.cal_wdiameter_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1062,8 +1130,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_transient_crater_diameter',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_transient_crater_diameter_request.SerializeToString,
+            impactEffect__pb2.cal_transient_crater_diameter_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1079,8 +1147,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_depthr',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_depthr_request.SerializeToString,
+            impactEffect__pb2.cal_depthr_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1096,8 +1164,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_cdiamater',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_cdiamater_request.SerializeToString,
+            impactEffect__pb2.cal_cdiamater_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1113,8 +1181,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_depthfr',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_depthfr_request.SerializeToString,
+            impactEffect__pb2.cal_depthfr_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1130,8 +1198,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_vCrater',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_vCrater_request.SerializeToString,
+            impactEffect__pb2.cal_vCrater_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1147,8 +1215,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_vratio',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_vratio_request.SerializeToString,
+            impactEffect__pb2.cal_vratio_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1164,8 +1232,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_vCrater_vRation',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_vCrater_vRation_request.SerializeToString,
+            impactEffect__pb2.cal_vCrater_vRation_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1181,8 +1249,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_vMelt',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_vMelt_request.SerializeToString,
+            impactEffect__pb2.cal_vMelt_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1198,8 +1266,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_mratio_and_mcratio',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_mratio_and_mcratio_request.SerializeToString,
+            impactEffect__pb2.cal_mratio_and_mcratio_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1215,8 +1283,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_eject_arrival',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_eject_arrival_request.SerializeToString,
+            impactEffect__pb2.cal_eject_arrival_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1232,8 +1300,25 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_ejecta_thickness',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_ejecta_thickness_request.SerializeToString,
+            impactEffect__pb2.cal_ejecta_thickness_response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def cal_d_frag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_d_frag',
+            impactEffect__pb2.cal_d_frag_request.SerializeToString,
+            impactEffect__pb2.cal_d_frag_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1249,8 +1334,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_themal',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_themal_request.SerializeToString,
+            impactEffect__pb2.cal_themal_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1266,8 +1351,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_magnitude',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_magnitude_request.SerializeToString,
+            impactEffect__pb2.cal_magnitude_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1283,8 +1368,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_magnitude2',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_magnitude2_request.SerializeToString,
+            impactEffect__pb2.cal_magnitude2_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1300,8 +1385,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_shock_arrival',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_shock_arrival_request.SerializeToString,
+            impactEffect__pb2.cal_shock_arrival_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1317,8 +1402,25 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_vmax',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_vmax_request.SerializeToString,
+            impactEffect__pb2.cal_vmax_response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def cal_shock_damage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_shock_damage',
+            impactEffect__pb2.cal_shock_damage_request.SerializeToString,
+            impactEffect__pb2.cal_shock_damage_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1334,8 +1436,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_dec_level',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_dec_level_request.SerializeToString,
+            impactEffect__pb2.cal_dec_level_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1351,8 +1453,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_TsunamiArrivalTime',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_TsunamiArrivalTime_request.SerializeToString,
+            impactEffect__pb2.cal_TsunamiArrivalTime_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1368,8 +1470,8 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_WaveAmplitudeUpperLimit',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_WaveAmplitudeUpperLimit_request.SerializeToString,
+            impactEffect__pb2.cal_WaveAmplitudeUpperLimit_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1385,7 +1487,7 @@ class ImpactEffectService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_WaveAmplitudeLowerLimit',
-            impactEffect__pb2.SimpleRequest.SerializeToString,
-            impactEffect__pb2.result.FromString,
+            impactEffect__pb2.cal_WaveAmplitudeLowerLimit_request.SerializeToString,
+            impactEffect__pb2.cal_WaveAmplitudeLowerLimit_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -44,11 +44,22 @@ var (
 )
 
 //
-func printEnergy(client impactEffect.ImpactEffectServiceClient, impactor *impactEffect.Impactor) {
-	log.Printf("Getting feature for point (%f, %f)", impactor.Diameter, impactor.Density)
+func printEnergy(client impactEffect.ImpactEffectServiceClient, req *impactEffect.Cal_KineticEnergyRequest) {
+	log.Printf("Getting feature for point (%f, %f)", req.Impactor.Diameter, req.Impactor.Density)
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	feature, err := client.Cal_KineticEnergy(ctx, impactor)
+	feature, err := client.Cal_KineticEnergy(ctx, req)
+	if err != nil {
+		log.Fatalf("client.GetFeature failed: %v", err)
+	}
+	log.Println(feature)
+}
+
+func printIFactor(client impactEffect.ImpactEffectServiceClient, req *impactEffect.CalIFactorRequest) {
+	log.Printf("Getting feature for point (%f, %f)", req.Impactor.Diameter, req.Impactor.Density)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+	feature, err := client.CalIFactor(ctx, req)
 	if err != nil {
 		log.Fatalf("client.GetFeature failed: %v", err)
 	}
@@ -77,13 +88,24 @@ func main() {
 	}
 	defer conn.Close()
 	client := impactEffect.NewImpactEffectServiceClient(conn)
+
 	impactor := &impactEffect.Impactor{}
 	impactor.Density = 111
 	impactor.Diameter = 111
 	impactor.Velocity = 111
 	impactor.Theta = 45
-	impactor.Depth = 0
-	impactor.Ttype = 3
 
-	printEnergy(client, impactor)
+	target := &impactEffect.Targets{}
+	target.Density = 111
+	target.Depth = 0
+	target.Distance = 111
+
+	req := &impactEffect.CalIFactorRequest{
+		Impactor: impactor,
+		Targets:  target,
+		Choice:   1,
+	}
+
+	// printEnergy(client, req)
+	printIFactor(client, req)
 }

@@ -1,14 +1,14 @@
 // Copyright 2015 gRPC authors.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
+//float  Licensed under the Apache License; Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
 //     http://www.apache.org/licenses/LICENSE-2.0
 //
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//float  Unless required by applicable law or agreed to in writing; software
+//float  distributed under the License is distributed on an "AS IS" BASIS;
+//float  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND; either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
@@ -26,50 +26,96 @@ package impactEffect;
 service ImpactEffectService {
   // A simple the function of ImpactEffect for test
   // calculte the Kinetic_energy of the impactor
-  rpc cal_Kinetic_energy(Impactor) returns (KineticEnergy) {}
+  rpc cal_Kinetic_energy(cal_Kinetic_energy_request) returns (cal_Kinetic_energy_response) {}
 
-  rpc cal_kinetic_energy_megatons(Impactor) returns (KineticEnergy) {}
+  // calculate the Kinetic_energy of the impactor
+  rpc cal_kinetic_energy_megatons(cal_kinetic_energy_megatons_request) returns (cal_kinetic_energy_megatons_response) {}
 
-  rpc cal_rec_time(Impactor) returns (RecTime) {}
+  // calculate the rec time of the impactor
+  rpc cal_rec_time(cal_rec_time_request) returns (cal_rec_time_response) {}
 
-  rpc cal_i_factor(SimpleRequest) returns (result) {}
-  rpc burst_velocity_at_zero(SimpleRequest) returns (result) {}
-  rpc altitude_of_breakup(SimpleRequest) returns (result) {}
-  rpc velocity_at_breakup(SimpleRequest) returns (result) {}
-  rpc dispersion_length_scale(SimpleRequest) returns (result) {}
-  rpc airburst_altitude(SimpleRequest) returns (result) {}
-  rpc brust_velocity(SimpleRequest) returns (result) {}
-  rpc dispersion_of_impactor(SimpleRequest) returns (result) {}
-  rpc fraction_of_momentum(SimpleRequest) returns (result) {}
-  rpc cal_trot_change(SimpleRequest) returns (result) {}
-  rpc cal_energy_atmosphere(SimpleRequest) returns (result) {}
-  rpc cal_energy_blast_surface(SimpleRequest) returns (result) {}
-  rpc cal_mass_of_water(SimpleRequest) returns (result) {}
-  rpc cal_velocity_projectile(SimpleRequest) returns (result) {}
-  rpc cal_ePIcentral_angle(SimpleRequest) returns (result) {}
-  rpc cal_scaling_diameter_constant(SimpleRequest) returns (result) {}
-  rpc cal_anglefac(SimpleRequest) returns (result) {}
-  rpc cal_wdiameter(SimpleRequest) returns (result) {}
-  rpc cal_transient_crater_diameter(SimpleRequest) returns (result) {}
-  rpc cal_depthr(SimpleRequest) returns (result) {}
-  rpc cal_cdiamater(SimpleRequest) returns (result) {}
-  rpc cal_depthfr(SimpleRequest) returns (result) {}
-  rpc cal_vCrater(SimpleRequest) returns (result) {}
-  rpc cal_vratio(SimpleRequest) returns (result) {}
-  rpc cal_vCrater_vRation(SimpleRequest) returns (result) {}
-  rpc cal_vMelt(SimpleRequest) returns (result) {}
-  rpc cal_mratio_and_mcratio(SimpleRequest) returns (result) {}
-  rpc cal_eject_arrival(SimpleRequest) returns (result) {}
-  rpc cal_ejecta_thickness(SimpleRequest) returns (result) {}
-  rpc cal_themal(SimpleRequest) returns (result) {}
-  rpc cal_magnitude(SimpleRequest) returns (result) {}
-  rpc cal_magnitude2(SimpleRequest) returns (result) {}
-  rpc cal_shock_arrival(SimpleRequest) returns (result) {}
-  rpc cal_vmax(SimpleRequest) returns (result) {}
-  rpc cal_dec_level(SimpleRequest) returns (result) {}
-  rpc cal_TsunamiArrivalTime(SimpleRequest) returns (result) {}
-  rpc cal_WaveAmplitudeUpperLimit(SimpleRequest) returns (result) {}
-  rpc cal_WaveAmplitudeLowerLimit(SimpleRequest) returns (result) {}
+  // calculate the i_factor of the impactor
+  rpc cal_i_factor(cal_i_factor_request) returns (cal_i_factor_response) {}
+
+  rpc burst_velocity_at_zero(burst_velocity_at_zero_request) returns (burst_velocity_at_zero_response) {}
+  
+  rpc altitude_of_breakup(altitude_of_breakup_request) returns (altitude_of_breakup_response) {}
+  
+  rpc velocity_at_breakup(velocity_at_breakup_request) returns (velocity_at_breakup_response) {}
+  
+  rpc dispersion_length_scale(dispersion_length_scale_request) returns (dispersion_length_scale_response) {}
+
+  rpc airburst_altitude(airburst_altitude_request) returns (airburst_altitude_response) {}
+  
+  rpc brust_velocity(brust_velocity_request) returns (brust_velocity_response) {}
+  
+  rpc dispersion_of_impactor(dispersion_of_impactor_request) returns (dispersion_of_impactor_response) {}
+  
+  rpc fraction_of_momentum(fraction_of_momentum_request) returns (fraction_of_momentum_response) {}
+  
+  rpc cal_trot_change(cal_trot_change_request) returns (cal_trot_change_response) {}
+  
+  rpc cal_energy_atmosphere(cal_energy_atmosphere_request) returns (cal_energy_atmosphere_response) {}
+  
+  rpc cal_energy_blast_surface(cal_energy_blast_surface_request) returns (cal_energy_blast_surface_response) {}
+  
+  rpc cal_mass_of_water(cal_mass_of_water_request) returns (cal_mass_of_water_response) {}
+  
+  rpc cal_velocity_projectile(cal_velocity_projectile_request) returns (cal_velocity_projectile_response) {}
+  
+  rpc cal_energy_at_seafloor(cal_energy_at_seafloor_request) returns (cal_energy_at_seafloor_response) {}
+
+  rpc cal_ePIcentral_angle(cal_ePIcentral_angle_request) returns (cal_ePIcentral_angle_response) {}
+  
+  rpc cal_scaling_diameter_constant(cal_scaling_diameter_constant_request) returns (cal_scaling_diameter_constant_response) {}
+  
+  rpc cal_anglefac(cal_anglefac_request) returns (cal_anglefac_response) {}
+  
+  rpc cal_wdiameter(cal_wdiameter_request) returns (cal_wdiameter_response) {}
+  
+  rpc cal_transient_crater_diameter(cal_transient_crater_diameter_request) returns (cal_transient_crater_diameter_response) {}
+  
+  rpc cal_depthr(cal_depthr_request) returns (cal_depthr_response) {}
+  
+  rpc cal_cdiamater(cal_cdiamater_request) returns (cal_cdiamater_response) {}
+  
+  rpc cal_depthfr(cal_depthfr_request) returns (cal_depthfr_response) {}
+  
+  rpc cal_vCrater(cal_vCrater_request) returns (cal_vCrater_response) {}
+
+  rpc cal_vratio(cal_vratio_request) returns (cal_vratio_response) {}
+  
+  rpc cal_vCrater_vRation(cal_vCrater_vRation_request) returns (cal_vCrater_vRation_response) {}
+  
+  rpc cal_vMelt(cal_vMelt_request) returns (cal_vMelt_response) {}
+  
+  rpc cal_mratio_and_mcratio(cal_mratio_and_mcratio_request) returns (cal_mratio_and_mcratio_response) {}
+  
+  rpc cal_eject_arrival(cal_eject_arrival_request) returns (cal_eject_arrival_response) {}
+  
+  rpc cal_ejecta_thickness(cal_ejecta_thickness_request) returns (cal_ejecta_thickness_response) {}
+  
+  rpc cal_d_frag(cal_d_frag_request) returns (cal_d_frag_response) {}
+
+  rpc cal_themal(cal_themal_request) returns (cal_themal_response) {}
+  
+  rpc cal_magnitude(cal_magnitude_request) returns (cal_magnitude_response) {}
+  
+  rpc cal_magnitude2(cal_magnitude2_request) returns (cal_magnitude2_response) {}
+  
+  rpc cal_shock_arrival(cal_shock_arrival_request) returns (cal_shock_arrival_response) {}
+  
+  rpc cal_vmax(cal_vmax_request) returns (cal_vmax_response) {}
+
+  rpc cal_shock_damage(cal_shock_damage_request) returns (cal_shock_damage_response) {}
+  
+  rpc cal_dec_level(cal_dec_level_request) returns (cal_dec_level_response) {}
+  
+  rpc cal_TsunamiArrivalTime(cal_TsunamiArrivalTime_request) returns (cal_TsunamiArrivalTime_response) {}
+  
+  rpc cal_WaveAmplitudeUpperLimit(cal_WaveAmplitudeUpperLimit_request) returns (cal_WaveAmplitudeUpperLimit_response) {}
+  
+  rpc cal_WaveAmplitudeLowerLimit(cal_WaveAmplitudeLowerLimit_request) returns (cal_WaveAmplitudeLowerLimit_response) {}
 }
 
 message Impactor {
@@ -77,28 +123,643 @@ message Impactor {
   float density = 2;
   float velocity = 3;
   float theta = 4;
-  float depth = 5;
-  int64 ttype = 6;
-  int64 choice = 7;
 }
 
-message SimpleTargets {
-  float density = 1;
-  float rhoSurface = 2;
-  float dragCoefficient = 3;
+message Targets {
+  float depth = 1;
+  float distance = 2;
+  float density = 3;
+  float ttype = 4;
+  float rhoSurface = 5;
+  float dragC = 6;
+  float schaleHeight = 7;
+  float fp = 8;
+  float pEarth = 9;
+  float mEarth = 10;
+  float lEarth = 11;
+  float g = 12;
+  float R_earth = 13;
+  float surface_wave_v = 14;
+  float melt_coeff = 15;
+  float vEarth = 16;
+  float Po = 17;
+  float seefloor_density = 18;
 }
 
-message SimpleRequest {
+message example_request {
   Impactor impactor = 1;
-  SimpleTargets targets = 2;
+  int32 choice = 2;
 }
 
-message result {
-  float res = 1;
+message example_response {
+  float example = 1;
 }
 
-message KineticEnergy { float kinetic_energy = 1; }
+message cal_Kinetic_energy_request {
+  Impactor impactor = 1;
+  int32 choice = 2;
+}
 
-message RecTime { float rec_time = 1; }
+message cal_Kinetic_energy_response {
+  float Kinetic_energy = 1;
+}
+
+message cal_kinetic_energy_megatons_request {
+  Impactor impactor = 1;
+  int32 choice = 2;
+}
+
+message cal_kinetic_energy_megatons_response {
+  float kinetic_energy_megatons = 1;
+}
+message cal_rec_time_request {
+  Impactor impactor = 1;
+  int32 choice = 2;
+}
+
+message cal_rec_time_response {
+  float rec_time = 1;
+}
+
+message cal_i_factor_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  int32 choice = 256;
+}
+
+message cal_i_factor_response {
+  float i_factor = 1;
+}
+
+message burst_velocity_at_zero_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  int32 choice = 256;
+}
+
+message burst_velocity_at_zero_response {
+  float velocity_at_surface = 1;
+}
+
+message altitude_of_breakup_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float collins_iFactor = 3;
+  float rStrength = 4;
+
+  int32 choice = 256;
+}
+
+message altitude_of_breakup_response {
+  float altitudeBU = 1;
+}
+
+message velocity_at_breakup_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float av = 3;
+  float altitudeBU = 4;
+
+  int32 choice = 256;
+}
+
+message velocity_at_breakup_response {
+  float velocity = 1;
+}
+
+message dispersion_length_scale_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBU = 3;
+
+  int32 choice = 256;
+}
+
+message dispersion_length_scale_response {
+  float lDisper = 1;
+}
+
+
+message airburst_altitude_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float alpha2 = 3;
+  float lDisper = 4;
+
+  int32 choice = 256;
+}
+
+message airburst_altitude_response {
+  float altitudeBurst = 1;
+}
+
+
+
+
+message brust_velocity_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBurst = 3;
+  float altitudeBU = 4;
+  float vBu = 5;
+  float lDisper = 6;
+
+  int32 choice = 256;
+}
+
+message brust_velocity_response {
+  float velocity = 1;
+}
+
+
+
+message dispersion_of_impactor_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float l_disper = 3;
+  float altitude_bu = 4;
+  float altitude_burst = 5;
+
+  int32 choice = 256;
+}
+
+message dispersion_of_impactor_response {
+  float dispersion = 1;
+}
+
+
+
+message fraction_of_momentum_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float velocity = 3;
+
+  int32 choice = 256;
+}
+
+message fraction_of_momentum_response {
+  float lratio = 1;
+  float pratio = 2;
+}
+
+
+
+message cal_trot_change_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float velocity = 3;
+
+  int32 choice = 256;
+}
+
+message cal_trot_change_response {
+  float trot_change = 1;
+}
+
+
+
+message cal_energy_atmosphere_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float velocity = 3;
+
+  int32 choice = 256;
+}
+
+message cal_energy_atmosphere_response {
+  float energy_atmosphere = 1;
+}
+
+
+
+message cal_energy_blast_surface_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float velocity = 3;
+  float altitudeBurst = 4;
+  float energy_atmosphere = 5;
+
+  int32 choice = 256;
+}
+
+message cal_energy_blast_surface_response {
+  float energy_blast = 1;
+  float energy_surface = 2;
+}
+
+
+
+message cal_mass_of_water_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  int32 choice = 256;
+}
+
+message cal_mass_of_water_response {
+  float mwater = 1;
+}
+
+
+
+message cal_velocity_projectile_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float velocity = 3;
+
+  int32 choice = 256;
+}
+
+message cal_velocity_projectile_response {
+  float vseafloor = 1;
+}
+
+message cal_energy_at_seafloor_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float vseafloor = 3;
+
+  int32 choice = 256;
+}
+
+message cal_energy_at_seafloor_response {
+  float energy_seafloor = 1;
+}
+
+
+message cal_ePIcentral_angle_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+
+  int32 choice = 256;
+}
+
+message cal_ePIcentral_angle_response {
+  float delta = 1;
+}
+
+
+
+message cal_scaling_diameter_constant_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+
+  int32 choice = 256;
+}
+
+message cal_scaling_diameter_constant_response {
+  float Cd = 1;
+  float beta = 2;
+}
+
+
+
+message cal_anglefac_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+
+  int32 choice = 256;
+}
+
+message cal_anglefac_response {
+  float anglefac = 1;
+}
+
+
+
+message cal_wdiameter_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float anglefac = 3;
+  float velocity = 4;
+
+  int32 choice = 256;
+}
+
+message cal_wdiameter_response {
+  float wdiameter = 1;
+}
+
+
+
+message cal_transient_crater_diameter_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float cd = 3;
+  float beta = 4;
+  float anglefac = 5;
+  float vseafloor = 6;
+  float dispersion = 7;
+
+  int32 choice = 256;
+}
+
+message cal_transient_crater_diameter_response {
+  float Dtr = 1;
+}
+
+
+
+message cal_depthr_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float Dtr = 3;
+
+  int32 choice = 256;
+}
+
+message cal_depthr_response {
+  float depthr = 1;
+}
+
+
+
+message cal_cdiamater_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float Dtr = 3;
+
+  int32 choice = 256;
+}
+
+message cal_cdiamater_response {
+  float cdiameter = 1;
+}
+
+
+
+message cal_depthfr_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float Dtr = 3;
+  float depthr = 4;
+  float cdiameter = 5;
+
+  int32 choice = 256;
+}
+
+message cal_depthfr_response {
+  float depthfr = 1;
+}
+
+
+
+message cal_vCrater_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float Dtr = 3;
+
+  int32 choice = 256;
+}
+
+message cal_vCrater_response {
+  float vCrater = 1;
+}
+
+
+
+message cal_vratio_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float Dtr = 3;
+
+  int32 choice = 256;
+}
+
+message cal_vratio_response {
+  float vratio = 1;
+}
+
+
+message cal_vCrater_vRation_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float Dtr = 3;
+
+  int32 choice = 256;
+}
+
+message cal_vCrater_vRation_response {
+  float vCrater = 1;
+  float vratio = 2;
+}
+
+
+message cal_vMelt_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float velocity = 3;
+  float energy_seafloor = 4;
+
+  int32 choice = 256;
+}
+
+message cal_vMelt_response {
+  float vMelt = 1;
+}
+
+
+message cal_mratio_and_mcratio_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float vMelt = 3;
+  float vCrater = 4;
+  float velocity = 5;
+  float Dtr = 6;
+
+  int32 choice = 256;
+}
+
+message cal_mratio_and_mcratio_response {
+  float mratio = 1;
+  float mcratio = 2;
+}
+
+
+message cal_eject_arrival_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBurst = 3;
+
+  int32 choice = 256;
+}
+
+message cal_eject_arrival_response {
+  float ejecta_arrival = 1;
+}
+
+
+message cal_ejecta_thickness_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBurst = 3;
+  float Dtr = 4;
+
+  int32 choice = 256;
+}
+
+message cal_ejecta_thickness_response {
+  float ejecta_thickness = 1;
+}
+
+message cal_d_frag_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBurst = 3;
+  float Dtr = 4;
+  float cdiameter = 5;
+
+  int32 choice = 256;
+}
+
+message cal_d_frag_response {
+  float d_frag = 1;
+}
+
+
+message cal_themal_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float energy_surface = 3;
+  float altitudeBurst = 4;
+  float delta = 5;
+  float velocity = 6;
+
+  int32 choice = 256;
+}
+
+message cal_themal_response {
+  float h = 1;
+  float Rf = 2;
+  float thermal_exposure = 3;
+  float no_radiation = 4;
+  float max_rad_time = 5;
+  float irradiation_time = 6;
+  float megaton_factor = 7;
+  float thermal_power = 8;
+}
+
+
+message cal_magnitude_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBurst = 3;
+  float energy_seafloor = 4;
+
+  int32 choice = 256;
+}
+
+message cal_magnitude_response {
+  float magnitude = 1;
+}
+
+
+message cal_magnitude2_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBurst = 3;
+  float energy_seafloor = 4;
+  float delta = 5;
+  
+  int32 choice = 256;
+}
+
+message cal_magnitude2_response {
+  float eff_mag = 1;
+  float seismic_arrival = 2;
+}
+
+
+message cal_shock_arrival_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float altitudeBurst = 3;
+
+  int32 choice = 256;
+}
+
+message cal_shock_arrival_response {
+  float shock_arrival = 1;
+}
+
+
+message cal_vmax_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float energy_blast = 3;
+  float altitudeBurst = 4;
+  
+  int32 choice = 256;
+}
+
+message cal_vmax_response {
+  float vmax = 1;
+  float opressure = 2;
+}
+
+message cal_shock_damage_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float opressure = 3;
+  float vmax = 4;
+  
+  int32 choice = 256;
+}
+
+message cal_shock_damage_response {
+  string shock_damage = 1;
+}
+
+
+message cal_dec_level_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float energy_blast = 3;
+  float altitudeBurst = 4;
+  
+  int32 choice = 256;
+}
+
+message cal_dec_level_response {
+  float dec_level = 1;
+}
+
+
+message cal_TsunamiArrivalTime_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float wdiameter = 3;
+
+  int32 choice = 256;
+}
+
+message cal_TsunamiArrivalTime_response {
+  float TsunamiArrivalTime = 1;
+}
+
+
+message cal_WaveAmplitudeUpperLimit_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float wdiameter = 3;
+
+  int32 choice = 256;
+}
+
+message cal_WaveAmplitudeUpperLimit_response {
+  float WaveAmplitudeUpperLimit = 1;
+}
+
+
+message cal_WaveAmplitudeLowerLimit_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float wdiameter = 3;
+
+  int32 choice = 256;
+}
+
+message cal_WaveAmplitudeLowerLimit_response {
+  float WaveAmplitudeLowerLimit = 1;
+}
 
 

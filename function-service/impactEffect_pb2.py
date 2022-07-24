@@ -14,16 +14,102 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12impactEffect.proto\x12\x0cimpactEffect\"|\n\x08Impactor\x12\x10\n\x08\x64iameter\x18\x01 \x01(\x02\x12\x0f\n\x07\x64\x65nsity\x18\x02 \x01(\x02\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\r\n\x05theta\x18\x04 \x01(\x02\x12\r\n\x05\x64\x65pth\x18\x05 \x01(\x02\x12\r\n\x05ttype\x18\x06 \x01(\x03\x12\x0e\n\x06\x63hoice\x18\x07 \x01(\x03\"M\n\rSimpleTargets\x12\x0f\n\x07\x64\x65nsity\x18\x01 \x01(\x02\x12\x12\n\nrhoSurface\x18\x02 \x01(\x02\x12\x17\n\x0f\x64ragCoefficient\x18\x03 \x01(\x02\"g\n\rSimpleRequest\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12,\n\x07targets\x18\x02 \x01(\x0b\x32\x1b.impactEffect.SimpleTargets\"\x15\n\x06result\x12\x0b\n\x03res\x18\x01 \x01(\x02\"\'\n\rKineticEnergy\x12\x16\n\x0ekinetic_energy\x18\x01 \x01(\x02\"\x1b\n\x07RecTime\x12\x10\n\x08rec_time\x18\x01 \x01(\x02\x32\x87\x18\n\x13ImpactEffectService\x12K\n\x12\x63\x61l_Kinetic_energy\x12\x16.impactEffect.Impactor\x1a\x1b.impactEffect.KineticEnergy\"\x00\x12T\n\x1b\x63\x61l_kinetic_energy_megatons\x12\x16.impactEffect.Impactor\x1a\x1b.impactEffect.KineticEnergy\"\x00\x12?\n\x0c\x63\x61l_rec_time\x12\x16.impactEffect.Impactor\x1a\x15.impactEffect.RecTime\"\x00\x12\x43\n\x0c\x63\x61l_i_factor\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x62urst_velocity_at_zero\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12J\n\x13\x61ltitude_of_breakup\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12J\n\x13velocity_at_breakup\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12N\n\x17\x64ispersion_length_scale\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x61irburst_altitude\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x45\n\x0e\x62rust_velocity\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x64ispersion_of_impactor\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12K\n\x14\x66raction_of_momentum\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x46\n\x0f\x63\x61l_trot_change\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12L\n\x15\x63\x61l_energy_atmosphere\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12O\n\x18\x63\x61l_energy_blast_surface\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x63\x61l_mass_of_water\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12N\n\x17\x63\x61l_velocity_projectile\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12K\n\x14\x63\x61l_ePIcentral_angle\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12T\n\x1d\x63\x61l_scaling_diameter_constant\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x43\n\x0c\x63\x61l_anglefac\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_wdiameter\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12T\n\x1d\x63\x61l_transient_crater_diameter\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x41\n\ncal_depthr\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_cdiamater\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x42\n\x0b\x63\x61l_depthfr\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x42\n\x0b\x63\x61l_vCrater\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x41\n\ncal_vratio\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12J\n\x13\x63\x61l_vCrater_vRation\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12@\n\tcal_vMelt\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x63\x61l_mratio_and_mcratio\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x63\x61l_eject_arrival\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12K\n\x14\x63\x61l_ejecta_thickness\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x41\n\ncal_themal\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_magnitude\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x45\n\x0e\x63\x61l_magnitude2\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12H\n\x11\x63\x61l_shock_arrival\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12?\n\x08\x63\x61l_vmax\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12\x44\n\rcal_dec_level\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12M\n\x16\x63\x61l_TsunamiArrivalTime\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12R\n\x1b\x63\x61l_WaveAmplitudeUpperLimit\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x12R\n\x1b\x63\x61l_WaveAmplitudeLowerLimit\x12\x1b.impactEffect.SimpleRequest\x1a\x14.impactEffect.result\"\x00\x42\x32Z0google.golang.org/grpc/impactEffect/impactEffectb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12impactEffect.proto\x12\x0cimpactEffect\"N\n\x08Impactor\x12\x10\n\x08\x64iameter\x18\x01 \x01(\x02\x12\x0f\n\x07\x64\x65nsity\x18\x02 \x01(\x02\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\r\n\x05theta\x18\x04 \x01(\x02\"\xbd\x02\n\x07Targets\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x02\x12\x10\n\x08\x64istance\x18\x02 \x01(\x02\x12\x0f\n\x07\x64\x65nsity\x18\x03 \x01(\x02\x12\r\n\x05ttype\x18\x04 \x01(\x02\x12\x12\n\nrhoSurface\x18\x05 \x01(\x02\x12\r\n\x05\x64ragC\x18\x06 \x01(\x02\x12\x14\n\x0cschaleHeight\x18\x07 \x01(\x02\x12\n\n\x02\x66p\x18\x08 \x01(\x02\x12\x0e\n\x06pEarth\x18\t \x01(\x02\x12\x0e\n\x06mEarth\x18\n \x01(\x02\x12\x0e\n\x06lEarth\x18\x0b \x01(\x02\x12\t\n\x01g\x18\x0c \x01(\x02\x12\x0f\n\x07R_earth\x18\r \x01(\x02\x12\x16\n\x0esurface_wave_v\x18\x0e \x01(\x02\x12\x12\n\nmelt_coeff\x18\x0f \x01(\x02\x12\x0e\n\x06vEarth\x18\x10 \x01(\x02\x12\n\n\x02Po\x18\x11 \x01(\x02\x12\x18\n\x10seefloor_density\x18\x12 \x01(\x02\"K\n\x0f\x65xample_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12\x0e\n\x06\x63hoice\x18\x02 \x01(\x05\"#\n\x10\x65xample_response\x12\x0f\n\x07\x65xample\x18\x01 \x01(\x02\"V\n\x1a\x63\x61l_Kinetic_energy_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12\x0e\n\x06\x63hoice\x18\x02 \x01(\x05\"5\n\x1b\x63\x61l_Kinetic_energy_response\x12\x16\n\x0eKinetic_energy\x18\x01 \x01(\x02\"_\n#cal_kinetic_energy_megatons_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12\x0e\n\x06\x63hoice\x18\x02 \x01(\x05\"G\n$cal_kinetic_energy_megatons_response\x12\x1f\n\x17kinetic_energy_megatons\x18\x01 \x01(\x02\"P\n\x14\x63\x61l_rec_time_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12\x0e\n\x06\x63hoice\x18\x02 \x01(\x05\")\n\x15\x63\x61l_rec_time_response\x12\x10\n\x08rec_time\x18\x01 \x01(\x02\"y\n\x14\x63\x61l_i_factor_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\")\n\x15\x63\x61l_i_factor_response\x12\x10\n\x08i_factor\x18\x01 \x01(\x02\"\x83\x01\n\x1e\x62urst_velocity_at_zero_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\">\n\x1f\x62urst_velocity_at_zero_response\x12\x1b\n\x13velocity_at_surface\x18\x01 \x01(\x02\"\xac\x01\n\x1b\x61ltitude_of_breakup_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x17\n\x0f\x63ollins_iFactor\x18\x03 \x01(\x02\x12\x11\n\trStrength\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"2\n\x1c\x61ltitude_of_breakup_response\x12\x12\n\naltitudeBU\x18\x01 \x01(\x02\"\xa0\x01\n\x1bvelocity_at_breakup_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\n\n\x02\x61v\x18\x03 \x01(\x02\x12\x12\n\naltitudeBU\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"0\n\x1cvelocity_at_breakup_response\x12\x10\n\x08velocity\x18\x01 \x01(\x02\"\x98\x01\n\x1f\x64ispersion_length_scale_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x12\n\naltitudeBU\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"3\n dispersion_length_scale_response\x12\x0f\n\x07lDisper\x18\x01 \x01(\x02\"\x9f\x01\n\x19\x61irburst_altitude_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0e\n\x06\x61lpha2\x18\x03 \x01(\x02\x12\x0f\n\x07lDisper\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"3\n\x1a\x61irburst_altitude_response\x12\x15\n\raltitudeBurst\x18\x01 \x01(\x02\"\xc4\x01\n\x16\x62rust_velocity_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x15\n\raltitudeBurst\x18\x03 \x01(\x02\x12\x12\n\naltitudeBU\x18\x04 \x01(\x02\x12\x0b\n\x03vBu\x18\x05 \x01(\x02\x12\x0f\n\x07lDisper\x18\x06 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"+\n\x17\x62rust_velocity_response\x12\x10\n\x08velocity\x18\x01 \x01(\x02\"\xc2\x01\n\x1e\x64ispersion_of_impactor_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08l_disper\x18\x03 \x01(\x02\x12\x13\n\x0b\x61ltitude_bu\x18\x04 \x01(\x02\x12\x16\n\x0e\x61ltitude_burst\x18\x05 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"5\n\x1f\x64ispersion_of_impactor_response\x12\x12\n\ndispersion\x18\x01 \x01(\x02\"\x93\x01\n\x1c\x66raction_of_momentum_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"?\n\x1d\x66raction_of_momentum_response\x12\x0e\n\x06lratio\x18\x01 \x01(\x02\x12\x0e\n\x06pratio\x18\x02 \x01(\x02\"\x8e\x01\n\x17\x63\x61l_trot_change_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"/\n\x18\x63\x61l_trot_change_response\x12\x13\n\x0btrot_change\x18\x01 \x01(\x02\"\x94\x01\n\x1d\x63\x61l_energy_atmosphere_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\";\n\x1e\x63\x61l_energy_atmosphere_response\x12\x19\n\x11\x65nergy_atmosphere\x18\x01 \x01(\x02\"\xc9\x01\n cal_energy_blast_surface_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\x15\n\raltitudeBurst\x18\x04 \x01(\x02\x12\x19\n\x11\x65nergy_atmosphere\x18\x05 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"Q\n!cal_energy_blast_surface_response\x12\x14\n\x0c\x65nergy_blast\x18\x01 \x01(\x02\x12\x16\n\x0e\x65nergy_surface\x18\x02 \x01(\x02\"~\n\x19\x63\x61l_mass_of_water_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\",\n\x1a\x63\x61l_mass_of_water_response\x12\x0e\n\x06mwater\x18\x01 \x01(\x02\"\x96\x01\n\x1f\x63\x61l_velocity_projectile_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"5\n cal_velocity_projectile_response\x12\x11\n\tvseafloor\x18\x01 \x01(\x02\"\x96\x01\n\x1e\x63\x61l_energy_at_seafloor_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x11\n\tvseafloor\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\":\n\x1f\x63\x61l_energy_at_seafloor_response\x12\x17\n\x0f\x65nergy_seafloor\x18\x01 \x01(\x02\"\x81\x01\n\x1c\x63\x61l_ePIcentral_angle_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\".\n\x1d\x63\x61l_ePIcentral_angle_response\x12\r\n\x05\x64\x65lta\x18\x01 \x01(\x02\"\x8a\x01\n%cal_scaling_diameter_constant_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"B\n&cal_scaling_diameter_constant_response\x12\n\n\x02\x43\x64\x18\x01 \x01(\x02\x12\x0c\n\x04\x62\x65ta\x18\x02 \x01(\x02\"y\n\x14\x63\x61l_anglefac_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\")\n\x15\x63\x61l_anglefac_response\x12\x10\n\x08\x61nglefac\x18\x01 \x01(\x02\"\x9e\x01\n\x15\x63\x61l_wdiameter_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08\x61nglefac\x18\x03 \x01(\x02\x12\x10\n\x08velocity\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"+\n\x16\x63\x61l_wdiameter_response\x12\x11\n\twdiameter\x18\x01 \x01(\x02\"\xdd\x01\n%cal_transient_crater_diameter_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\n\n\x02\x63\x64\x18\x03 \x01(\x02\x12\x0c\n\x04\x62\x65ta\x18\x04 \x01(\x02\x12\x10\n\x08\x61nglefac\x18\x05 \x01(\x02\x12\x11\n\tvseafloor\x18\x06 \x01(\x02\x12\x12\n\ndispersion\x18\x07 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"5\n&cal_transient_crater_diameter_response\x12\x0b\n\x03\x44tr\x18\x01 \x01(\x02\"\x84\x01\n\x12\x63\x61l_depthr_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0b\n\x03\x44tr\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"%\n\x13\x63\x61l_depthr_response\x12\x0e\n\x06\x64\x65pthr\x18\x01 \x01(\x02\"\x87\x01\n\x15\x63\x61l_cdiamater_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0b\n\x03\x44tr\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"+\n\x16\x63\x61l_cdiamater_response\x12\x11\n\tcdiameter\x18\x01 \x01(\x02\"\xa8\x01\n\x13\x63\x61l_depthfr_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0b\n\x03\x44tr\x18\x03 \x01(\x02\x12\x0e\n\x06\x64\x65pthr\x18\x04 \x01(\x02\x12\x11\n\tcdiameter\x18\x05 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"\'\n\x14\x63\x61l_depthfr_response\x12\x0f\n\x07\x64\x65pthfr\x18\x01 \x01(\x02\"\x85\x01\n\x13\x63\x61l_vCrater_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0b\n\x03\x44tr\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"\'\n\x14\x63\x61l_vCrater_response\x12\x0f\n\x07vCrater\x18\x01 \x01(\x02\"\x84\x01\n\x12\x63\x61l_vratio_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0b\n\x03\x44tr\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"%\n\x13\x63\x61l_vratio_response\x12\x0e\n\x06vratio\x18\x01 \x01(\x02\"\x8d\x01\n\x1b\x63\x61l_vCrater_vRation_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x0b\n\x03\x44tr\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"?\n\x1c\x63\x61l_vCrater_vRation_response\x12\x0f\n\x07vCrater\x18\x01 \x01(\x02\x12\x0e\n\x06vratio\x18\x02 \x01(\x02\"\xa1\x01\n\x11\x63\x61l_vMelt_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x10\n\x08velocity\x18\x03 \x01(\x02\x12\x17\n\x0f\x65nergy_seafloor\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"#\n\x12\x63\x61l_vMelt_response\x12\r\n\x05vMelt\x18\x01 \x01(\x02\"\xc2\x01\n\x1e\x63\x61l_mratio_and_mcratio_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\r\n\x05vMelt\x18\x03 \x01(\x02\x12\x0f\n\x07vCrater\x18\x04 \x01(\x02\x12\x10\n\x08velocity\x18\x05 \x01(\x02\x12\x0b\n\x03\x44tr\x18\x06 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"B\n\x1f\x63\x61l_mratio_and_mcratio_response\x12\x0e\n\x06mratio\x18\x01 \x01(\x02\x12\x0f\n\x07mcratio\x18\x02 \x01(\x02\"\x95\x01\n\x19\x63\x61l_eject_arrival_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x15\n\raltitudeBurst\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"4\n\x1a\x63\x61l_eject_arrival_response\x12\x16\n\x0e\x65jecta_arrival\x18\x01 \x01(\x02\"\xa5\x01\n\x1c\x63\x61l_ejecta_thickness_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x15\n\raltitudeBurst\x18\x03 \x01(\x02\x12\x0b\n\x03\x44tr\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"9\n\x1d\x63\x61l_ejecta_thickness_response\x12\x18\n\x10\x65jecta_thickness\x18\x01 \x01(\x02\"\xae\x01\n\x12\x63\x61l_d_frag_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x15\n\raltitudeBurst\x18\x03 \x01(\x02\x12\x0b\n\x03\x44tr\x18\x04 \x01(\x02\x12\x11\n\tcdiameter\x18\x05 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"%\n\x13\x63\x61l_d_frag_response\x12\x0e\n\x06\x64_frag\x18\x01 \x01(\x02\"\xc7\x01\n\x12\x63\x61l_themal_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x16\n\x0e\x65nergy_surface\x18\x03 \x01(\x02\x12\x15\n\raltitudeBurst\x18\x04 \x01(\x02\x12\r\n\x05\x64\x65lta\x18\x05 \x01(\x02\x12\x10\n\x08velocity\x18\x06 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"\xbb\x01\n\x13\x63\x61l_themal_response\x12\t\n\x01h\x18\x01 \x01(\x02\x12\n\n\x02Rf\x18\x02 \x01(\x02\x12\x18\n\x10thermal_exposure\x18\x03 \x01(\x02\x12\x14\n\x0cno_radiation\x18\x04 \x01(\x02\x12\x14\n\x0cmax_rad_time\x18\x05 \x01(\x02\x12\x18\n\x10irradiation_time\x18\x06 \x01(\x02\x12\x16\n\x0emegaton_factor\x18\x07 \x01(\x02\x12\x15\n\rthermal_power\x18\x08 \x01(\x02\"\xaa\x01\n\x15\x63\x61l_magnitude_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x15\n\raltitudeBurst\x18\x03 \x01(\x02\x12\x17\n\x0f\x65nergy_seafloor\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"+\n\x16\x63\x61l_magnitude_response\x12\x11\n\tmagnitude\x18\x01 \x01(\x02\"\xba\x01\n\x16\x63\x61l_magnitude2_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x15\n\raltitudeBurst\x18\x03 \x01(\x02\x12\x17\n\x0f\x65nergy_seafloor\x18\x04 \x01(\x02\x12\r\n\x05\x64\x65lta\x18\x05 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"C\n\x17\x63\x61l_magnitude2_response\x12\x0f\n\x07\x65\x66\x66_mag\x18\x01 \x01(\x02\x12\x17\n\x0fseismic_arrival\x18\x02 \x01(\x02\"\x95\x01\n\x19\x63\x61l_shock_arrival_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x15\n\raltitudeBurst\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"3\n\x1a\x63\x61l_shock_arrival_response\x12\x15\n\rshock_arrival\x18\x01 \x01(\x02\"\xa2\x01\n\x10\x63\x61l_vmax_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x14\n\x0c\x65nergy_blast\x18\x03 \x01(\x02\x12\x15\n\raltitudeBurst\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"4\n\x11\x63\x61l_vmax_response\x12\x0c\n\x04vmax\x18\x01 \x01(\x02\x12\x11\n\topressure\x18\x02 \x01(\x02\"\x9e\x01\n\x18\x63\x61l_shock_damage_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x11\n\topressure\x18\x03 \x01(\x02\x12\x0c\n\x04vmax\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"1\n\x19\x63\x61l_shock_damage_response\x12\x14\n\x0cshock_damage\x18\x01 \x01(\t\"\xa7\x01\n\x15\x63\x61l_dec_level_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x14\n\x0c\x65nergy_blast\x18\x03 \x01(\x02\x12\x15\n\raltitudeBurst\x18\x04 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"+\n\x16\x63\x61l_dec_level_response\x12\x11\n\tdec_level\x18\x01 \x01(\x02\"\x96\x01\n\x1e\x63\x61l_TsunamiArrivalTime_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x11\n\twdiameter\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"=\n\x1f\x63\x61l_TsunamiArrivalTime_response\x12\x1a\n\x12TsunamiArrivalTime\x18\x01 \x01(\x02\"\x9b\x01\n#cal_WaveAmplitudeUpperLimit_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x11\n\twdiameter\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"G\n$cal_WaveAmplitudeUpperLimit_response\x12\x1f\n\x17WaveAmplitudeUpperLimit\x18\x01 \x01(\x02\"\x9b\x01\n#cal_WaveAmplitudeLowerLimit_request\x12(\n\x08impactor\x18\x01 \x01(\x0b\x32\x16.impactEffect.Impactor\x12&\n\x07targets\x18\x02 \x01(\x0b\x32\x15.impactEffect.Targets\x12\x11\n\twdiameter\x18\x03 \x01(\x02\x12\x0f\n\x06\x63hoice\x18\x80\x02 \x01(\x05\"G\n$cal_WaveAmplitudeLowerLimit_response\x12\x1f\n\x17WaveAmplitudeLowerLimit\x18\x01 \x01(\x02\x32\x91%\n\x13ImpactEffectService\x12k\n\x12\x63\x61l_Kinetic_energy\x12(.impactEffect.cal_Kinetic_energy_request\x1a).impactEffect.cal_Kinetic_energy_response\"\x00\x12\x86\x01\n\x1b\x63\x61l_kinetic_energy_megatons\x12\x31.impactEffect.cal_kinetic_energy_megatons_request\x1a\x32.impactEffect.cal_kinetic_energy_megatons_response\"\x00\x12Y\n\x0c\x63\x61l_rec_time\x12\".impactEffect.cal_rec_time_request\x1a#.impactEffect.cal_rec_time_response\"\x00\x12Y\n\x0c\x63\x61l_i_factor\x12\".impactEffect.cal_i_factor_request\x1a#.impactEffect.cal_i_factor_response\"\x00\x12w\n\x16\x62urst_velocity_at_zero\x12,.impactEffect.burst_velocity_at_zero_request\x1a-.impactEffect.burst_velocity_at_zero_response\"\x00\x12n\n\x13\x61ltitude_of_breakup\x12).impactEffect.altitude_of_breakup_request\x1a*.impactEffect.altitude_of_breakup_response\"\x00\x12n\n\x13velocity_at_breakup\x12).impactEffect.velocity_at_breakup_request\x1a*.impactEffect.velocity_at_breakup_response\"\x00\x12z\n\x17\x64ispersion_length_scale\x12-.impactEffect.dispersion_length_scale_request\x1a..impactEffect.dispersion_length_scale_response\"\x00\x12h\n\x11\x61irburst_altitude\x12\'.impactEffect.airburst_altitude_request\x1a(.impactEffect.airburst_altitude_response\"\x00\x12_\n\x0e\x62rust_velocity\x12$.impactEffect.brust_velocity_request\x1a%.impactEffect.brust_velocity_response\"\x00\x12w\n\x16\x64ispersion_of_impactor\x12,.impactEffect.dispersion_of_impactor_request\x1a-.impactEffect.dispersion_of_impactor_response\"\x00\x12q\n\x14\x66raction_of_momentum\x12*.impactEffect.fraction_of_momentum_request\x1a+.impactEffect.fraction_of_momentum_response\"\x00\x12\x62\n\x0f\x63\x61l_trot_change\x12%.impactEffect.cal_trot_change_request\x1a&.impactEffect.cal_trot_change_response\"\x00\x12t\n\x15\x63\x61l_energy_atmosphere\x12+.impactEffect.cal_energy_atmosphere_request\x1a,.impactEffect.cal_energy_atmosphere_response\"\x00\x12}\n\x18\x63\x61l_energy_blast_surface\x12..impactEffect.cal_energy_blast_surface_request\x1a/.impactEffect.cal_energy_blast_surface_response\"\x00\x12h\n\x11\x63\x61l_mass_of_water\x12\'.impactEffect.cal_mass_of_water_request\x1a(.impactEffect.cal_mass_of_water_response\"\x00\x12z\n\x17\x63\x61l_velocity_projectile\x12-.impactEffect.cal_velocity_projectile_request\x1a..impactEffect.cal_velocity_projectile_response\"\x00\x12w\n\x16\x63\x61l_energy_at_seafloor\x12,.impactEffect.cal_energy_at_seafloor_request\x1a-.impactEffect.cal_energy_at_seafloor_response\"\x00\x12q\n\x14\x63\x61l_ePIcentral_angle\x12*.impactEffect.cal_ePIcentral_angle_request\x1a+.impactEffect.cal_ePIcentral_angle_response\"\x00\x12\x8c\x01\n\x1d\x63\x61l_scaling_diameter_constant\x12\x33.impactEffect.cal_scaling_diameter_constant_request\x1a\x34.impactEffect.cal_scaling_diameter_constant_response\"\x00\x12Y\n\x0c\x63\x61l_anglefac\x12\".impactEffect.cal_anglefac_request\x1a#.impactEffect.cal_anglefac_response\"\x00\x12\\\n\rcal_wdiameter\x12#.impactEffect.cal_wdiameter_request\x1a$.impactEffect.cal_wdiameter_response\"\x00\x12\x8c\x01\n\x1d\x63\x61l_transient_crater_diameter\x12\x33.impactEffect.cal_transient_crater_diameter_request\x1a\x34.impactEffect.cal_transient_crater_diameter_response\"\x00\x12S\n\ncal_depthr\x12 .impactEffect.cal_depthr_request\x1a!.impactEffect.cal_depthr_response\"\x00\x12\\\n\rcal_cdiamater\x12#.impactEffect.cal_cdiamater_request\x1a$.impactEffect.cal_cdiamater_response\"\x00\x12V\n\x0b\x63\x61l_depthfr\x12!.impactEffect.cal_depthfr_request\x1a\".impactEffect.cal_depthfr_response\"\x00\x12V\n\x0b\x63\x61l_vCrater\x12!.impactEffect.cal_vCrater_request\x1a\".impactEffect.cal_vCrater_response\"\x00\x12S\n\ncal_vratio\x12 .impactEffect.cal_vratio_request\x1a!.impactEffect.cal_vratio_response\"\x00\x12n\n\x13\x63\x61l_vCrater_vRation\x12).impactEffect.cal_vCrater_vRation_request\x1a*.impactEffect.cal_vCrater_vRation_response\"\x00\x12P\n\tcal_vMelt\x12\x1f.impactEffect.cal_vMelt_request\x1a .impactEffect.cal_vMelt_response\"\x00\x12w\n\x16\x63\x61l_mratio_and_mcratio\x12,.impactEffect.cal_mratio_and_mcratio_request\x1a-.impactEffect.cal_mratio_and_mcratio_response\"\x00\x12h\n\x11\x63\x61l_eject_arrival\x12\'.impactEffect.cal_eject_arrival_request\x1a(.impactEffect.cal_eject_arrival_response\"\x00\x12q\n\x14\x63\x61l_ejecta_thickness\x12*.impactEffect.cal_ejecta_thickness_request\x1a+.impactEffect.cal_ejecta_thickness_response\"\x00\x12S\n\ncal_d_frag\x12 .impactEffect.cal_d_frag_request\x1a!.impactEffect.cal_d_frag_response\"\x00\x12S\n\ncal_themal\x12 .impactEffect.cal_themal_request\x1a!.impactEffect.cal_themal_response\"\x00\x12\\\n\rcal_magnitude\x12#.impactEffect.cal_magnitude_request\x1a$.impactEffect.cal_magnitude_response\"\x00\x12_\n\x0e\x63\x61l_magnitude2\x12$.impactEffect.cal_magnitude2_request\x1a%.impactEffect.cal_magnitude2_response\"\x00\x12h\n\x11\x63\x61l_shock_arrival\x12\'.impactEffect.cal_shock_arrival_request\x1a(.impactEffect.cal_shock_arrival_response\"\x00\x12M\n\x08\x63\x61l_vmax\x12\x1e.impactEffect.cal_vmax_request\x1a\x1f.impactEffect.cal_vmax_response\"\x00\x12\x65\n\x10\x63\x61l_shock_damage\x12&.impactEffect.cal_shock_damage_request\x1a\'.impactEffect.cal_shock_damage_response\"\x00\x12\\\n\rcal_dec_level\x12#.impactEffect.cal_dec_level_request\x1a$.impactEffect.cal_dec_level_response\"\x00\x12w\n\x16\x63\x61l_TsunamiArrivalTime\x12,.impactEffect.cal_TsunamiArrivalTime_request\x1a-.impactEffect.cal_TsunamiArrivalTime_response\"\x00\x12\x86\x01\n\x1b\x63\x61l_WaveAmplitudeUpperLimit\x12\x31.impactEffect.cal_WaveAmplitudeUpperLimit_request\x1a\x32.impactEffect.cal_WaveAmplitudeUpperLimit_response\"\x00\x12\x86\x01\n\x1b\x63\x61l_WaveAmplitudeLowerLimit\x12\x31.impactEffect.cal_WaveAmplitudeLowerLimit_request\x1a\x32.impactEffect.cal_WaveAmplitudeLowerLimit_response\"\x00\x42\x32Z0google.golang.org/grpc/impactEffect/impactEffectb\x06proto3')
 
 
 
 _IMPACTOR = DESCRIPTOR.message_types_by_name['Impactor']
-_SIMPLETARGETS = DESCRIPTOR.message_types_by_name['SimpleTargets']
-_SIMPLEREQUEST = DESCRIPTOR.message_types_by_name['SimpleRequest']
-_RESULT = DESCRIPTOR.message_types_by_name['result']
-_KINETICENERGY = DESCRIPTOR.message_types_by_name['KineticEnergy']
-_RECTIME = DESCRIPTOR.message_types_by_name['RecTime']
+_TARGETS = DESCRIPTOR.message_types_by_name['Targets']
+_EXAMPLE_REQUEST = DESCRIPTOR.message_types_by_name['example_request']
+_EXAMPLE_RESPONSE = DESCRIPTOR.message_types_by_name['example_response']
+_CAL_KINETIC_ENERGY_REQUEST = DESCRIPTOR.message_types_by_name['cal_Kinetic_energy_request']
+_CAL_KINETIC_ENERGY_RESPONSE = DESCRIPTOR.message_types_by_name['cal_Kinetic_energy_response']
+_CAL_KINETIC_ENERGY_MEGATONS_REQUEST = DESCRIPTOR.message_types_by_name['cal_kinetic_energy_megatons_request']
+_CAL_KINETIC_ENERGY_MEGATONS_RESPONSE = DESCRIPTOR.message_types_by_name['cal_kinetic_energy_megatons_response']
+_CAL_REC_TIME_REQUEST = DESCRIPTOR.message_types_by_name['cal_rec_time_request']
+_CAL_REC_TIME_RESPONSE = DESCRIPTOR.message_types_by_name['cal_rec_time_response']
+_CAL_I_FACTOR_REQUEST = DESCRIPTOR.message_types_by_name['cal_i_factor_request']
+_CAL_I_FACTOR_RESPONSE = DESCRIPTOR.message_types_by_name['cal_i_factor_response']
+_BURST_VELOCITY_AT_ZERO_REQUEST = DESCRIPTOR.message_types_by_name['burst_velocity_at_zero_request']
+_BURST_VELOCITY_AT_ZERO_RESPONSE = DESCRIPTOR.message_types_by_name['burst_velocity_at_zero_response']
+_ALTITUDE_OF_BREAKUP_REQUEST = DESCRIPTOR.message_types_by_name['altitude_of_breakup_request']
+_ALTITUDE_OF_BREAKUP_RESPONSE = DESCRIPTOR.message_types_by_name['altitude_of_breakup_response']
+_VELOCITY_AT_BREAKUP_REQUEST = DESCRIPTOR.message_types_by_name['velocity_at_breakup_request']
+_VELOCITY_AT_BREAKUP_RESPONSE = DESCRIPTOR.message_types_by_name['velocity_at_breakup_response']
+_DISPERSION_LENGTH_SCALE_REQUEST = DESCRIPTOR.message_types_by_name['dispersion_length_scale_request']
+_DISPERSION_LENGTH_SCALE_RESPONSE = DESCRIPTOR.message_types_by_name['dispersion_length_scale_response']
+_AIRBURST_ALTITUDE_REQUEST = DESCRIPTOR.message_types_by_name['airburst_altitude_request']
+_AIRBURST_ALTITUDE_RESPONSE = DESCRIPTOR.message_types_by_name['airburst_altitude_response']
+_BRUST_VELOCITY_REQUEST = DESCRIPTOR.message_types_by_name['brust_velocity_request']
+_BRUST_VELOCITY_RESPONSE = DESCRIPTOR.message_types_by_name['brust_velocity_response']
+_DISPERSION_OF_IMPACTOR_REQUEST = DESCRIPTOR.message_types_by_name['dispersion_of_impactor_request']
+_DISPERSION_OF_IMPACTOR_RESPONSE = DESCRIPTOR.message_types_by_name['dispersion_of_impactor_response']
+_FRACTION_OF_MOMENTUM_REQUEST = DESCRIPTOR.message_types_by_name['fraction_of_momentum_request']
+_FRACTION_OF_MOMENTUM_RESPONSE = DESCRIPTOR.message_types_by_name['fraction_of_momentum_response']
+_CAL_TROT_CHANGE_REQUEST = DESCRIPTOR.message_types_by_name['cal_trot_change_request']
+_CAL_TROT_CHANGE_RESPONSE = DESCRIPTOR.message_types_by_name['cal_trot_change_response']
+_CAL_ENERGY_ATMOSPHERE_REQUEST = DESCRIPTOR.message_types_by_name['cal_energy_atmosphere_request']
+_CAL_ENERGY_ATMOSPHERE_RESPONSE = DESCRIPTOR.message_types_by_name['cal_energy_atmosphere_response']
+_CAL_ENERGY_BLAST_SURFACE_REQUEST = DESCRIPTOR.message_types_by_name['cal_energy_blast_surface_request']
+_CAL_ENERGY_BLAST_SURFACE_RESPONSE = DESCRIPTOR.message_types_by_name['cal_energy_blast_surface_response']
+_CAL_MASS_OF_WATER_REQUEST = DESCRIPTOR.message_types_by_name['cal_mass_of_water_request']
+_CAL_MASS_OF_WATER_RESPONSE = DESCRIPTOR.message_types_by_name['cal_mass_of_water_response']
+_CAL_VELOCITY_PROJECTILE_REQUEST = DESCRIPTOR.message_types_by_name['cal_velocity_projectile_request']
+_CAL_VELOCITY_PROJECTILE_RESPONSE = DESCRIPTOR.message_types_by_name['cal_velocity_projectile_response']
+_CAL_ENERGY_AT_SEAFLOOR_REQUEST = DESCRIPTOR.message_types_by_name['cal_energy_at_seafloor_request']
+_CAL_ENERGY_AT_SEAFLOOR_RESPONSE = DESCRIPTOR.message_types_by_name['cal_energy_at_seafloor_response']
+_CAL_EPICENTRAL_ANGLE_REQUEST = DESCRIPTOR.message_types_by_name['cal_ePIcentral_angle_request']
+_CAL_EPICENTRAL_ANGLE_RESPONSE = DESCRIPTOR.message_types_by_name['cal_ePIcentral_angle_response']
+_CAL_SCALING_DIAMETER_CONSTANT_REQUEST = DESCRIPTOR.message_types_by_name['cal_scaling_diameter_constant_request']
+_CAL_SCALING_DIAMETER_CONSTANT_RESPONSE = DESCRIPTOR.message_types_by_name['cal_scaling_diameter_constant_response']
+_CAL_ANGLEFAC_REQUEST = DESCRIPTOR.message_types_by_name['cal_anglefac_request']
+_CAL_ANGLEFAC_RESPONSE = DESCRIPTOR.message_types_by_name['cal_anglefac_response']
+_CAL_WDIAMETER_REQUEST = DESCRIPTOR.message_types_by_name['cal_wdiameter_request']
+_CAL_WDIAMETER_RESPONSE = DESCRIPTOR.message_types_by_name['cal_wdiameter_response']
+_CAL_TRANSIENT_CRATER_DIAMETER_REQUEST = DESCRIPTOR.message_types_by_name['cal_transient_crater_diameter_request']
+_CAL_TRANSIENT_CRATER_DIAMETER_RESPONSE = DESCRIPTOR.message_types_by_name['cal_transient_crater_diameter_response']
+_CAL_DEPTHR_REQUEST = DESCRIPTOR.message_types_by_name['cal_depthr_request']
+_CAL_DEPTHR_RESPONSE = DESCRIPTOR.message_types_by_name['cal_depthr_response']
+_CAL_CDIAMATER_REQUEST = DESCRIPTOR.message_types_by_name['cal_cdiamater_request']
+_CAL_CDIAMATER_RESPONSE = DESCRIPTOR.message_types_by_name['cal_cdiamater_response']
+_CAL_DEPTHFR_REQUEST = DESCRIPTOR.message_types_by_name['cal_depthfr_request']
+_CAL_DEPTHFR_RESPONSE = DESCRIPTOR.message_types_by_name['cal_depthfr_response']
+_CAL_VCRATER_REQUEST = DESCRIPTOR.message_types_by_name['cal_vCrater_request']
+_CAL_VCRATER_RESPONSE = DESCRIPTOR.message_types_by_name['cal_vCrater_response']
+_CAL_VRATIO_REQUEST = DESCRIPTOR.message_types_by_name['cal_vratio_request']
+_CAL_VRATIO_RESPONSE = DESCRIPTOR.message_types_by_name['cal_vratio_response']
+_CAL_VCRATER_VRATION_REQUEST = DESCRIPTOR.message_types_by_name['cal_vCrater_vRation_request']
+_CAL_VCRATER_VRATION_RESPONSE = DESCRIPTOR.message_types_by_name['cal_vCrater_vRation_response']
+_CAL_VMELT_REQUEST = DESCRIPTOR.message_types_by_name['cal_vMelt_request']
+_CAL_VMELT_RESPONSE = DESCRIPTOR.message_types_by_name['cal_vMelt_response']
+_CAL_MRATIO_AND_MCRATIO_REQUEST = DESCRIPTOR.message_types_by_name['cal_mratio_and_mcratio_request']
+_CAL_MRATIO_AND_MCRATIO_RESPONSE = DESCRIPTOR.message_types_by_name['cal_mratio_and_mcratio_response']
+_CAL_EJECT_ARRIVAL_REQUEST = DESCRIPTOR.message_types_by_name['cal_eject_arrival_request']
+_CAL_EJECT_ARRIVAL_RESPONSE = DESCRIPTOR.message_types_by_name['cal_eject_arrival_response']
+_CAL_EJECTA_THICKNESS_REQUEST = DESCRIPTOR.message_types_by_name['cal_ejecta_thickness_request']
+_CAL_EJECTA_THICKNESS_RESPONSE = DESCRIPTOR.message_types_by_name['cal_ejecta_thickness_response']
+_CAL_D_FRAG_REQUEST = DESCRIPTOR.message_types_by_name['cal_d_frag_request']
+_CAL_D_FRAG_RESPONSE = DESCRIPTOR.message_types_by_name['cal_d_frag_response']
+_CAL_THEMAL_REQUEST = DESCRIPTOR.message_types_by_name['cal_themal_request']
+_CAL_THEMAL_RESPONSE = DESCRIPTOR.message_types_by_name['cal_themal_response']
+_CAL_MAGNITUDE_REQUEST = DESCRIPTOR.message_types_by_name['cal_magnitude_request']
+_CAL_MAGNITUDE_RESPONSE = DESCRIPTOR.message_types_by_name['cal_magnitude_response']
+_CAL_MAGNITUDE2_REQUEST = DESCRIPTOR.message_types_by_name['cal_magnitude2_request']
+_CAL_MAGNITUDE2_RESPONSE = DESCRIPTOR.message_types_by_name['cal_magnitude2_response']
+_CAL_SHOCK_ARRIVAL_REQUEST = DESCRIPTOR.message_types_by_name['cal_shock_arrival_request']
+_CAL_SHOCK_ARRIVAL_RESPONSE = DESCRIPTOR.message_types_by_name['cal_shock_arrival_response']
+_CAL_VMAX_REQUEST = DESCRIPTOR.message_types_by_name['cal_vmax_request']
+_CAL_VMAX_RESPONSE = DESCRIPTOR.message_types_by_name['cal_vmax_response']
+_CAL_SHOCK_DAMAGE_REQUEST = DESCRIPTOR.message_types_by_name['cal_shock_damage_request']
+_CAL_SHOCK_DAMAGE_RESPONSE = DESCRIPTOR.message_types_by_name['cal_shock_damage_response']
+_CAL_DEC_LEVEL_REQUEST = DESCRIPTOR.message_types_by_name['cal_dec_level_request']
+_CAL_DEC_LEVEL_RESPONSE = DESCRIPTOR.message_types_by_name['cal_dec_level_response']
+_CAL_TSUNAMIARRIVALTIME_REQUEST = DESCRIPTOR.message_types_by_name['cal_TsunamiArrivalTime_request']
+_CAL_TSUNAMIARRIVALTIME_RESPONSE = DESCRIPTOR.message_types_by_name['cal_TsunamiArrivalTime_response']
+_CAL_WAVEAMPLITUDEUPPERLIMIT_REQUEST = DESCRIPTOR.message_types_by_name['cal_WaveAmplitudeUpperLimit_request']
+_CAL_WAVEAMPLITUDEUPPERLIMIT_RESPONSE = DESCRIPTOR.message_types_by_name['cal_WaveAmplitudeUpperLimit_response']
+_CAL_WAVEAMPLITUDELOWERLIMIT_REQUEST = DESCRIPTOR.message_types_by_name['cal_WaveAmplitudeLowerLimit_request']
+_CAL_WAVEAMPLITUDELOWERLIMIT_RESPONSE = DESCRIPTOR.message_types_by_name['cal_WaveAmplitudeLowerLimit_response']
 Impactor = _reflection.GeneratedProtocolMessageType('Impactor', (_message.Message,), {
   'DESCRIPTOR' : _IMPACTOR,
   '__module__' : 'impactEffect_pb2'
@@ -31,40 +117,642 @@ Impactor = _reflection.GeneratedProtocolMessageType('Impactor', (_message.Messag
   })
 _sym_db.RegisterMessage(Impactor)
 
-SimpleTargets = _reflection.GeneratedProtocolMessageType('SimpleTargets', (_message.Message,), {
-  'DESCRIPTOR' : _SIMPLETARGETS,
+Targets = _reflection.GeneratedProtocolMessageType('Targets', (_message.Message,), {
+  'DESCRIPTOR' : _TARGETS,
   '__module__' : 'impactEffect_pb2'
-  # @@protoc_insertion_point(class_scope:impactEffect.SimpleTargets)
+  # @@protoc_insertion_point(class_scope:impactEffect.Targets)
   })
-_sym_db.RegisterMessage(SimpleTargets)
+_sym_db.RegisterMessage(Targets)
 
-SimpleRequest = _reflection.GeneratedProtocolMessageType('SimpleRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SIMPLEREQUEST,
+example_request = _reflection.GeneratedProtocolMessageType('example_request', (_message.Message,), {
+  'DESCRIPTOR' : _EXAMPLE_REQUEST,
   '__module__' : 'impactEffect_pb2'
-  # @@protoc_insertion_point(class_scope:impactEffect.SimpleRequest)
+  # @@protoc_insertion_point(class_scope:impactEffect.example_request)
   })
-_sym_db.RegisterMessage(SimpleRequest)
+_sym_db.RegisterMessage(example_request)
 
-result = _reflection.GeneratedProtocolMessageType('result', (_message.Message,), {
-  'DESCRIPTOR' : _RESULT,
+example_response = _reflection.GeneratedProtocolMessageType('example_response', (_message.Message,), {
+  'DESCRIPTOR' : _EXAMPLE_RESPONSE,
   '__module__' : 'impactEffect_pb2'
-  # @@protoc_insertion_point(class_scope:impactEffect.result)
+  # @@protoc_insertion_point(class_scope:impactEffect.example_response)
   })
-_sym_db.RegisterMessage(result)
+_sym_db.RegisterMessage(example_response)
 
-KineticEnergy = _reflection.GeneratedProtocolMessageType('KineticEnergy', (_message.Message,), {
-  'DESCRIPTOR' : _KINETICENERGY,
+cal_Kinetic_energy_request = _reflection.GeneratedProtocolMessageType('cal_Kinetic_energy_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_KINETIC_ENERGY_REQUEST,
   '__module__' : 'impactEffect_pb2'
-  # @@protoc_insertion_point(class_scope:impactEffect.KineticEnergy)
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_Kinetic_energy_request)
   })
-_sym_db.RegisterMessage(KineticEnergy)
+_sym_db.RegisterMessage(cal_Kinetic_energy_request)
 
-RecTime = _reflection.GeneratedProtocolMessageType('RecTime', (_message.Message,), {
-  'DESCRIPTOR' : _RECTIME,
+cal_Kinetic_energy_response = _reflection.GeneratedProtocolMessageType('cal_Kinetic_energy_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_KINETIC_ENERGY_RESPONSE,
   '__module__' : 'impactEffect_pb2'
-  # @@protoc_insertion_point(class_scope:impactEffect.RecTime)
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_Kinetic_energy_response)
   })
-_sym_db.RegisterMessage(RecTime)
+_sym_db.RegisterMessage(cal_Kinetic_energy_response)
+
+cal_kinetic_energy_megatons_request = _reflection.GeneratedProtocolMessageType('cal_kinetic_energy_megatons_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_KINETIC_ENERGY_MEGATONS_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_kinetic_energy_megatons_request)
+  })
+_sym_db.RegisterMessage(cal_kinetic_energy_megatons_request)
+
+cal_kinetic_energy_megatons_response = _reflection.GeneratedProtocolMessageType('cal_kinetic_energy_megatons_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_KINETIC_ENERGY_MEGATONS_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_kinetic_energy_megatons_response)
+  })
+_sym_db.RegisterMessage(cal_kinetic_energy_megatons_response)
+
+cal_rec_time_request = _reflection.GeneratedProtocolMessageType('cal_rec_time_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_REC_TIME_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_rec_time_request)
+  })
+_sym_db.RegisterMessage(cal_rec_time_request)
+
+cal_rec_time_response = _reflection.GeneratedProtocolMessageType('cal_rec_time_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_REC_TIME_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_rec_time_response)
+  })
+_sym_db.RegisterMessage(cal_rec_time_response)
+
+cal_i_factor_request = _reflection.GeneratedProtocolMessageType('cal_i_factor_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_I_FACTOR_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_i_factor_request)
+  })
+_sym_db.RegisterMessage(cal_i_factor_request)
+
+cal_i_factor_response = _reflection.GeneratedProtocolMessageType('cal_i_factor_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_I_FACTOR_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_i_factor_response)
+  })
+_sym_db.RegisterMessage(cal_i_factor_response)
+
+burst_velocity_at_zero_request = _reflection.GeneratedProtocolMessageType('burst_velocity_at_zero_request', (_message.Message,), {
+  'DESCRIPTOR' : _BURST_VELOCITY_AT_ZERO_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.burst_velocity_at_zero_request)
+  })
+_sym_db.RegisterMessage(burst_velocity_at_zero_request)
+
+burst_velocity_at_zero_response = _reflection.GeneratedProtocolMessageType('burst_velocity_at_zero_response', (_message.Message,), {
+  'DESCRIPTOR' : _BURST_VELOCITY_AT_ZERO_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.burst_velocity_at_zero_response)
+  })
+_sym_db.RegisterMessage(burst_velocity_at_zero_response)
+
+altitude_of_breakup_request = _reflection.GeneratedProtocolMessageType('altitude_of_breakup_request', (_message.Message,), {
+  'DESCRIPTOR' : _ALTITUDE_OF_BREAKUP_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.altitude_of_breakup_request)
+  })
+_sym_db.RegisterMessage(altitude_of_breakup_request)
+
+altitude_of_breakup_response = _reflection.GeneratedProtocolMessageType('altitude_of_breakup_response', (_message.Message,), {
+  'DESCRIPTOR' : _ALTITUDE_OF_BREAKUP_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.altitude_of_breakup_response)
+  })
+_sym_db.RegisterMessage(altitude_of_breakup_response)
+
+velocity_at_breakup_request = _reflection.GeneratedProtocolMessageType('velocity_at_breakup_request', (_message.Message,), {
+  'DESCRIPTOR' : _VELOCITY_AT_BREAKUP_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.velocity_at_breakup_request)
+  })
+_sym_db.RegisterMessage(velocity_at_breakup_request)
+
+velocity_at_breakup_response = _reflection.GeneratedProtocolMessageType('velocity_at_breakup_response', (_message.Message,), {
+  'DESCRIPTOR' : _VELOCITY_AT_BREAKUP_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.velocity_at_breakup_response)
+  })
+_sym_db.RegisterMessage(velocity_at_breakup_response)
+
+dispersion_length_scale_request = _reflection.GeneratedProtocolMessageType('dispersion_length_scale_request', (_message.Message,), {
+  'DESCRIPTOR' : _DISPERSION_LENGTH_SCALE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.dispersion_length_scale_request)
+  })
+_sym_db.RegisterMessage(dispersion_length_scale_request)
+
+dispersion_length_scale_response = _reflection.GeneratedProtocolMessageType('dispersion_length_scale_response', (_message.Message,), {
+  'DESCRIPTOR' : _DISPERSION_LENGTH_SCALE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.dispersion_length_scale_response)
+  })
+_sym_db.RegisterMessage(dispersion_length_scale_response)
+
+airburst_altitude_request = _reflection.GeneratedProtocolMessageType('airburst_altitude_request', (_message.Message,), {
+  'DESCRIPTOR' : _AIRBURST_ALTITUDE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.airburst_altitude_request)
+  })
+_sym_db.RegisterMessage(airburst_altitude_request)
+
+airburst_altitude_response = _reflection.GeneratedProtocolMessageType('airburst_altitude_response', (_message.Message,), {
+  'DESCRIPTOR' : _AIRBURST_ALTITUDE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.airburst_altitude_response)
+  })
+_sym_db.RegisterMessage(airburst_altitude_response)
+
+brust_velocity_request = _reflection.GeneratedProtocolMessageType('brust_velocity_request', (_message.Message,), {
+  'DESCRIPTOR' : _BRUST_VELOCITY_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.brust_velocity_request)
+  })
+_sym_db.RegisterMessage(brust_velocity_request)
+
+brust_velocity_response = _reflection.GeneratedProtocolMessageType('brust_velocity_response', (_message.Message,), {
+  'DESCRIPTOR' : _BRUST_VELOCITY_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.brust_velocity_response)
+  })
+_sym_db.RegisterMessage(brust_velocity_response)
+
+dispersion_of_impactor_request = _reflection.GeneratedProtocolMessageType('dispersion_of_impactor_request', (_message.Message,), {
+  'DESCRIPTOR' : _DISPERSION_OF_IMPACTOR_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.dispersion_of_impactor_request)
+  })
+_sym_db.RegisterMessage(dispersion_of_impactor_request)
+
+dispersion_of_impactor_response = _reflection.GeneratedProtocolMessageType('dispersion_of_impactor_response', (_message.Message,), {
+  'DESCRIPTOR' : _DISPERSION_OF_IMPACTOR_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.dispersion_of_impactor_response)
+  })
+_sym_db.RegisterMessage(dispersion_of_impactor_response)
+
+fraction_of_momentum_request = _reflection.GeneratedProtocolMessageType('fraction_of_momentum_request', (_message.Message,), {
+  'DESCRIPTOR' : _FRACTION_OF_MOMENTUM_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.fraction_of_momentum_request)
+  })
+_sym_db.RegisterMessage(fraction_of_momentum_request)
+
+fraction_of_momentum_response = _reflection.GeneratedProtocolMessageType('fraction_of_momentum_response', (_message.Message,), {
+  'DESCRIPTOR' : _FRACTION_OF_MOMENTUM_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.fraction_of_momentum_response)
+  })
+_sym_db.RegisterMessage(fraction_of_momentum_response)
+
+cal_trot_change_request = _reflection.GeneratedProtocolMessageType('cal_trot_change_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_TROT_CHANGE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_trot_change_request)
+  })
+_sym_db.RegisterMessage(cal_trot_change_request)
+
+cal_trot_change_response = _reflection.GeneratedProtocolMessageType('cal_trot_change_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_TROT_CHANGE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_trot_change_response)
+  })
+_sym_db.RegisterMessage(cal_trot_change_response)
+
+cal_energy_atmosphere_request = _reflection.GeneratedProtocolMessageType('cal_energy_atmosphere_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ENERGY_ATMOSPHERE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_energy_atmosphere_request)
+  })
+_sym_db.RegisterMessage(cal_energy_atmosphere_request)
+
+cal_energy_atmosphere_response = _reflection.GeneratedProtocolMessageType('cal_energy_atmosphere_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ENERGY_ATMOSPHERE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_energy_atmosphere_response)
+  })
+_sym_db.RegisterMessage(cal_energy_atmosphere_response)
+
+cal_energy_blast_surface_request = _reflection.GeneratedProtocolMessageType('cal_energy_blast_surface_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ENERGY_BLAST_SURFACE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_energy_blast_surface_request)
+  })
+_sym_db.RegisterMessage(cal_energy_blast_surface_request)
+
+cal_energy_blast_surface_response = _reflection.GeneratedProtocolMessageType('cal_energy_blast_surface_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ENERGY_BLAST_SURFACE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_energy_blast_surface_response)
+  })
+_sym_db.RegisterMessage(cal_energy_blast_surface_response)
+
+cal_mass_of_water_request = _reflection.GeneratedProtocolMessageType('cal_mass_of_water_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MASS_OF_WATER_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_mass_of_water_request)
+  })
+_sym_db.RegisterMessage(cal_mass_of_water_request)
+
+cal_mass_of_water_response = _reflection.GeneratedProtocolMessageType('cal_mass_of_water_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MASS_OF_WATER_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_mass_of_water_response)
+  })
+_sym_db.RegisterMessage(cal_mass_of_water_response)
+
+cal_velocity_projectile_request = _reflection.GeneratedProtocolMessageType('cal_velocity_projectile_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VELOCITY_PROJECTILE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_velocity_projectile_request)
+  })
+_sym_db.RegisterMessage(cal_velocity_projectile_request)
+
+cal_velocity_projectile_response = _reflection.GeneratedProtocolMessageType('cal_velocity_projectile_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VELOCITY_PROJECTILE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_velocity_projectile_response)
+  })
+_sym_db.RegisterMessage(cal_velocity_projectile_response)
+
+cal_energy_at_seafloor_request = _reflection.GeneratedProtocolMessageType('cal_energy_at_seafloor_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ENERGY_AT_SEAFLOOR_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_energy_at_seafloor_request)
+  })
+_sym_db.RegisterMessage(cal_energy_at_seafloor_request)
+
+cal_energy_at_seafloor_response = _reflection.GeneratedProtocolMessageType('cal_energy_at_seafloor_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ENERGY_AT_SEAFLOOR_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_energy_at_seafloor_response)
+  })
+_sym_db.RegisterMessage(cal_energy_at_seafloor_response)
+
+cal_ePIcentral_angle_request = _reflection.GeneratedProtocolMessageType('cal_ePIcentral_angle_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_EPICENTRAL_ANGLE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_ePIcentral_angle_request)
+  })
+_sym_db.RegisterMessage(cal_ePIcentral_angle_request)
+
+cal_ePIcentral_angle_response = _reflection.GeneratedProtocolMessageType('cal_ePIcentral_angle_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_EPICENTRAL_ANGLE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_ePIcentral_angle_response)
+  })
+_sym_db.RegisterMessage(cal_ePIcentral_angle_response)
+
+cal_scaling_diameter_constant_request = _reflection.GeneratedProtocolMessageType('cal_scaling_diameter_constant_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_SCALING_DIAMETER_CONSTANT_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_scaling_diameter_constant_request)
+  })
+_sym_db.RegisterMessage(cal_scaling_diameter_constant_request)
+
+cal_scaling_diameter_constant_response = _reflection.GeneratedProtocolMessageType('cal_scaling_diameter_constant_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_SCALING_DIAMETER_CONSTANT_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_scaling_diameter_constant_response)
+  })
+_sym_db.RegisterMessage(cal_scaling_diameter_constant_response)
+
+cal_anglefac_request = _reflection.GeneratedProtocolMessageType('cal_anglefac_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ANGLEFAC_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_anglefac_request)
+  })
+_sym_db.RegisterMessage(cal_anglefac_request)
+
+cal_anglefac_response = _reflection.GeneratedProtocolMessageType('cal_anglefac_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_ANGLEFAC_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_anglefac_response)
+  })
+_sym_db.RegisterMessage(cal_anglefac_response)
+
+cal_wdiameter_request = _reflection.GeneratedProtocolMessageType('cal_wdiameter_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_WDIAMETER_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_wdiameter_request)
+  })
+_sym_db.RegisterMessage(cal_wdiameter_request)
+
+cal_wdiameter_response = _reflection.GeneratedProtocolMessageType('cal_wdiameter_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_WDIAMETER_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_wdiameter_response)
+  })
+_sym_db.RegisterMessage(cal_wdiameter_response)
+
+cal_transient_crater_diameter_request = _reflection.GeneratedProtocolMessageType('cal_transient_crater_diameter_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_TRANSIENT_CRATER_DIAMETER_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_transient_crater_diameter_request)
+  })
+_sym_db.RegisterMessage(cal_transient_crater_diameter_request)
+
+cal_transient_crater_diameter_response = _reflection.GeneratedProtocolMessageType('cal_transient_crater_diameter_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_TRANSIENT_CRATER_DIAMETER_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_transient_crater_diameter_response)
+  })
+_sym_db.RegisterMessage(cal_transient_crater_diameter_response)
+
+cal_depthr_request = _reflection.GeneratedProtocolMessageType('cal_depthr_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_DEPTHR_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_depthr_request)
+  })
+_sym_db.RegisterMessage(cal_depthr_request)
+
+cal_depthr_response = _reflection.GeneratedProtocolMessageType('cal_depthr_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_DEPTHR_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_depthr_response)
+  })
+_sym_db.RegisterMessage(cal_depthr_response)
+
+cal_cdiamater_request = _reflection.GeneratedProtocolMessageType('cal_cdiamater_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_CDIAMATER_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_cdiamater_request)
+  })
+_sym_db.RegisterMessage(cal_cdiamater_request)
+
+cal_cdiamater_response = _reflection.GeneratedProtocolMessageType('cal_cdiamater_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_CDIAMATER_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_cdiamater_response)
+  })
+_sym_db.RegisterMessage(cal_cdiamater_response)
+
+cal_depthfr_request = _reflection.GeneratedProtocolMessageType('cal_depthfr_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_DEPTHFR_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_depthfr_request)
+  })
+_sym_db.RegisterMessage(cal_depthfr_request)
+
+cal_depthfr_response = _reflection.GeneratedProtocolMessageType('cal_depthfr_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_DEPTHFR_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_depthfr_response)
+  })
+_sym_db.RegisterMessage(cal_depthfr_response)
+
+cal_vCrater_request = _reflection.GeneratedProtocolMessageType('cal_vCrater_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VCRATER_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vCrater_request)
+  })
+_sym_db.RegisterMessage(cal_vCrater_request)
+
+cal_vCrater_response = _reflection.GeneratedProtocolMessageType('cal_vCrater_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VCRATER_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vCrater_response)
+  })
+_sym_db.RegisterMessage(cal_vCrater_response)
+
+cal_vratio_request = _reflection.GeneratedProtocolMessageType('cal_vratio_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VRATIO_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vratio_request)
+  })
+_sym_db.RegisterMessage(cal_vratio_request)
+
+cal_vratio_response = _reflection.GeneratedProtocolMessageType('cal_vratio_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VRATIO_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vratio_response)
+  })
+_sym_db.RegisterMessage(cal_vratio_response)
+
+cal_vCrater_vRation_request = _reflection.GeneratedProtocolMessageType('cal_vCrater_vRation_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VCRATER_VRATION_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vCrater_vRation_request)
+  })
+_sym_db.RegisterMessage(cal_vCrater_vRation_request)
+
+cal_vCrater_vRation_response = _reflection.GeneratedProtocolMessageType('cal_vCrater_vRation_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VCRATER_VRATION_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vCrater_vRation_response)
+  })
+_sym_db.RegisterMessage(cal_vCrater_vRation_response)
+
+cal_vMelt_request = _reflection.GeneratedProtocolMessageType('cal_vMelt_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VMELT_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vMelt_request)
+  })
+_sym_db.RegisterMessage(cal_vMelt_request)
+
+cal_vMelt_response = _reflection.GeneratedProtocolMessageType('cal_vMelt_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VMELT_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vMelt_response)
+  })
+_sym_db.RegisterMessage(cal_vMelt_response)
+
+cal_mratio_and_mcratio_request = _reflection.GeneratedProtocolMessageType('cal_mratio_and_mcratio_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MRATIO_AND_MCRATIO_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_mratio_and_mcratio_request)
+  })
+_sym_db.RegisterMessage(cal_mratio_and_mcratio_request)
+
+cal_mratio_and_mcratio_response = _reflection.GeneratedProtocolMessageType('cal_mratio_and_mcratio_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MRATIO_AND_MCRATIO_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_mratio_and_mcratio_response)
+  })
+_sym_db.RegisterMessage(cal_mratio_and_mcratio_response)
+
+cal_eject_arrival_request = _reflection.GeneratedProtocolMessageType('cal_eject_arrival_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_EJECT_ARRIVAL_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_eject_arrival_request)
+  })
+_sym_db.RegisterMessage(cal_eject_arrival_request)
+
+cal_eject_arrival_response = _reflection.GeneratedProtocolMessageType('cal_eject_arrival_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_EJECT_ARRIVAL_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_eject_arrival_response)
+  })
+_sym_db.RegisterMessage(cal_eject_arrival_response)
+
+cal_ejecta_thickness_request = _reflection.GeneratedProtocolMessageType('cal_ejecta_thickness_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_EJECTA_THICKNESS_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_ejecta_thickness_request)
+  })
+_sym_db.RegisterMessage(cal_ejecta_thickness_request)
+
+cal_ejecta_thickness_response = _reflection.GeneratedProtocolMessageType('cal_ejecta_thickness_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_EJECTA_THICKNESS_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_ejecta_thickness_response)
+  })
+_sym_db.RegisterMessage(cal_ejecta_thickness_response)
+
+cal_d_frag_request = _reflection.GeneratedProtocolMessageType('cal_d_frag_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_D_FRAG_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_d_frag_request)
+  })
+_sym_db.RegisterMessage(cal_d_frag_request)
+
+cal_d_frag_response = _reflection.GeneratedProtocolMessageType('cal_d_frag_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_D_FRAG_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_d_frag_response)
+  })
+_sym_db.RegisterMessage(cal_d_frag_response)
+
+cal_themal_request = _reflection.GeneratedProtocolMessageType('cal_themal_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_THEMAL_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_themal_request)
+  })
+_sym_db.RegisterMessage(cal_themal_request)
+
+cal_themal_response = _reflection.GeneratedProtocolMessageType('cal_themal_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_THEMAL_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_themal_response)
+  })
+_sym_db.RegisterMessage(cal_themal_response)
+
+cal_magnitude_request = _reflection.GeneratedProtocolMessageType('cal_magnitude_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MAGNITUDE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_magnitude_request)
+  })
+_sym_db.RegisterMessage(cal_magnitude_request)
+
+cal_magnitude_response = _reflection.GeneratedProtocolMessageType('cal_magnitude_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MAGNITUDE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_magnitude_response)
+  })
+_sym_db.RegisterMessage(cal_magnitude_response)
+
+cal_magnitude2_request = _reflection.GeneratedProtocolMessageType('cal_magnitude2_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MAGNITUDE2_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_magnitude2_request)
+  })
+_sym_db.RegisterMessage(cal_magnitude2_request)
+
+cal_magnitude2_response = _reflection.GeneratedProtocolMessageType('cal_magnitude2_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_MAGNITUDE2_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_magnitude2_response)
+  })
+_sym_db.RegisterMessage(cal_magnitude2_response)
+
+cal_shock_arrival_request = _reflection.GeneratedProtocolMessageType('cal_shock_arrival_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_SHOCK_ARRIVAL_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_shock_arrival_request)
+  })
+_sym_db.RegisterMessage(cal_shock_arrival_request)
+
+cal_shock_arrival_response = _reflection.GeneratedProtocolMessageType('cal_shock_arrival_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_SHOCK_ARRIVAL_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_shock_arrival_response)
+  })
+_sym_db.RegisterMessage(cal_shock_arrival_response)
+
+cal_vmax_request = _reflection.GeneratedProtocolMessageType('cal_vmax_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VMAX_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vmax_request)
+  })
+_sym_db.RegisterMessage(cal_vmax_request)
+
+cal_vmax_response = _reflection.GeneratedProtocolMessageType('cal_vmax_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_VMAX_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_vmax_response)
+  })
+_sym_db.RegisterMessage(cal_vmax_response)
+
+cal_shock_damage_request = _reflection.GeneratedProtocolMessageType('cal_shock_damage_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_SHOCK_DAMAGE_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_shock_damage_request)
+  })
+_sym_db.RegisterMessage(cal_shock_damage_request)
+
+cal_shock_damage_response = _reflection.GeneratedProtocolMessageType('cal_shock_damage_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_SHOCK_DAMAGE_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_shock_damage_response)
+  })
+_sym_db.RegisterMessage(cal_shock_damage_response)
+
+cal_dec_level_request = _reflection.GeneratedProtocolMessageType('cal_dec_level_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_DEC_LEVEL_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_dec_level_request)
+  })
+_sym_db.RegisterMessage(cal_dec_level_request)
+
+cal_dec_level_response = _reflection.GeneratedProtocolMessageType('cal_dec_level_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_DEC_LEVEL_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_dec_level_response)
+  })
+_sym_db.RegisterMessage(cal_dec_level_response)
+
+cal_TsunamiArrivalTime_request = _reflection.GeneratedProtocolMessageType('cal_TsunamiArrivalTime_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_TSUNAMIARRIVALTIME_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_TsunamiArrivalTime_request)
+  })
+_sym_db.RegisterMessage(cal_TsunamiArrivalTime_request)
+
+cal_TsunamiArrivalTime_response = _reflection.GeneratedProtocolMessageType('cal_TsunamiArrivalTime_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_TSUNAMIARRIVALTIME_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_TsunamiArrivalTime_response)
+  })
+_sym_db.RegisterMessage(cal_TsunamiArrivalTime_response)
+
+cal_WaveAmplitudeUpperLimit_request = _reflection.GeneratedProtocolMessageType('cal_WaveAmplitudeUpperLimit_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_WAVEAMPLITUDEUPPERLIMIT_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_WaveAmplitudeUpperLimit_request)
+  })
+_sym_db.RegisterMessage(cal_WaveAmplitudeUpperLimit_request)
+
+cal_WaveAmplitudeUpperLimit_response = _reflection.GeneratedProtocolMessageType('cal_WaveAmplitudeUpperLimit_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_WAVEAMPLITUDEUPPERLIMIT_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_WaveAmplitudeUpperLimit_response)
+  })
+_sym_db.RegisterMessage(cal_WaveAmplitudeUpperLimit_response)
+
+cal_WaveAmplitudeLowerLimit_request = _reflection.GeneratedProtocolMessageType('cal_WaveAmplitudeLowerLimit_request', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_WAVEAMPLITUDELOWERLIMIT_REQUEST,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_WaveAmplitudeLowerLimit_request)
+  })
+_sym_db.RegisterMessage(cal_WaveAmplitudeLowerLimit_request)
+
+cal_WaveAmplitudeLowerLimit_response = _reflection.GeneratedProtocolMessageType('cal_WaveAmplitudeLowerLimit_response', (_message.Message,), {
+  'DESCRIPTOR' : _CAL_WAVEAMPLITUDELOWERLIMIT_RESPONSE,
+  '__module__' : 'impactEffect_pb2'
+  # @@protoc_insertion_point(class_scope:impactEffect.cal_WaveAmplitudeLowerLimit_response)
+  })
+_sym_db.RegisterMessage(cal_WaveAmplitudeLowerLimit_response)
 
 _IMPACTEFFECTSERVICE = DESCRIPTOR.services_by_name['ImpactEffectService']
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -72,17 +760,189 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z0google.golang.org/grpc/impactEffect/impactEffect'
   _IMPACTOR._serialized_start=36
-  _IMPACTOR._serialized_end=160
-  _SIMPLETARGETS._serialized_start=162
-  _SIMPLETARGETS._serialized_end=239
-  _SIMPLEREQUEST._serialized_start=241
-  _SIMPLEREQUEST._serialized_end=344
-  _RESULT._serialized_start=346
-  _RESULT._serialized_end=367
-  _KINETICENERGY._serialized_start=369
-  _KINETICENERGY._serialized_end=408
-  _RECTIME._serialized_start=410
-  _RECTIME._serialized_end=437
-  _IMPACTEFFECTSERVICE._serialized_start=440
-  _IMPACTEFFECTSERVICE._serialized_end=3519
+  _IMPACTOR._serialized_end=114
+  _TARGETS._serialized_start=117
+  _TARGETS._serialized_end=434
+  _EXAMPLE_REQUEST._serialized_start=436
+  _EXAMPLE_REQUEST._serialized_end=511
+  _EXAMPLE_RESPONSE._serialized_start=513
+  _EXAMPLE_RESPONSE._serialized_end=548
+  _CAL_KINETIC_ENERGY_REQUEST._serialized_start=550
+  _CAL_KINETIC_ENERGY_REQUEST._serialized_end=636
+  _CAL_KINETIC_ENERGY_RESPONSE._serialized_start=638
+  _CAL_KINETIC_ENERGY_RESPONSE._serialized_end=691
+  _CAL_KINETIC_ENERGY_MEGATONS_REQUEST._serialized_start=693
+  _CAL_KINETIC_ENERGY_MEGATONS_REQUEST._serialized_end=788
+  _CAL_KINETIC_ENERGY_MEGATONS_RESPONSE._serialized_start=790
+  _CAL_KINETIC_ENERGY_MEGATONS_RESPONSE._serialized_end=861
+  _CAL_REC_TIME_REQUEST._serialized_start=863
+  _CAL_REC_TIME_REQUEST._serialized_end=943
+  _CAL_REC_TIME_RESPONSE._serialized_start=945
+  _CAL_REC_TIME_RESPONSE._serialized_end=986
+  _CAL_I_FACTOR_REQUEST._serialized_start=988
+  _CAL_I_FACTOR_REQUEST._serialized_end=1109
+  _CAL_I_FACTOR_RESPONSE._serialized_start=1111
+  _CAL_I_FACTOR_RESPONSE._serialized_end=1152
+  _BURST_VELOCITY_AT_ZERO_REQUEST._serialized_start=1155
+  _BURST_VELOCITY_AT_ZERO_REQUEST._serialized_end=1286
+  _BURST_VELOCITY_AT_ZERO_RESPONSE._serialized_start=1288
+  _BURST_VELOCITY_AT_ZERO_RESPONSE._serialized_end=1350
+  _ALTITUDE_OF_BREAKUP_REQUEST._serialized_start=1353
+  _ALTITUDE_OF_BREAKUP_REQUEST._serialized_end=1525
+  _ALTITUDE_OF_BREAKUP_RESPONSE._serialized_start=1527
+  _ALTITUDE_OF_BREAKUP_RESPONSE._serialized_end=1577
+  _VELOCITY_AT_BREAKUP_REQUEST._serialized_start=1580
+  _VELOCITY_AT_BREAKUP_REQUEST._serialized_end=1740
+  _VELOCITY_AT_BREAKUP_RESPONSE._serialized_start=1742
+  _VELOCITY_AT_BREAKUP_RESPONSE._serialized_end=1790
+  _DISPERSION_LENGTH_SCALE_REQUEST._serialized_start=1793
+  _DISPERSION_LENGTH_SCALE_REQUEST._serialized_end=1945
+  _DISPERSION_LENGTH_SCALE_RESPONSE._serialized_start=1947
+  _DISPERSION_LENGTH_SCALE_RESPONSE._serialized_end=1998
+  _AIRBURST_ALTITUDE_REQUEST._serialized_start=2001
+  _AIRBURST_ALTITUDE_REQUEST._serialized_end=2160
+  _AIRBURST_ALTITUDE_RESPONSE._serialized_start=2162
+  _AIRBURST_ALTITUDE_RESPONSE._serialized_end=2213
+  _BRUST_VELOCITY_REQUEST._serialized_start=2216
+  _BRUST_VELOCITY_REQUEST._serialized_end=2412
+  _BRUST_VELOCITY_RESPONSE._serialized_start=2414
+  _BRUST_VELOCITY_RESPONSE._serialized_end=2457
+  _DISPERSION_OF_IMPACTOR_REQUEST._serialized_start=2460
+  _DISPERSION_OF_IMPACTOR_REQUEST._serialized_end=2654
+  _DISPERSION_OF_IMPACTOR_RESPONSE._serialized_start=2656
+  _DISPERSION_OF_IMPACTOR_RESPONSE._serialized_end=2709
+  _FRACTION_OF_MOMENTUM_REQUEST._serialized_start=2712
+  _FRACTION_OF_MOMENTUM_REQUEST._serialized_end=2859
+  _FRACTION_OF_MOMENTUM_RESPONSE._serialized_start=2861
+  _FRACTION_OF_MOMENTUM_RESPONSE._serialized_end=2924
+  _CAL_TROT_CHANGE_REQUEST._serialized_start=2927
+  _CAL_TROT_CHANGE_REQUEST._serialized_end=3069
+  _CAL_TROT_CHANGE_RESPONSE._serialized_start=3071
+  _CAL_TROT_CHANGE_RESPONSE._serialized_end=3118
+  _CAL_ENERGY_ATMOSPHERE_REQUEST._serialized_start=3121
+  _CAL_ENERGY_ATMOSPHERE_REQUEST._serialized_end=3269
+  _CAL_ENERGY_ATMOSPHERE_RESPONSE._serialized_start=3271
+  _CAL_ENERGY_ATMOSPHERE_RESPONSE._serialized_end=3330
+  _CAL_ENERGY_BLAST_SURFACE_REQUEST._serialized_start=3333
+  _CAL_ENERGY_BLAST_SURFACE_REQUEST._serialized_end=3534
+  _CAL_ENERGY_BLAST_SURFACE_RESPONSE._serialized_start=3536
+  _CAL_ENERGY_BLAST_SURFACE_RESPONSE._serialized_end=3617
+  _CAL_MASS_OF_WATER_REQUEST._serialized_start=3619
+  _CAL_MASS_OF_WATER_REQUEST._serialized_end=3745
+  _CAL_MASS_OF_WATER_RESPONSE._serialized_start=3747
+  _CAL_MASS_OF_WATER_RESPONSE._serialized_end=3791
+  _CAL_VELOCITY_PROJECTILE_REQUEST._serialized_start=3794
+  _CAL_VELOCITY_PROJECTILE_REQUEST._serialized_end=3944
+  _CAL_VELOCITY_PROJECTILE_RESPONSE._serialized_start=3946
+  _CAL_VELOCITY_PROJECTILE_RESPONSE._serialized_end=3999
+  _CAL_ENERGY_AT_SEAFLOOR_REQUEST._serialized_start=4002
+  _CAL_ENERGY_AT_SEAFLOOR_REQUEST._serialized_end=4152
+  _CAL_ENERGY_AT_SEAFLOOR_RESPONSE._serialized_start=4154
+  _CAL_ENERGY_AT_SEAFLOOR_RESPONSE._serialized_end=4212
+  _CAL_EPICENTRAL_ANGLE_REQUEST._serialized_start=4215
+  _CAL_EPICENTRAL_ANGLE_REQUEST._serialized_end=4344
+  _CAL_EPICENTRAL_ANGLE_RESPONSE._serialized_start=4346
+  _CAL_EPICENTRAL_ANGLE_RESPONSE._serialized_end=4392
+  _CAL_SCALING_DIAMETER_CONSTANT_REQUEST._serialized_start=4395
+  _CAL_SCALING_DIAMETER_CONSTANT_REQUEST._serialized_end=4533
+  _CAL_SCALING_DIAMETER_CONSTANT_RESPONSE._serialized_start=4535
+  _CAL_SCALING_DIAMETER_CONSTANT_RESPONSE._serialized_end=4601
+  _CAL_ANGLEFAC_REQUEST._serialized_start=4603
+  _CAL_ANGLEFAC_REQUEST._serialized_end=4724
+  _CAL_ANGLEFAC_RESPONSE._serialized_start=4726
+  _CAL_ANGLEFAC_RESPONSE._serialized_end=4767
+  _CAL_WDIAMETER_REQUEST._serialized_start=4770
+  _CAL_WDIAMETER_REQUEST._serialized_end=4928
+  _CAL_WDIAMETER_RESPONSE._serialized_start=4930
+  _CAL_WDIAMETER_RESPONSE._serialized_end=4973
+  _CAL_TRANSIENT_CRATER_DIAMETER_REQUEST._serialized_start=4976
+  _CAL_TRANSIENT_CRATER_DIAMETER_REQUEST._serialized_end=5197
+  _CAL_TRANSIENT_CRATER_DIAMETER_RESPONSE._serialized_start=5199
+  _CAL_TRANSIENT_CRATER_DIAMETER_RESPONSE._serialized_end=5252
+  _CAL_DEPTHR_REQUEST._serialized_start=5255
+  _CAL_DEPTHR_REQUEST._serialized_end=5387
+  _CAL_DEPTHR_RESPONSE._serialized_start=5389
+  _CAL_DEPTHR_RESPONSE._serialized_end=5426
+  _CAL_CDIAMATER_REQUEST._serialized_start=5429
+  _CAL_CDIAMATER_REQUEST._serialized_end=5564
+  _CAL_CDIAMATER_RESPONSE._serialized_start=5566
+  _CAL_CDIAMATER_RESPONSE._serialized_end=5609
+  _CAL_DEPTHFR_REQUEST._serialized_start=5612
+  _CAL_DEPTHFR_REQUEST._serialized_end=5780
+  _CAL_DEPTHFR_RESPONSE._serialized_start=5782
+  _CAL_DEPTHFR_RESPONSE._serialized_end=5821
+  _CAL_VCRATER_REQUEST._serialized_start=5824
+  _CAL_VCRATER_REQUEST._serialized_end=5957
+  _CAL_VCRATER_RESPONSE._serialized_start=5959
+  _CAL_VCRATER_RESPONSE._serialized_end=5998
+  _CAL_VRATIO_REQUEST._serialized_start=6001
+  _CAL_VRATIO_REQUEST._serialized_end=6133
+  _CAL_VRATIO_RESPONSE._serialized_start=6135
+  _CAL_VRATIO_RESPONSE._serialized_end=6172
+  _CAL_VCRATER_VRATION_REQUEST._serialized_start=6175
+  _CAL_VCRATER_VRATION_REQUEST._serialized_end=6316
+  _CAL_VCRATER_VRATION_RESPONSE._serialized_start=6318
+  _CAL_VCRATER_VRATION_RESPONSE._serialized_end=6381
+  _CAL_VMELT_REQUEST._serialized_start=6384
+  _CAL_VMELT_REQUEST._serialized_end=6545
+  _CAL_VMELT_RESPONSE._serialized_start=6547
+  _CAL_VMELT_RESPONSE._serialized_end=6582
+  _CAL_MRATIO_AND_MCRATIO_REQUEST._serialized_start=6585
+  _CAL_MRATIO_AND_MCRATIO_REQUEST._serialized_end=6779
+  _CAL_MRATIO_AND_MCRATIO_RESPONSE._serialized_start=6781
+  _CAL_MRATIO_AND_MCRATIO_RESPONSE._serialized_end=6847
+  _CAL_EJECT_ARRIVAL_REQUEST._serialized_start=6850
+  _CAL_EJECT_ARRIVAL_REQUEST._serialized_end=6999
+  _CAL_EJECT_ARRIVAL_RESPONSE._serialized_start=7001
+  _CAL_EJECT_ARRIVAL_RESPONSE._serialized_end=7053
+  _CAL_EJECTA_THICKNESS_REQUEST._serialized_start=7056
+  _CAL_EJECTA_THICKNESS_REQUEST._serialized_end=7221
+  _CAL_EJECTA_THICKNESS_RESPONSE._serialized_start=7223
+  _CAL_EJECTA_THICKNESS_RESPONSE._serialized_end=7280
+  _CAL_D_FRAG_REQUEST._serialized_start=7283
+  _CAL_D_FRAG_REQUEST._serialized_end=7457
+  _CAL_D_FRAG_RESPONSE._serialized_start=7459
+  _CAL_D_FRAG_RESPONSE._serialized_end=7496
+  _CAL_THEMAL_REQUEST._serialized_start=7499
+  _CAL_THEMAL_REQUEST._serialized_end=7698
+  _CAL_THEMAL_RESPONSE._serialized_start=7701
+  _CAL_THEMAL_RESPONSE._serialized_end=7888
+  _CAL_MAGNITUDE_REQUEST._serialized_start=7891
+  _CAL_MAGNITUDE_REQUEST._serialized_end=8061
+  _CAL_MAGNITUDE_RESPONSE._serialized_start=8063
+  _CAL_MAGNITUDE_RESPONSE._serialized_end=8106
+  _CAL_MAGNITUDE2_REQUEST._serialized_start=8109
+  _CAL_MAGNITUDE2_REQUEST._serialized_end=8295
+  _CAL_MAGNITUDE2_RESPONSE._serialized_start=8297
+  _CAL_MAGNITUDE2_RESPONSE._serialized_end=8364
+  _CAL_SHOCK_ARRIVAL_REQUEST._serialized_start=8367
+  _CAL_SHOCK_ARRIVAL_REQUEST._serialized_end=8516
+  _CAL_SHOCK_ARRIVAL_RESPONSE._serialized_start=8518
+  _CAL_SHOCK_ARRIVAL_RESPONSE._serialized_end=8569
+  _CAL_VMAX_REQUEST._serialized_start=8572
+  _CAL_VMAX_REQUEST._serialized_end=8734
+  _CAL_VMAX_RESPONSE._serialized_start=8736
+  _CAL_VMAX_RESPONSE._serialized_end=8788
+  _CAL_SHOCK_DAMAGE_REQUEST._serialized_start=8791
+  _CAL_SHOCK_DAMAGE_REQUEST._serialized_end=8949
+  _CAL_SHOCK_DAMAGE_RESPONSE._serialized_start=8951
+  _CAL_SHOCK_DAMAGE_RESPONSE._serialized_end=9000
+  _CAL_DEC_LEVEL_REQUEST._serialized_start=9003
+  _CAL_DEC_LEVEL_REQUEST._serialized_end=9170
+  _CAL_DEC_LEVEL_RESPONSE._serialized_start=9172
+  _CAL_DEC_LEVEL_RESPONSE._serialized_end=9215
+  _CAL_TSUNAMIARRIVALTIME_REQUEST._serialized_start=9218
+  _CAL_TSUNAMIARRIVALTIME_REQUEST._serialized_end=9368
+  _CAL_TSUNAMIARRIVALTIME_RESPONSE._serialized_start=9370
+  _CAL_TSUNAMIARRIVALTIME_RESPONSE._serialized_end=9431
+  _CAL_WAVEAMPLITUDEUPPERLIMIT_REQUEST._serialized_start=9434
+  _CAL_WAVEAMPLITUDEUPPERLIMIT_REQUEST._serialized_end=9589
+  _CAL_WAVEAMPLITUDEUPPERLIMIT_RESPONSE._serialized_start=9591
+  _CAL_WAVEAMPLITUDEUPPERLIMIT_RESPONSE._serialized_end=9662
+  _CAL_WAVEAMPLITUDELOWERLIMIT_REQUEST._serialized_start=9665
+  _CAL_WAVEAMPLITUDELOWERLIMIT_REQUEST._serialized_end=9820
+  _CAL_WAVEAMPLITUDELOWERLIMIT_RESPONSE._serialized_start=9822
+  _CAL_WAVEAMPLITUDELOWERLIMIT_RESPONSE._serialized_end=9893
+  _IMPACTEFFECTSERVICE._serialized_start=9896
+  _IMPACTEFFECTSERVICE._serialized_end=14649
 # @@protoc_insertion_point(module_scope)

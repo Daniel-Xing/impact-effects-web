@@ -24,47 +24,53 @@ const _ = grpc.SupportPackageIsVersion7
 type ImpactEffectServiceClient interface {
 	// A simple the function of ImpactEffect for test
 	// calculte the Kinetic_energy of the impactor
-	Cal_KineticEnergy(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*KineticEnergy, error)
-	CalKineticEnergyMegatons(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*KineticEnergy, error)
-	CalRecTime(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*RecTime, error)
-	CalIFactor(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	BurstVelocityAtZero(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	AltitudeOfBreakup(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	VelocityAtBreakup(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	DispersionLengthScale(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	AirburstAltitude(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	BrustVelocity(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	DispersionOfImpactor(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	FractionOfMomentum(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalTrotChange(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalEnergyAtmosphere(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalEnergyBlastSurface(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalMassOfWater(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalVelocityProjectile(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalEPIcentralAngle(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalScalingDiameterConstant(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalAnglefac(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalWdiameter(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalTransientCraterDiameter(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalDepthr(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalCdiamater(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalDepthfr(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalVCrater(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalVratio(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalVCraterVRation(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalVMelt(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalMratioAndMcratio(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalEjectArrival(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalEjectaThickness(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalThemal(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalMagnitude(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalMagnitude2(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalShockArrival(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalVmax(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	CalDecLevel(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	Cal_TsunamiArrivalTime(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	Cal_WaveAmplitudeUpperLimit(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
-	Cal_WaveAmplitudeLowerLimit(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error)
+	Cal_KineticEnergy(ctx context.Context, in *Cal_KineticEnergyRequest, opts ...grpc.CallOption) (*Cal_KineticEnergyResponse, error)
+	// calculate the Kinetic_energy of the impactor
+	CalKineticEnergyMegatons(ctx context.Context, in *CalKineticEnergyMegatonsRequest, opts ...grpc.CallOption) (*CalKineticEnergyMegatonsResponse, error)
+	// calculate the rec time of the impactor
+	CalRecTime(ctx context.Context, in *CalRecTimeRequest, opts ...grpc.CallOption) (*CalRecTimeResponse, error)
+	// calculate the i_factor of the impactor
+	CalIFactor(ctx context.Context, in *CalIFactorRequest, opts ...grpc.CallOption) (*CalIFactorResponse, error)
+	BurstVelocityAtZero(ctx context.Context, in *BurstVelocityAtZeroRequest, opts ...grpc.CallOption) (*BurstVelocityAtZeroResponse, error)
+	AltitudeOfBreakup(ctx context.Context, in *AltitudeOfBreakupRequest, opts ...grpc.CallOption) (*AltitudeOfBreakupResponse, error)
+	VelocityAtBreakup(ctx context.Context, in *VelocityAtBreakupRequest, opts ...grpc.CallOption) (*VelocityAtBreakupResponse, error)
+	DispersionLengthScale(ctx context.Context, in *DispersionLengthScaleRequest, opts ...grpc.CallOption) (*DispersionLengthScaleResponse, error)
+	AirburstAltitude(ctx context.Context, in *AirburstAltitudeRequest, opts ...grpc.CallOption) (*AirburstAltitudeResponse, error)
+	BrustVelocity(ctx context.Context, in *BrustVelocityRequest, opts ...grpc.CallOption) (*BrustVelocityResponse, error)
+	DispersionOfImpactor(ctx context.Context, in *DispersionOfImpactorRequest, opts ...grpc.CallOption) (*DispersionOfImpactorResponse, error)
+	FractionOfMomentum(ctx context.Context, in *FractionOfMomentumRequest, opts ...grpc.CallOption) (*FractionOfMomentumResponse, error)
+	CalTrotChange(ctx context.Context, in *CalTrotChangeRequest, opts ...grpc.CallOption) (*CalTrotChangeResponse, error)
+	CalEnergyAtmosphere(ctx context.Context, in *CalEnergyAtmosphereRequest, opts ...grpc.CallOption) (*CalEnergyAtmosphereResponse, error)
+	CalEnergyBlastSurface(ctx context.Context, in *CalEnergyBlastSurfaceRequest, opts ...grpc.CallOption) (*CalEnergyBlastSurfaceResponse, error)
+	CalMassOfWater(ctx context.Context, in *CalMassOfWaterRequest, opts ...grpc.CallOption) (*CalMassOfWaterResponse, error)
+	CalVelocityProjectile(ctx context.Context, in *CalVelocityProjectileRequest, opts ...grpc.CallOption) (*CalVelocityProjectileResponse, error)
+	CalEnergyAtSeafloor(ctx context.Context, in *CalEnergyAtSeafloorRequest, opts ...grpc.CallOption) (*CalEnergyAtSeafloorResponse, error)
+	CalEPIcentralAngle(ctx context.Context, in *CalEPIcentralAngleRequest, opts ...grpc.CallOption) (*CalEPIcentralAngleResponse, error)
+	CalScalingDiameterConstant(ctx context.Context, in *CalScalingDiameterConstantRequest, opts ...grpc.CallOption) (*CalScalingDiameterConstantResponse, error)
+	CalAnglefac(ctx context.Context, in *CalAnglefacRequest, opts ...grpc.CallOption) (*CalAnglefacResponse, error)
+	CalWdiameter(ctx context.Context, in *CalWdiameterRequest, opts ...grpc.CallOption) (*CalWdiameterResponse, error)
+	CalTransientCraterDiameter(ctx context.Context, in *CalTransientCraterDiameterRequest, opts ...grpc.CallOption) (*CalTransientCraterDiameterResponse, error)
+	CalDepthr(ctx context.Context, in *CalDepthrRequest, opts ...grpc.CallOption) (*CalDepthrResponse, error)
+	CalCdiamater(ctx context.Context, in *CalCdiamaterRequest, opts ...grpc.CallOption) (*CalCdiamaterResponse, error)
+	CalDepthfr(ctx context.Context, in *CalDepthfrRequest, opts ...grpc.CallOption) (*CalDepthfrResponse, error)
+	CalVCrater(ctx context.Context, in *CalVCraterRequest, opts ...grpc.CallOption) (*CalVCraterResponse, error)
+	CalVratio(ctx context.Context, in *CalVratioRequest, opts ...grpc.CallOption) (*CalVratioResponse, error)
+	CalVCraterVRation(ctx context.Context, in *CalVCraterVRationRequest, opts ...grpc.CallOption) (*CalVCraterVRationResponse, error)
+	CalVMelt(ctx context.Context, in *CalVMeltRequest, opts ...grpc.CallOption) (*CalVMeltResponse, error)
+	CalMratioAndMcratio(ctx context.Context, in *CalMratioAndMcratioRequest, opts ...grpc.CallOption) (*CalMratioAndMcratioResponse, error)
+	CalEjectArrival(ctx context.Context, in *CalEjectArrivalRequest, opts ...grpc.CallOption) (*CalEjectArrivalResponse, error)
+	CalEjectaThickness(ctx context.Context, in *CalEjectaThicknessRequest, opts ...grpc.CallOption) (*CalEjectaThicknessResponse, error)
+	CalDFrag(ctx context.Context, in *CalDFragRequest, opts ...grpc.CallOption) (*CalDFragResponse, error)
+	CalThemal(ctx context.Context, in *CalThemalRequest, opts ...grpc.CallOption) (*CalThemalResponse, error)
+	CalMagnitude(ctx context.Context, in *CalMagnitudeRequest, opts ...grpc.CallOption) (*CalMagnitudeResponse, error)
+	CalMagnitude2(ctx context.Context, in *CalMagnitude2Request, opts ...grpc.CallOption) (*CalMagnitude2Response, error)
+	CalShockArrival(ctx context.Context, in *CalShockArrivalRequest, opts ...grpc.CallOption) (*CalShockArrivalResponse, error)
+	CalVmax(ctx context.Context, in *CalVmaxRequest, opts ...grpc.CallOption) (*CalVmaxResponse, error)
+	CalShockDamage(ctx context.Context, in *CalShockDamageRequest, opts ...grpc.CallOption) (*CalShockDamageResponse, error)
+	CalDecLevel(ctx context.Context, in *CalDecLevelRequest, opts ...grpc.CallOption) (*CalDecLevelResponse, error)
+	Cal_TsunamiArrivalTime(ctx context.Context, in *Cal_TsunamiArrivalTimeRequest, opts ...grpc.CallOption) (*Cal_TsunamiArrivalTimeResponse, error)
+	Cal_WaveAmplitudeUpperLimit(ctx context.Context, in *Cal_WaveAmplitudeUpperLimitRequest, opts ...grpc.CallOption) (*Cal_WaveAmplitudeUpperLimitResponse, error)
+	Cal_WaveAmplitudeLowerLimit(ctx context.Context, in *Cal_WaveAmplitudeLowerLimitRequest, opts ...grpc.CallOption) (*Cal_WaveAmplitudeLowerLimitResponse, error)
 }
 
 type impactEffectServiceClient struct {
@@ -75,8 +81,8 @@ func NewImpactEffectServiceClient(cc grpc.ClientConnInterface) ImpactEffectServi
 	return &impactEffectServiceClient{cc}
 }
 
-func (c *impactEffectServiceClient) Cal_KineticEnergy(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*KineticEnergy, error) {
-	out := new(KineticEnergy)
+func (c *impactEffectServiceClient) Cal_KineticEnergy(ctx context.Context, in *Cal_KineticEnergyRequest, opts ...grpc.CallOption) (*Cal_KineticEnergyResponse, error) {
+	out := new(Cal_KineticEnergyResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_Kinetic_energy", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -84,8 +90,8 @@ func (c *impactEffectServiceClient) Cal_KineticEnergy(ctx context.Context, in *I
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalKineticEnergyMegatons(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*KineticEnergy, error) {
-	out := new(KineticEnergy)
+func (c *impactEffectServiceClient) CalKineticEnergyMegatons(ctx context.Context, in *CalKineticEnergyMegatonsRequest, opts ...grpc.CallOption) (*CalKineticEnergyMegatonsResponse, error) {
+	out := new(CalKineticEnergyMegatonsResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_kinetic_energy_megatons", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -93,8 +99,8 @@ func (c *impactEffectServiceClient) CalKineticEnergyMegatons(ctx context.Context
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalRecTime(ctx context.Context, in *Impactor, opts ...grpc.CallOption) (*RecTime, error) {
-	out := new(RecTime)
+func (c *impactEffectServiceClient) CalRecTime(ctx context.Context, in *CalRecTimeRequest, opts ...grpc.CallOption) (*CalRecTimeResponse, error) {
+	out := new(CalRecTimeResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_rec_time", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -102,8 +108,8 @@ func (c *impactEffectServiceClient) CalRecTime(ctx context.Context, in *Impactor
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalIFactor(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalIFactor(ctx context.Context, in *CalIFactorRequest, opts ...grpc.CallOption) (*CalIFactorResponse, error) {
+	out := new(CalIFactorResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_i_factor", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -111,8 +117,8 @@ func (c *impactEffectServiceClient) CalIFactor(ctx context.Context, in *SimpleRe
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) BurstVelocityAtZero(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) BurstVelocityAtZero(ctx context.Context, in *BurstVelocityAtZeroRequest, opts ...grpc.CallOption) (*BurstVelocityAtZeroResponse, error) {
+	out := new(BurstVelocityAtZeroResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/burst_velocity_at_zero", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -120,8 +126,8 @@ func (c *impactEffectServiceClient) BurstVelocityAtZero(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) AltitudeOfBreakup(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) AltitudeOfBreakup(ctx context.Context, in *AltitudeOfBreakupRequest, opts ...grpc.CallOption) (*AltitudeOfBreakupResponse, error) {
+	out := new(AltitudeOfBreakupResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/altitude_of_breakup", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -129,8 +135,8 @@ func (c *impactEffectServiceClient) AltitudeOfBreakup(ctx context.Context, in *S
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) VelocityAtBreakup(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) VelocityAtBreakup(ctx context.Context, in *VelocityAtBreakupRequest, opts ...grpc.CallOption) (*VelocityAtBreakupResponse, error) {
+	out := new(VelocityAtBreakupResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/velocity_at_breakup", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -138,8 +144,8 @@ func (c *impactEffectServiceClient) VelocityAtBreakup(ctx context.Context, in *S
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) DispersionLengthScale(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) DispersionLengthScale(ctx context.Context, in *DispersionLengthScaleRequest, opts ...grpc.CallOption) (*DispersionLengthScaleResponse, error) {
+	out := new(DispersionLengthScaleResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/dispersion_length_scale", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -147,8 +153,8 @@ func (c *impactEffectServiceClient) DispersionLengthScale(ctx context.Context, i
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) AirburstAltitude(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) AirburstAltitude(ctx context.Context, in *AirburstAltitudeRequest, opts ...grpc.CallOption) (*AirburstAltitudeResponse, error) {
+	out := new(AirburstAltitudeResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/airburst_altitude", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -156,8 +162,8 @@ func (c *impactEffectServiceClient) AirburstAltitude(ctx context.Context, in *Si
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) BrustVelocity(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) BrustVelocity(ctx context.Context, in *BrustVelocityRequest, opts ...grpc.CallOption) (*BrustVelocityResponse, error) {
+	out := new(BrustVelocityResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/brust_velocity", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -165,8 +171,8 @@ func (c *impactEffectServiceClient) BrustVelocity(ctx context.Context, in *Simpl
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) DispersionOfImpactor(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) DispersionOfImpactor(ctx context.Context, in *DispersionOfImpactorRequest, opts ...grpc.CallOption) (*DispersionOfImpactorResponse, error) {
+	out := new(DispersionOfImpactorResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/dispersion_of_impactor", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -174,8 +180,8 @@ func (c *impactEffectServiceClient) DispersionOfImpactor(ctx context.Context, in
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) FractionOfMomentum(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) FractionOfMomentum(ctx context.Context, in *FractionOfMomentumRequest, opts ...grpc.CallOption) (*FractionOfMomentumResponse, error) {
+	out := new(FractionOfMomentumResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/fraction_of_momentum", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -183,8 +189,8 @@ func (c *impactEffectServiceClient) FractionOfMomentum(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalTrotChange(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalTrotChange(ctx context.Context, in *CalTrotChangeRequest, opts ...grpc.CallOption) (*CalTrotChangeResponse, error) {
+	out := new(CalTrotChangeResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_trot_change", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -192,8 +198,8 @@ func (c *impactEffectServiceClient) CalTrotChange(ctx context.Context, in *Simpl
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalEnergyAtmosphere(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalEnergyAtmosphere(ctx context.Context, in *CalEnergyAtmosphereRequest, opts ...grpc.CallOption) (*CalEnergyAtmosphereResponse, error) {
+	out := new(CalEnergyAtmosphereResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_energy_atmosphere", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -201,8 +207,8 @@ func (c *impactEffectServiceClient) CalEnergyAtmosphere(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalEnergyBlastSurface(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalEnergyBlastSurface(ctx context.Context, in *CalEnergyBlastSurfaceRequest, opts ...grpc.CallOption) (*CalEnergyBlastSurfaceResponse, error) {
+	out := new(CalEnergyBlastSurfaceResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_energy_blast_surface", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -210,8 +216,8 @@ func (c *impactEffectServiceClient) CalEnergyBlastSurface(ctx context.Context, i
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalMassOfWater(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalMassOfWater(ctx context.Context, in *CalMassOfWaterRequest, opts ...grpc.CallOption) (*CalMassOfWaterResponse, error) {
+	out := new(CalMassOfWaterResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_mass_of_water", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -219,8 +225,8 @@ func (c *impactEffectServiceClient) CalMassOfWater(ctx context.Context, in *Simp
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalVelocityProjectile(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalVelocityProjectile(ctx context.Context, in *CalVelocityProjectileRequest, opts ...grpc.CallOption) (*CalVelocityProjectileResponse, error) {
+	out := new(CalVelocityProjectileResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_velocity_projectile", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -228,8 +234,17 @@ func (c *impactEffectServiceClient) CalVelocityProjectile(ctx context.Context, i
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalEPIcentralAngle(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalEnergyAtSeafloor(ctx context.Context, in *CalEnergyAtSeafloorRequest, opts ...grpc.CallOption) (*CalEnergyAtSeafloorResponse, error) {
+	out := new(CalEnergyAtSeafloorResponse)
+	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_energy_at_seafloor", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *impactEffectServiceClient) CalEPIcentralAngle(ctx context.Context, in *CalEPIcentralAngleRequest, opts ...grpc.CallOption) (*CalEPIcentralAngleResponse, error) {
+	out := new(CalEPIcentralAngleResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_ePIcentral_angle", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -237,8 +252,8 @@ func (c *impactEffectServiceClient) CalEPIcentralAngle(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalScalingDiameterConstant(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalScalingDiameterConstant(ctx context.Context, in *CalScalingDiameterConstantRequest, opts ...grpc.CallOption) (*CalScalingDiameterConstantResponse, error) {
+	out := new(CalScalingDiameterConstantResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_scaling_diameter_constant", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -246,8 +261,8 @@ func (c *impactEffectServiceClient) CalScalingDiameterConstant(ctx context.Conte
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalAnglefac(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalAnglefac(ctx context.Context, in *CalAnglefacRequest, opts ...grpc.CallOption) (*CalAnglefacResponse, error) {
+	out := new(CalAnglefacResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_anglefac", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -255,8 +270,8 @@ func (c *impactEffectServiceClient) CalAnglefac(ctx context.Context, in *SimpleR
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalWdiameter(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalWdiameter(ctx context.Context, in *CalWdiameterRequest, opts ...grpc.CallOption) (*CalWdiameterResponse, error) {
+	out := new(CalWdiameterResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_wdiameter", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -264,8 +279,8 @@ func (c *impactEffectServiceClient) CalWdiameter(ctx context.Context, in *Simple
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalTransientCraterDiameter(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalTransientCraterDiameter(ctx context.Context, in *CalTransientCraterDiameterRequest, opts ...grpc.CallOption) (*CalTransientCraterDiameterResponse, error) {
+	out := new(CalTransientCraterDiameterResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_transient_crater_diameter", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -273,8 +288,8 @@ func (c *impactEffectServiceClient) CalTransientCraterDiameter(ctx context.Conte
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalDepthr(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalDepthr(ctx context.Context, in *CalDepthrRequest, opts ...grpc.CallOption) (*CalDepthrResponse, error) {
+	out := new(CalDepthrResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_depthr", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -282,8 +297,8 @@ func (c *impactEffectServiceClient) CalDepthr(ctx context.Context, in *SimpleReq
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalCdiamater(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalCdiamater(ctx context.Context, in *CalCdiamaterRequest, opts ...grpc.CallOption) (*CalCdiamaterResponse, error) {
+	out := new(CalCdiamaterResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_cdiamater", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -291,8 +306,8 @@ func (c *impactEffectServiceClient) CalCdiamater(ctx context.Context, in *Simple
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalDepthfr(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalDepthfr(ctx context.Context, in *CalDepthfrRequest, opts ...grpc.CallOption) (*CalDepthfrResponse, error) {
+	out := new(CalDepthfrResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_depthfr", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -300,8 +315,8 @@ func (c *impactEffectServiceClient) CalDepthfr(ctx context.Context, in *SimpleRe
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalVCrater(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalVCrater(ctx context.Context, in *CalVCraterRequest, opts ...grpc.CallOption) (*CalVCraterResponse, error) {
+	out := new(CalVCraterResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_vCrater", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -309,8 +324,8 @@ func (c *impactEffectServiceClient) CalVCrater(ctx context.Context, in *SimpleRe
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalVratio(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalVratio(ctx context.Context, in *CalVratioRequest, opts ...grpc.CallOption) (*CalVratioResponse, error) {
+	out := new(CalVratioResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_vratio", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -318,8 +333,8 @@ func (c *impactEffectServiceClient) CalVratio(ctx context.Context, in *SimpleReq
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalVCraterVRation(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalVCraterVRation(ctx context.Context, in *CalVCraterVRationRequest, opts ...grpc.CallOption) (*CalVCraterVRationResponse, error) {
+	out := new(CalVCraterVRationResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_vCrater_vRation", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -327,8 +342,8 @@ func (c *impactEffectServiceClient) CalVCraterVRation(ctx context.Context, in *S
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalVMelt(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalVMelt(ctx context.Context, in *CalVMeltRequest, opts ...grpc.CallOption) (*CalVMeltResponse, error) {
+	out := new(CalVMeltResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_vMelt", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -336,8 +351,8 @@ func (c *impactEffectServiceClient) CalVMelt(ctx context.Context, in *SimpleRequ
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalMratioAndMcratio(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalMratioAndMcratio(ctx context.Context, in *CalMratioAndMcratioRequest, opts ...grpc.CallOption) (*CalMratioAndMcratioResponse, error) {
+	out := new(CalMratioAndMcratioResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_mratio_and_mcratio", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -345,8 +360,8 @@ func (c *impactEffectServiceClient) CalMratioAndMcratio(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalEjectArrival(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalEjectArrival(ctx context.Context, in *CalEjectArrivalRequest, opts ...grpc.CallOption) (*CalEjectArrivalResponse, error) {
+	out := new(CalEjectArrivalResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_eject_arrival", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -354,8 +369,8 @@ func (c *impactEffectServiceClient) CalEjectArrival(ctx context.Context, in *Sim
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalEjectaThickness(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalEjectaThickness(ctx context.Context, in *CalEjectaThicknessRequest, opts ...grpc.CallOption) (*CalEjectaThicknessResponse, error) {
+	out := new(CalEjectaThicknessResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_ejecta_thickness", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -363,8 +378,17 @@ func (c *impactEffectServiceClient) CalEjectaThickness(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalThemal(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalDFrag(ctx context.Context, in *CalDFragRequest, opts ...grpc.CallOption) (*CalDFragResponse, error) {
+	out := new(CalDFragResponse)
+	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_d_frag", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *impactEffectServiceClient) CalThemal(ctx context.Context, in *CalThemalRequest, opts ...grpc.CallOption) (*CalThemalResponse, error) {
+	out := new(CalThemalResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_themal", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -372,8 +396,8 @@ func (c *impactEffectServiceClient) CalThemal(ctx context.Context, in *SimpleReq
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalMagnitude(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalMagnitude(ctx context.Context, in *CalMagnitudeRequest, opts ...grpc.CallOption) (*CalMagnitudeResponse, error) {
+	out := new(CalMagnitudeResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_magnitude", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -381,8 +405,8 @@ func (c *impactEffectServiceClient) CalMagnitude(ctx context.Context, in *Simple
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalMagnitude2(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalMagnitude2(ctx context.Context, in *CalMagnitude2Request, opts ...grpc.CallOption) (*CalMagnitude2Response, error) {
+	out := new(CalMagnitude2Response)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_magnitude2", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -390,8 +414,8 @@ func (c *impactEffectServiceClient) CalMagnitude2(ctx context.Context, in *Simpl
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalShockArrival(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalShockArrival(ctx context.Context, in *CalShockArrivalRequest, opts ...grpc.CallOption) (*CalShockArrivalResponse, error) {
+	out := new(CalShockArrivalResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_shock_arrival", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -399,8 +423,8 @@ func (c *impactEffectServiceClient) CalShockArrival(ctx context.Context, in *Sim
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalVmax(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalVmax(ctx context.Context, in *CalVmaxRequest, opts ...grpc.CallOption) (*CalVmaxResponse, error) {
+	out := new(CalVmaxResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_vmax", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -408,8 +432,17 @@ func (c *impactEffectServiceClient) CalVmax(ctx context.Context, in *SimpleReque
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) CalDecLevel(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) CalShockDamage(ctx context.Context, in *CalShockDamageRequest, opts ...grpc.CallOption) (*CalShockDamageResponse, error) {
+	out := new(CalShockDamageResponse)
+	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_shock_damage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *impactEffectServiceClient) CalDecLevel(ctx context.Context, in *CalDecLevelRequest, opts ...grpc.CallOption) (*CalDecLevelResponse, error) {
+	out := new(CalDecLevelResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_dec_level", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -417,8 +450,8 @@ func (c *impactEffectServiceClient) CalDecLevel(ctx context.Context, in *SimpleR
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) Cal_TsunamiArrivalTime(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) Cal_TsunamiArrivalTime(ctx context.Context, in *Cal_TsunamiArrivalTimeRequest, opts ...grpc.CallOption) (*Cal_TsunamiArrivalTimeResponse, error) {
+	out := new(Cal_TsunamiArrivalTimeResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_TsunamiArrivalTime", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -426,8 +459,8 @@ func (c *impactEffectServiceClient) Cal_TsunamiArrivalTime(ctx context.Context, 
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) Cal_WaveAmplitudeUpperLimit(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) Cal_WaveAmplitudeUpperLimit(ctx context.Context, in *Cal_WaveAmplitudeUpperLimitRequest, opts ...grpc.CallOption) (*Cal_WaveAmplitudeUpperLimitResponse, error) {
+	out := new(Cal_WaveAmplitudeUpperLimitResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_WaveAmplitudeUpperLimit", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -435,8 +468,8 @@ func (c *impactEffectServiceClient) Cal_WaveAmplitudeUpperLimit(ctx context.Cont
 	return out, nil
 }
 
-func (c *impactEffectServiceClient) Cal_WaveAmplitudeLowerLimit(ctx context.Context, in *SimpleRequest, opts ...grpc.CallOption) (*Result, error) {
-	out := new(Result)
+func (c *impactEffectServiceClient) Cal_WaveAmplitudeLowerLimit(ctx context.Context, in *Cal_WaveAmplitudeLowerLimitRequest, opts ...grpc.CallOption) (*Cal_WaveAmplitudeLowerLimitResponse, error) {
+	out := new(Cal_WaveAmplitudeLowerLimitResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_WaveAmplitudeLowerLimit", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -450,47 +483,53 @@ func (c *impactEffectServiceClient) Cal_WaveAmplitudeLowerLimit(ctx context.Cont
 type ImpactEffectServiceServer interface {
 	// A simple the function of ImpactEffect for test
 	// calculte the Kinetic_energy of the impactor
-	Cal_KineticEnergy(context.Context, *Impactor) (*KineticEnergy, error)
-	CalKineticEnergyMegatons(context.Context, *Impactor) (*KineticEnergy, error)
-	CalRecTime(context.Context, *Impactor) (*RecTime, error)
-	CalIFactor(context.Context, *SimpleRequest) (*Result, error)
-	BurstVelocityAtZero(context.Context, *SimpleRequest) (*Result, error)
-	AltitudeOfBreakup(context.Context, *SimpleRequest) (*Result, error)
-	VelocityAtBreakup(context.Context, *SimpleRequest) (*Result, error)
-	DispersionLengthScale(context.Context, *SimpleRequest) (*Result, error)
-	AirburstAltitude(context.Context, *SimpleRequest) (*Result, error)
-	BrustVelocity(context.Context, *SimpleRequest) (*Result, error)
-	DispersionOfImpactor(context.Context, *SimpleRequest) (*Result, error)
-	FractionOfMomentum(context.Context, *SimpleRequest) (*Result, error)
-	CalTrotChange(context.Context, *SimpleRequest) (*Result, error)
-	CalEnergyAtmosphere(context.Context, *SimpleRequest) (*Result, error)
-	CalEnergyBlastSurface(context.Context, *SimpleRequest) (*Result, error)
-	CalMassOfWater(context.Context, *SimpleRequest) (*Result, error)
-	CalVelocityProjectile(context.Context, *SimpleRequest) (*Result, error)
-	CalEPIcentralAngle(context.Context, *SimpleRequest) (*Result, error)
-	CalScalingDiameterConstant(context.Context, *SimpleRequest) (*Result, error)
-	CalAnglefac(context.Context, *SimpleRequest) (*Result, error)
-	CalWdiameter(context.Context, *SimpleRequest) (*Result, error)
-	CalTransientCraterDiameter(context.Context, *SimpleRequest) (*Result, error)
-	CalDepthr(context.Context, *SimpleRequest) (*Result, error)
-	CalCdiamater(context.Context, *SimpleRequest) (*Result, error)
-	CalDepthfr(context.Context, *SimpleRequest) (*Result, error)
-	CalVCrater(context.Context, *SimpleRequest) (*Result, error)
-	CalVratio(context.Context, *SimpleRequest) (*Result, error)
-	CalVCraterVRation(context.Context, *SimpleRequest) (*Result, error)
-	CalVMelt(context.Context, *SimpleRequest) (*Result, error)
-	CalMratioAndMcratio(context.Context, *SimpleRequest) (*Result, error)
-	CalEjectArrival(context.Context, *SimpleRequest) (*Result, error)
-	CalEjectaThickness(context.Context, *SimpleRequest) (*Result, error)
-	CalThemal(context.Context, *SimpleRequest) (*Result, error)
-	CalMagnitude(context.Context, *SimpleRequest) (*Result, error)
-	CalMagnitude2(context.Context, *SimpleRequest) (*Result, error)
-	CalShockArrival(context.Context, *SimpleRequest) (*Result, error)
-	CalVmax(context.Context, *SimpleRequest) (*Result, error)
-	CalDecLevel(context.Context, *SimpleRequest) (*Result, error)
-	Cal_TsunamiArrivalTime(context.Context, *SimpleRequest) (*Result, error)
-	Cal_WaveAmplitudeUpperLimit(context.Context, *SimpleRequest) (*Result, error)
-	Cal_WaveAmplitudeLowerLimit(context.Context, *SimpleRequest) (*Result, error)
+	Cal_KineticEnergy(context.Context, *Cal_KineticEnergyRequest) (*Cal_KineticEnergyResponse, error)
+	// calculate the Kinetic_energy of the impactor
+	CalKineticEnergyMegatons(context.Context, *CalKineticEnergyMegatonsRequest) (*CalKineticEnergyMegatonsResponse, error)
+	// calculate the rec time of the impactor
+	CalRecTime(context.Context, *CalRecTimeRequest) (*CalRecTimeResponse, error)
+	// calculate the i_factor of the impactor
+	CalIFactor(context.Context, *CalIFactorRequest) (*CalIFactorResponse, error)
+	BurstVelocityAtZero(context.Context, *BurstVelocityAtZeroRequest) (*BurstVelocityAtZeroResponse, error)
+	AltitudeOfBreakup(context.Context, *AltitudeOfBreakupRequest) (*AltitudeOfBreakupResponse, error)
+	VelocityAtBreakup(context.Context, *VelocityAtBreakupRequest) (*VelocityAtBreakupResponse, error)
+	DispersionLengthScale(context.Context, *DispersionLengthScaleRequest) (*DispersionLengthScaleResponse, error)
+	AirburstAltitude(context.Context, *AirburstAltitudeRequest) (*AirburstAltitudeResponse, error)
+	BrustVelocity(context.Context, *BrustVelocityRequest) (*BrustVelocityResponse, error)
+	DispersionOfImpactor(context.Context, *DispersionOfImpactorRequest) (*DispersionOfImpactorResponse, error)
+	FractionOfMomentum(context.Context, *FractionOfMomentumRequest) (*FractionOfMomentumResponse, error)
+	CalTrotChange(context.Context, *CalTrotChangeRequest) (*CalTrotChangeResponse, error)
+	CalEnergyAtmosphere(context.Context, *CalEnergyAtmosphereRequest) (*CalEnergyAtmosphereResponse, error)
+	CalEnergyBlastSurface(context.Context, *CalEnergyBlastSurfaceRequest) (*CalEnergyBlastSurfaceResponse, error)
+	CalMassOfWater(context.Context, *CalMassOfWaterRequest) (*CalMassOfWaterResponse, error)
+	CalVelocityProjectile(context.Context, *CalVelocityProjectileRequest) (*CalVelocityProjectileResponse, error)
+	CalEnergyAtSeafloor(context.Context, *CalEnergyAtSeafloorRequest) (*CalEnergyAtSeafloorResponse, error)
+	CalEPIcentralAngle(context.Context, *CalEPIcentralAngleRequest) (*CalEPIcentralAngleResponse, error)
+	CalScalingDiameterConstant(context.Context, *CalScalingDiameterConstantRequest) (*CalScalingDiameterConstantResponse, error)
+	CalAnglefac(context.Context, *CalAnglefacRequest) (*CalAnglefacResponse, error)
+	CalWdiameter(context.Context, *CalWdiameterRequest) (*CalWdiameterResponse, error)
+	CalTransientCraterDiameter(context.Context, *CalTransientCraterDiameterRequest) (*CalTransientCraterDiameterResponse, error)
+	CalDepthr(context.Context, *CalDepthrRequest) (*CalDepthrResponse, error)
+	CalCdiamater(context.Context, *CalCdiamaterRequest) (*CalCdiamaterResponse, error)
+	CalDepthfr(context.Context, *CalDepthfrRequest) (*CalDepthfrResponse, error)
+	CalVCrater(context.Context, *CalVCraterRequest) (*CalVCraterResponse, error)
+	CalVratio(context.Context, *CalVratioRequest) (*CalVratioResponse, error)
+	CalVCraterVRation(context.Context, *CalVCraterVRationRequest) (*CalVCraterVRationResponse, error)
+	CalVMelt(context.Context, *CalVMeltRequest) (*CalVMeltResponse, error)
+	CalMratioAndMcratio(context.Context, *CalMratioAndMcratioRequest) (*CalMratioAndMcratioResponse, error)
+	CalEjectArrival(context.Context, *CalEjectArrivalRequest) (*CalEjectArrivalResponse, error)
+	CalEjectaThickness(context.Context, *CalEjectaThicknessRequest) (*CalEjectaThicknessResponse, error)
+	CalDFrag(context.Context, *CalDFragRequest) (*CalDFragResponse, error)
+	CalThemal(context.Context, *CalThemalRequest) (*CalThemalResponse, error)
+	CalMagnitude(context.Context, *CalMagnitudeRequest) (*CalMagnitudeResponse, error)
+	CalMagnitude2(context.Context, *CalMagnitude2Request) (*CalMagnitude2Response, error)
+	CalShockArrival(context.Context, *CalShockArrivalRequest) (*CalShockArrivalResponse, error)
+	CalVmax(context.Context, *CalVmaxRequest) (*CalVmaxResponse, error)
+	CalShockDamage(context.Context, *CalShockDamageRequest) (*CalShockDamageResponse, error)
+	CalDecLevel(context.Context, *CalDecLevelRequest) (*CalDecLevelResponse, error)
+	Cal_TsunamiArrivalTime(context.Context, *Cal_TsunamiArrivalTimeRequest) (*Cal_TsunamiArrivalTimeResponse, error)
+	Cal_WaveAmplitudeUpperLimit(context.Context, *Cal_WaveAmplitudeUpperLimitRequest) (*Cal_WaveAmplitudeUpperLimitResponse, error)
+	Cal_WaveAmplitudeLowerLimit(context.Context, *Cal_WaveAmplitudeLowerLimitRequest) (*Cal_WaveAmplitudeLowerLimitResponse, error)
 	mustEmbedUnimplementedImpactEffectServiceServer()
 }
 
@@ -498,127 +537,136 @@ type ImpactEffectServiceServer interface {
 type UnimplementedImpactEffectServiceServer struct {
 }
 
-func (UnimplementedImpactEffectServiceServer) Cal_KineticEnergy(context.Context, *Impactor) (*KineticEnergy, error) {
+func (UnimplementedImpactEffectServiceServer) Cal_KineticEnergy(context.Context, *Cal_KineticEnergyRequest) (*Cal_KineticEnergyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cal_KineticEnergy not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalKineticEnergyMegatons(context.Context, *Impactor) (*KineticEnergy, error) {
+func (UnimplementedImpactEffectServiceServer) CalKineticEnergyMegatons(context.Context, *CalKineticEnergyMegatonsRequest) (*CalKineticEnergyMegatonsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalKineticEnergyMegatons not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalRecTime(context.Context, *Impactor) (*RecTime, error) {
+func (UnimplementedImpactEffectServiceServer) CalRecTime(context.Context, *CalRecTimeRequest) (*CalRecTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalRecTime not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalIFactor(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalIFactor(context.Context, *CalIFactorRequest) (*CalIFactorResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalIFactor not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) BurstVelocityAtZero(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) BurstVelocityAtZero(context.Context, *BurstVelocityAtZeroRequest) (*BurstVelocityAtZeroResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BurstVelocityAtZero not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) AltitudeOfBreakup(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) AltitudeOfBreakup(context.Context, *AltitudeOfBreakupRequest) (*AltitudeOfBreakupResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AltitudeOfBreakup not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) VelocityAtBreakup(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) VelocityAtBreakup(context.Context, *VelocityAtBreakupRequest) (*VelocityAtBreakupResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VelocityAtBreakup not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) DispersionLengthScale(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) DispersionLengthScale(context.Context, *DispersionLengthScaleRequest) (*DispersionLengthScaleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DispersionLengthScale not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) AirburstAltitude(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) AirburstAltitude(context.Context, *AirburstAltitudeRequest) (*AirburstAltitudeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AirburstAltitude not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) BrustVelocity(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) BrustVelocity(context.Context, *BrustVelocityRequest) (*BrustVelocityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BrustVelocity not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) DispersionOfImpactor(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) DispersionOfImpactor(context.Context, *DispersionOfImpactorRequest) (*DispersionOfImpactorResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DispersionOfImpactor not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) FractionOfMomentum(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) FractionOfMomentum(context.Context, *FractionOfMomentumRequest) (*FractionOfMomentumResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FractionOfMomentum not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalTrotChange(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalTrotChange(context.Context, *CalTrotChangeRequest) (*CalTrotChangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalTrotChange not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalEnergyAtmosphere(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalEnergyAtmosphere(context.Context, *CalEnergyAtmosphereRequest) (*CalEnergyAtmosphereResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalEnergyAtmosphere not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalEnergyBlastSurface(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalEnergyBlastSurface(context.Context, *CalEnergyBlastSurfaceRequest) (*CalEnergyBlastSurfaceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalEnergyBlastSurface not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalMassOfWater(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalMassOfWater(context.Context, *CalMassOfWaterRequest) (*CalMassOfWaterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalMassOfWater not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalVelocityProjectile(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalVelocityProjectile(context.Context, *CalVelocityProjectileRequest) (*CalVelocityProjectileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalVelocityProjectile not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalEPIcentralAngle(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalEnergyAtSeafloor(context.Context, *CalEnergyAtSeafloorRequest) (*CalEnergyAtSeafloorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CalEnergyAtSeafloor not implemented")
+}
+func (UnimplementedImpactEffectServiceServer) CalEPIcentralAngle(context.Context, *CalEPIcentralAngleRequest) (*CalEPIcentralAngleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalEPIcentralAngle not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalScalingDiameterConstant(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalScalingDiameterConstant(context.Context, *CalScalingDiameterConstantRequest) (*CalScalingDiameterConstantResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalScalingDiameterConstant not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalAnglefac(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalAnglefac(context.Context, *CalAnglefacRequest) (*CalAnglefacResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalAnglefac not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalWdiameter(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalWdiameter(context.Context, *CalWdiameterRequest) (*CalWdiameterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalWdiameter not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalTransientCraterDiameter(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalTransientCraterDiameter(context.Context, *CalTransientCraterDiameterRequest) (*CalTransientCraterDiameterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalTransientCraterDiameter not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalDepthr(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalDepthr(context.Context, *CalDepthrRequest) (*CalDepthrResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalDepthr not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalCdiamater(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalCdiamater(context.Context, *CalCdiamaterRequest) (*CalCdiamaterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalCdiamater not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalDepthfr(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalDepthfr(context.Context, *CalDepthfrRequest) (*CalDepthfrResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalDepthfr not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalVCrater(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalVCrater(context.Context, *CalVCraterRequest) (*CalVCraterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalVCrater not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalVratio(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalVratio(context.Context, *CalVratioRequest) (*CalVratioResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalVratio not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalVCraterVRation(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalVCraterVRation(context.Context, *CalVCraterVRationRequest) (*CalVCraterVRationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalVCraterVRation not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalVMelt(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalVMelt(context.Context, *CalVMeltRequest) (*CalVMeltResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalVMelt not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalMratioAndMcratio(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalMratioAndMcratio(context.Context, *CalMratioAndMcratioRequest) (*CalMratioAndMcratioResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalMratioAndMcratio not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalEjectArrival(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalEjectArrival(context.Context, *CalEjectArrivalRequest) (*CalEjectArrivalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalEjectArrival not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalEjectaThickness(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalEjectaThickness(context.Context, *CalEjectaThicknessRequest) (*CalEjectaThicknessResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalEjectaThickness not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalThemal(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalDFrag(context.Context, *CalDFragRequest) (*CalDFragResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CalDFrag not implemented")
+}
+func (UnimplementedImpactEffectServiceServer) CalThemal(context.Context, *CalThemalRequest) (*CalThemalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalThemal not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalMagnitude(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalMagnitude(context.Context, *CalMagnitudeRequest) (*CalMagnitudeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalMagnitude not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalMagnitude2(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalMagnitude2(context.Context, *CalMagnitude2Request) (*CalMagnitude2Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalMagnitude2 not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalShockArrival(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalShockArrival(context.Context, *CalShockArrivalRequest) (*CalShockArrivalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalShockArrival not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalVmax(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalVmax(context.Context, *CalVmaxRequest) (*CalVmaxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalVmax not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) CalDecLevel(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) CalShockDamage(context.Context, *CalShockDamageRequest) (*CalShockDamageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CalShockDamage not implemented")
+}
+func (UnimplementedImpactEffectServiceServer) CalDecLevel(context.Context, *CalDecLevelRequest) (*CalDecLevelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalDecLevel not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) Cal_TsunamiArrivalTime(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) Cal_TsunamiArrivalTime(context.Context, *Cal_TsunamiArrivalTimeRequest) (*Cal_TsunamiArrivalTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cal_TsunamiArrivalTime not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) Cal_WaveAmplitudeUpperLimit(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) Cal_WaveAmplitudeUpperLimit(context.Context, *Cal_WaveAmplitudeUpperLimitRequest) (*Cal_WaveAmplitudeUpperLimitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cal_WaveAmplitudeUpperLimit not implemented")
 }
-func (UnimplementedImpactEffectServiceServer) Cal_WaveAmplitudeLowerLimit(context.Context, *SimpleRequest) (*Result, error) {
+func (UnimplementedImpactEffectServiceServer) Cal_WaveAmplitudeLowerLimit(context.Context, *Cal_WaveAmplitudeLowerLimitRequest) (*Cal_WaveAmplitudeLowerLimitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cal_WaveAmplitudeLowerLimit not implemented")
 }
 func (UnimplementedImpactEffectServiceServer) mustEmbedUnimplementedImpactEffectServiceServer() {}
@@ -635,7 +683,7 @@ func RegisterImpactEffectServiceServer(s grpc.ServiceRegistrar, srv ImpactEffect
 }
 
 func _ImpactEffectService_Cal_KineticEnergy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Impactor)
+	in := new(Cal_KineticEnergyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -647,13 +695,13 @@ func _ImpactEffectService_Cal_KineticEnergy_Handler(srv interface{}, ctx context
 		FullMethod: "/impactEffect.ImpactEffectService/cal_Kinetic_energy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).Cal_KineticEnergy(ctx, req.(*Impactor))
+		return srv.(ImpactEffectServiceServer).Cal_KineticEnergy(ctx, req.(*Cal_KineticEnergyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalKineticEnergyMegatons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Impactor)
+	in := new(CalKineticEnergyMegatonsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -665,13 +713,13 @@ func _ImpactEffectService_CalKineticEnergyMegatons_Handler(srv interface{}, ctx 
 		FullMethod: "/impactEffect.ImpactEffectService/cal_kinetic_energy_megatons",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalKineticEnergyMegatons(ctx, req.(*Impactor))
+		return srv.(ImpactEffectServiceServer).CalKineticEnergyMegatons(ctx, req.(*CalKineticEnergyMegatonsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalRecTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Impactor)
+	in := new(CalRecTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -683,13 +731,13 @@ func _ImpactEffectService_CalRecTime_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/impactEffect.ImpactEffectService/cal_rec_time",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalRecTime(ctx, req.(*Impactor))
+		return srv.(ImpactEffectServiceServer).CalRecTime(ctx, req.(*CalRecTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalIFactor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalIFactorRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -701,13 +749,13 @@ func _ImpactEffectService_CalIFactor_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/impactEffect.ImpactEffectService/cal_i_factor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalIFactor(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalIFactor(ctx, req.(*CalIFactorRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_BurstVelocityAtZero_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(BurstVelocityAtZeroRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -719,13 +767,13 @@ func _ImpactEffectService_BurstVelocityAtZero_Handler(srv interface{}, ctx conte
 		FullMethod: "/impactEffect.ImpactEffectService/burst_velocity_at_zero",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).BurstVelocityAtZero(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).BurstVelocityAtZero(ctx, req.(*BurstVelocityAtZeroRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_AltitudeOfBreakup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(AltitudeOfBreakupRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -737,13 +785,13 @@ func _ImpactEffectService_AltitudeOfBreakup_Handler(srv interface{}, ctx context
 		FullMethod: "/impactEffect.ImpactEffectService/altitude_of_breakup",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).AltitudeOfBreakup(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).AltitudeOfBreakup(ctx, req.(*AltitudeOfBreakupRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_VelocityAtBreakup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(VelocityAtBreakupRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -755,13 +803,13 @@ func _ImpactEffectService_VelocityAtBreakup_Handler(srv interface{}, ctx context
 		FullMethod: "/impactEffect.ImpactEffectService/velocity_at_breakup",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).VelocityAtBreakup(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).VelocityAtBreakup(ctx, req.(*VelocityAtBreakupRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_DispersionLengthScale_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(DispersionLengthScaleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -773,13 +821,13 @@ func _ImpactEffectService_DispersionLengthScale_Handler(srv interface{}, ctx con
 		FullMethod: "/impactEffect.ImpactEffectService/dispersion_length_scale",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).DispersionLengthScale(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).DispersionLengthScale(ctx, req.(*DispersionLengthScaleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_AirburstAltitude_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(AirburstAltitudeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -791,13 +839,13 @@ func _ImpactEffectService_AirburstAltitude_Handler(srv interface{}, ctx context.
 		FullMethod: "/impactEffect.ImpactEffectService/airburst_altitude",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).AirburstAltitude(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).AirburstAltitude(ctx, req.(*AirburstAltitudeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_BrustVelocity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(BrustVelocityRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -809,13 +857,13 @@ func _ImpactEffectService_BrustVelocity_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/impactEffect.ImpactEffectService/brust_velocity",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).BrustVelocity(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).BrustVelocity(ctx, req.(*BrustVelocityRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_DispersionOfImpactor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(DispersionOfImpactorRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -827,13 +875,13 @@ func _ImpactEffectService_DispersionOfImpactor_Handler(srv interface{}, ctx cont
 		FullMethod: "/impactEffect.ImpactEffectService/dispersion_of_impactor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).DispersionOfImpactor(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).DispersionOfImpactor(ctx, req.(*DispersionOfImpactorRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_FractionOfMomentum_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(FractionOfMomentumRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -845,13 +893,13 @@ func _ImpactEffectService_FractionOfMomentum_Handler(srv interface{}, ctx contex
 		FullMethod: "/impactEffect.ImpactEffectService/fraction_of_momentum",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).FractionOfMomentum(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).FractionOfMomentum(ctx, req.(*FractionOfMomentumRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalTrotChange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalTrotChangeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -863,13 +911,13 @@ func _ImpactEffectService_CalTrotChange_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/impactEffect.ImpactEffectService/cal_trot_change",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalTrotChange(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalTrotChange(ctx, req.(*CalTrotChangeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalEnergyAtmosphere_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalEnergyAtmosphereRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -881,13 +929,13 @@ func _ImpactEffectService_CalEnergyAtmosphere_Handler(srv interface{}, ctx conte
 		FullMethod: "/impactEffect.ImpactEffectService/cal_energy_atmosphere",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalEnergyAtmosphere(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalEnergyAtmosphere(ctx, req.(*CalEnergyAtmosphereRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalEnergyBlastSurface_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalEnergyBlastSurfaceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -899,13 +947,13 @@ func _ImpactEffectService_CalEnergyBlastSurface_Handler(srv interface{}, ctx con
 		FullMethod: "/impactEffect.ImpactEffectService/cal_energy_blast_surface",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalEnergyBlastSurface(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalEnergyBlastSurface(ctx, req.(*CalEnergyBlastSurfaceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalMassOfWater_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalMassOfWaterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -917,13 +965,13 @@ func _ImpactEffectService_CalMassOfWater_Handler(srv interface{}, ctx context.Co
 		FullMethod: "/impactEffect.ImpactEffectService/cal_mass_of_water",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalMassOfWater(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalMassOfWater(ctx, req.(*CalMassOfWaterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalVelocityProjectile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalVelocityProjectileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -935,13 +983,31 @@ func _ImpactEffectService_CalVelocityProjectile_Handler(srv interface{}, ctx con
 		FullMethod: "/impactEffect.ImpactEffectService/cal_velocity_projectile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalVelocityProjectile(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalVelocityProjectile(ctx, req.(*CalVelocityProjectileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImpactEffectService_CalEnergyAtSeafloor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CalEnergyAtSeafloorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImpactEffectServiceServer).CalEnergyAtSeafloor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/impactEffect.ImpactEffectService/cal_energy_at_seafloor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImpactEffectServiceServer).CalEnergyAtSeafloor(ctx, req.(*CalEnergyAtSeafloorRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalEPIcentralAngle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalEPIcentralAngleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -953,13 +1019,13 @@ func _ImpactEffectService_CalEPIcentralAngle_Handler(srv interface{}, ctx contex
 		FullMethod: "/impactEffect.ImpactEffectService/cal_ePIcentral_angle",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalEPIcentralAngle(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalEPIcentralAngle(ctx, req.(*CalEPIcentralAngleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalScalingDiameterConstant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalScalingDiameterConstantRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -971,13 +1037,13 @@ func _ImpactEffectService_CalScalingDiameterConstant_Handler(srv interface{}, ct
 		FullMethod: "/impactEffect.ImpactEffectService/cal_scaling_diameter_constant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalScalingDiameterConstant(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalScalingDiameterConstant(ctx, req.(*CalScalingDiameterConstantRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalAnglefac_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalAnglefacRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -989,13 +1055,13 @@ func _ImpactEffectService_CalAnglefac_Handler(srv interface{}, ctx context.Conte
 		FullMethod: "/impactEffect.ImpactEffectService/cal_anglefac",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalAnglefac(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalAnglefac(ctx, req.(*CalAnglefacRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalWdiameter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalWdiameterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1007,13 +1073,13 @@ func _ImpactEffectService_CalWdiameter_Handler(srv interface{}, ctx context.Cont
 		FullMethod: "/impactEffect.ImpactEffectService/cal_wdiameter",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalWdiameter(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalWdiameter(ctx, req.(*CalWdiameterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalTransientCraterDiameter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalTransientCraterDiameterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1025,13 +1091,13 @@ func _ImpactEffectService_CalTransientCraterDiameter_Handler(srv interface{}, ct
 		FullMethod: "/impactEffect.ImpactEffectService/cal_transient_crater_diameter",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalTransientCraterDiameter(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalTransientCraterDiameter(ctx, req.(*CalTransientCraterDiameterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalDepthr_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalDepthrRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1043,13 +1109,13 @@ func _ImpactEffectService_CalDepthr_Handler(srv interface{}, ctx context.Context
 		FullMethod: "/impactEffect.ImpactEffectService/cal_depthr",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalDepthr(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalDepthr(ctx, req.(*CalDepthrRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalCdiamater_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalCdiamaterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1061,13 +1127,13 @@ func _ImpactEffectService_CalCdiamater_Handler(srv interface{}, ctx context.Cont
 		FullMethod: "/impactEffect.ImpactEffectService/cal_cdiamater",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalCdiamater(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalCdiamater(ctx, req.(*CalCdiamaterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalDepthfr_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalDepthfrRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1079,13 +1145,13 @@ func _ImpactEffectService_CalDepthfr_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/impactEffect.ImpactEffectService/cal_depthfr",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalDepthfr(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalDepthfr(ctx, req.(*CalDepthfrRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalVCrater_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalVCraterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1097,13 +1163,13 @@ func _ImpactEffectService_CalVCrater_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/impactEffect.ImpactEffectService/cal_vCrater",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalVCrater(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalVCrater(ctx, req.(*CalVCraterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalVratio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalVratioRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1115,13 +1181,13 @@ func _ImpactEffectService_CalVratio_Handler(srv interface{}, ctx context.Context
 		FullMethod: "/impactEffect.ImpactEffectService/cal_vratio",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalVratio(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalVratio(ctx, req.(*CalVratioRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalVCraterVRation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalVCraterVRationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1133,13 +1199,13 @@ func _ImpactEffectService_CalVCraterVRation_Handler(srv interface{}, ctx context
 		FullMethod: "/impactEffect.ImpactEffectService/cal_vCrater_vRation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalVCraterVRation(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalVCraterVRation(ctx, req.(*CalVCraterVRationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalVMelt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalVMeltRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1151,13 +1217,13 @@ func _ImpactEffectService_CalVMelt_Handler(srv interface{}, ctx context.Context,
 		FullMethod: "/impactEffect.ImpactEffectService/cal_vMelt",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalVMelt(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalVMelt(ctx, req.(*CalVMeltRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalMratioAndMcratio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalMratioAndMcratioRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1169,13 +1235,13 @@ func _ImpactEffectService_CalMratioAndMcratio_Handler(srv interface{}, ctx conte
 		FullMethod: "/impactEffect.ImpactEffectService/cal_mratio_and_mcratio",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalMratioAndMcratio(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalMratioAndMcratio(ctx, req.(*CalMratioAndMcratioRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalEjectArrival_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalEjectArrivalRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1187,13 +1253,13 @@ func _ImpactEffectService_CalEjectArrival_Handler(srv interface{}, ctx context.C
 		FullMethod: "/impactEffect.ImpactEffectService/cal_eject_arrival",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalEjectArrival(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalEjectArrival(ctx, req.(*CalEjectArrivalRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalEjectaThickness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalEjectaThicknessRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1205,13 +1271,31 @@ func _ImpactEffectService_CalEjectaThickness_Handler(srv interface{}, ctx contex
 		FullMethod: "/impactEffect.ImpactEffectService/cal_ejecta_thickness",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalEjectaThickness(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalEjectaThickness(ctx, req.(*CalEjectaThicknessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImpactEffectService_CalDFrag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CalDFragRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImpactEffectServiceServer).CalDFrag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/impactEffect.ImpactEffectService/cal_d_frag",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImpactEffectServiceServer).CalDFrag(ctx, req.(*CalDFragRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalThemal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalThemalRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1223,13 +1307,13 @@ func _ImpactEffectService_CalThemal_Handler(srv interface{}, ctx context.Context
 		FullMethod: "/impactEffect.ImpactEffectService/cal_themal",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalThemal(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalThemal(ctx, req.(*CalThemalRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalMagnitude_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalMagnitudeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1241,13 +1325,13 @@ func _ImpactEffectService_CalMagnitude_Handler(srv interface{}, ctx context.Cont
 		FullMethod: "/impactEffect.ImpactEffectService/cal_magnitude",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalMagnitude(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalMagnitude(ctx, req.(*CalMagnitudeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalMagnitude2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalMagnitude2Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1259,13 +1343,13 @@ func _ImpactEffectService_CalMagnitude2_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/impactEffect.ImpactEffectService/cal_magnitude2",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalMagnitude2(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalMagnitude2(ctx, req.(*CalMagnitude2Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalShockArrival_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalShockArrivalRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1277,13 +1361,13 @@ func _ImpactEffectService_CalShockArrival_Handler(srv interface{}, ctx context.C
 		FullMethod: "/impactEffect.ImpactEffectService/cal_shock_arrival",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalShockArrival(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalShockArrival(ctx, req.(*CalShockArrivalRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalVmax_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalVmaxRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1295,13 +1379,31 @@ func _ImpactEffectService_CalVmax_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/impactEffect.ImpactEffectService/cal_vmax",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalVmax(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalVmax(ctx, req.(*CalVmaxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImpactEffectService_CalShockDamage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CalShockDamageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImpactEffectServiceServer).CalShockDamage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/impactEffect.ImpactEffectService/cal_shock_damage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImpactEffectServiceServer).CalShockDamage(ctx, req.(*CalShockDamageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_CalDecLevel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(CalDecLevelRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1313,13 +1415,13 @@ func _ImpactEffectService_CalDecLevel_Handler(srv interface{}, ctx context.Conte
 		FullMethod: "/impactEffect.ImpactEffectService/cal_dec_level",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).CalDecLevel(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).CalDecLevel(ctx, req.(*CalDecLevelRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_Cal_TsunamiArrivalTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(Cal_TsunamiArrivalTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1331,13 +1433,13 @@ func _ImpactEffectService_Cal_TsunamiArrivalTime_Handler(srv interface{}, ctx co
 		FullMethod: "/impactEffect.ImpactEffectService/cal_TsunamiArrivalTime",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).Cal_TsunamiArrivalTime(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).Cal_TsunamiArrivalTime(ctx, req.(*Cal_TsunamiArrivalTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_Cal_WaveAmplitudeUpperLimit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(Cal_WaveAmplitudeUpperLimitRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1349,13 +1451,13 @@ func _ImpactEffectService_Cal_WaveAmplitudeUpperLimit_Handler(srv interface{}, c
 		FullMethod: "/impactEffect.ImpactEffectService/cal_WaveAmplitudeUpperLimit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).Cal_WaveAmplitudeUpperLimit(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).Cal_WaveAmplitudeUpperLimit(ctx, req.(*Cal_WaveAmplitudeUpperLimitRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_Cal_WaveAmplitudeLowerLimit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SimpleRequest)
+	in := new(Cal_WaveAmplitudeLowerLimitRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1367,7 +1469,7 @@ func _ImpactEffectService_Cal_WaveAmplitudeLowerLimit_Handler(srv interface{}, c
 		FullMethod: "/impactEffect.ImpactEffectService/cal_WaveAmplitudeLowerLimit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ImpactEffectServiceServer).Cal_WaveAmplitudeLowerLimit(ctx, req.(*SimpleRequest))
+		return srv.(ImpactEffectServiceServer).Cal_WaveAmplitudeLowerLimit(ctx, req.(*Cal_WaveAmplitudeLowerLimitRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1448,6 +1550,10 @@ var ImpactEffectService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ImpactEffectService_CalVelocityProjectile_Handler,
 		},
 		{
+			MethodName: "cal_energy_at_seafloor",
+			Handler:    _ImpactEffectService_CalEnergyAtSeafloor_Handler,
+		},
+		{
 			MethodName: "cal_ePIcentral_angle",
 			Handler:    _ImpactEffectService_CalEPIcentralAngle_Handler,
 		},
@@ -1508,6 +1614,10 @@ var ImpactEffectService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ImpactEffectService_CalEjectaThickness_Handler,
 		},
 		{
+			MethodName: "cal_d_frag",
+			Handler:    _ImpactEffectService_CalDFrag_Handler,
+		},
+		{
 			MethodName: "cal_themal",
 			Handler:    _ImpactEffectService_CalThemal_Handler,
 		},
@@ -1526,6 +1636,10 @@ var ImpactEffectService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "cal_vmax",
 			Handler:    _ImpactEffectService_CalVmax_Handler,
+		},
+		{
+			MethodName: "cal_shock_damage",
+			Handler:    _ImpactEffectService_CalShockDamage_Handler,
 		},
 		{
 			MethodName: "cal_dec_level",
