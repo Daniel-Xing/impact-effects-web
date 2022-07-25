@@ -60,7 +60,7 @@ func ImpactEffect() {
 	//
 	var velocity, altitudeBU, vBU, lDisper, altitudeBurst, dispersion float32
 	if collins_iFactor >= 1 {
-		velocity = ies.BrustVelocity(&impactEffect.BrustVelocityRequest{
+		velocity = ies.BurstVelocityAtZero(&impactEffect.BurstVelocityAtZeroRequest{
 			Impactor: impactor,
 			Targets:  target,
 			Choice:   1,

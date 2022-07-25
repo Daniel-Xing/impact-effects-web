@@ -24,31 +24,9 @@ package main
 
 import (
 	"back-web/controlor"
-	"back-web/google.golang.org/grpc/impactEffect/impactEffect"
-	"back-web/rpc"
 )
 
 func main() {
-
-	impactor := &impactEffect.Impactor{}
-	impactor.Density = 111
-	impactor.Diameter = 111
-	impactor.Velocity = 111
-	impactor.Theta = 45
-
-	target := &impactEffect.Targets{}
-	target.Density = 111
-	target.Depth = 0
-	target.Distance = 111
-
-	req := &impactEffect.CalIFactorRequest{
-		Impactor: impactor,
-		Targets:  target,
-		Choice:   1,
-	}
-
-	service := rpc.NewImpactEffectRPCService()
-	service.CalIFactor(req)
 
 	controlor.ImpactEffect()
 }

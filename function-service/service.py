@@ -59,6 +59,8 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
                             theta=request.impactor.theta)
         function_type = Choices.Collins
 
+        print("", impactor.pdiameter, impactor.density,
+              impactor.velocity, impactor.theta)
         rec_time_ = rec_time(impactor, function_type)
         print("rec_time: ", rec_time_, "Choice: ", request.choice)
 
@@ -96,7 +98,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         velocity_at_surface = burst_velocity_at_zero(impactor=impactor, target=target,
                                                      type=function_type)
 
-        return impactEffect_pb2.brust_velocity_response(velocity_at_surface=velocity_at_surface)
+        return impactEffect_pb2.burst_velocity_at_zero_response(velocity_at_surface=velocity_at_surface)
 
     def altitude_of_breakup(self, request, context):
         print("-------------- altitude_of_breakup --------------")
@@ -118,7 +120,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.altitude_of_breakup_response(altitudeBU=altitudeBU)
 
     def velocity_at_breakup(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- velocity_at_breakup --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -137,7 +139,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.velocity_at_breakup_response(velocity=velocity)
 
     def dispersion_length_scale(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- dispersion_length_scale --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -156,7 +158,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.dispersion_length_scale_response(lDisper=lDisper)
 
     def airburst_altitude(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- airburst_altitude --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -176,7 +178,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.airburst_altitude_response(altitudeBurst=altitudeBurst)
 
     def brust_velocity(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- brust_velocity --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -198,7 +200,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.brust_velocity_response(velocity=velocity)
 
     def dispersion_of_impactor(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- dispersion_of_impactor --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -219,7 +221,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.dispersion_of_impactor_response(dispersion=dispersion)
 
     def fraction_of_momentum(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- fraction_of_momentum --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -238,7 +240,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.fraction_of_momentum_response(lratio=lratio, pratio=pratio)
 
     def cal_trot_change(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_trot_change --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -257,7 +259,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_trot_change_response(trot_change=trot_change)
 
     def cal_energy_atmosphere(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_energy_atmosphere --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -276,7 +278,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_energy_atmosphere_response(energy_atmosphere=energy_atmosphere)
 
     def cal_energy_blast_surface(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_energy_blast_surface --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -297,7 +299,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_energy_blast_surface_response(energy_blast=energy_blast, energy_surface=energy_surface)
 
     def cal_mass_of_water(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_mass_of_water --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -314,7 +316,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_mass_of_water_response(mwater=mwater)
 
     def cal_velocity_projectile(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_velocity_projectile --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -331,7 +333,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_velocity_projectile_response(vseafloor=vseafloor)
 
     def cal_energy_at_seafloor(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_energy_at_seafloor --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -348,7 +350,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_energy_at_seafloor_response(energy_seafloor=energy_seafloor)
 
     def cal_ePIcentral_angle(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_ePIcentral_angle --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -645,12 +647,12 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
 
         return impactEffect_pb2.cal_themal_response(h=h,
                                                     Rf=Rf,
-                                                    thermal_exposure_=thermal_exposure_,
-                                                    no_radiation_=no_radiation_,
-                                                    max_rad_time_=max_rad_time_,
-                                                    irradiation_time_=irradiation_time_,
-                                                    megaton_factor_=megaton_factor_,
-                                                    thermal_power_=thermal_power_)
+                                                    thermal_exposure=thermal_exposure_,
+                                                    no_radiation=no_radiation_,
+                                                    max_rad_time=max_rad_time_,
+                                                    irradiation_time=irradiation_time_,
+                                                    megaton_factor=megaton_factor_,
+                                                    thermal_power=thermal_power_)
 
     def cal_magnitude(self, request, context):
         print("-------------- cal_i_factor --------------")
