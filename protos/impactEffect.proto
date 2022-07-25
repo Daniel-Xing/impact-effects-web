@@ -25,6 +25,10 @@ package impactEffect;
 // Interface exported by the server.
 service ImpactEffectService {
   // A simple the function of ImpactEffect for test
+
+  // calculate the mass of impactor
+  rpc cal_mass(cal_mass_request) returns (cal_mass_response) {}
+
   // calculte the Kinetic_energy of the impactor
   rpc cal_Kinetic_energy(cal_Kinetic_energy_request) returns (cal_Kinetic_energy_response) {}
 
@@ -125,6 +129,8 @@ message Impactor {
   float theta = 4;
 }
 
+
+
 message Targets {
   float depth = 1;
   float distance = 2;
@@ -153,6 +159,14 @@ message example_request {
 
 message example_response {
   float example = 1;
+}
+
+message cal_mass_request {
+  Impactor impactor = 1;
+}
+
+message cal_mass_response {
+  float mass =1;
 }
 
 message cal_Kinetic_energy_request {
@@ -189,6 +203,8 @@ message cal_i_factor_request {
 
 message cal_i_factor_response {
   float i_factor = 1;
+  float av = 2;
+  float rStrength = 3;
 }
 
 message burst_velocity_at_zero_request {

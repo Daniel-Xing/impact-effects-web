@@ -18,6 +18,14 @@ from impactEffects.instances import ImpactorClass, TargetClass
 
 class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
 
+    def cal_mass(self, request, context):
+        impactor = Impactor(diameter=request.impactor.diameter,
+                            density=request.impactor.density,
+                            velocity=request.impactor.velocity,
+                            theta=request.impactor.theta)
+
+        return impactEffect_pb2.cal_mass_response(mass=impactor.get_mass())
+
     def cal_Kinetic_energy(self, request, context):
         print("-------------- cal_Kinetic_energy --------------")
         # impactor = request.impactor
@@ -71,7 +79,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         collins_iFactor, _av, _rStrength = iFactor(impactor=impactor, target=target,
                                                    type=function_type)
 
-        return impactEffect_pb2.cal_i_factor_response(i_factor=collins_iFactor)
+        return impactEffect_pb2.cal_i_factor_response(i_factor=collins_iFactor, av=_av, rStrength=_rStrength)
 
     def burst_velocity_at_zero(self, request, context):
         print("-------------- burst_velocity_at_zero --------------")
@@ -351,13 +359,13 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
                         density=request.targets.density)
         function_type = Choices.Collins
 
-        delta = cal_ePIcentral_angle(impactor=impactor, target=target,
+        delta = cal_ePIcentral_angle(target=target,
                                      type=function_type)
 
         return impactEffect_pb2.cal_ePIcentral_angle_response(delta=delta)
 
     def cal_scaling_diameter_constant(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_scaling_diameter_constant --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -368,13 +376,13 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
                         density=request.targets.density)
         function_type = Choices.Collins
 
-        Cd, beta = cal_scaling_diameter_constant(impactor=impactor, target=target,
+        Cd, beta = cal_scaling_diameter_constant(target=target,
                                                  type=function_type)
 
         return impactEffect_pb2.cal_scaling_diameter_constant_response(Cd=Cd, beta=beta)
 
     def cal_anglefac(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_anglefac --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -385,7 +393,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
                         density=request.targets.density)
         function_type = Choices.Collins
 
-        anglefac = cal_anglefac(impactor=impactor, target=target,
+        anglefac = cal_anglefac(impactor=impactor,
                                 type=function_type)
 
         return impactEffect_pb2.cal_anglefac_response(anglefac=anglefac)

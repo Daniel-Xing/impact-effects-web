@@ -7,6 +7,7 @@ import impactEffect_pb2 as impactEffect__pb2
 
 class ImpactEffectServiceStub(object):
     """Interface exported by the server.
+    A simple the function of ImpactEffect for test
     """
 
     def __init__(self, channel):
@@ -15,6 +16,11 @@ class ImpactEffectServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.cal_mass = channel.unary_unary(
+                '/impactEffect.ImpactEffectService/cal_mass',
+                request_serializer=impactEffect__pb2.cal_mass_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_mass_response.FromString,
+                )
         self.cal_Kinetic_energy = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_Kinetic_energy',
                 request_serializer=impactEffect__pb2.cal_Kinetic_energy_request.SerializeToString,
@@ -239,11 +245,18 @@ class ImpactEffectServiceStub(object):
 
 class ImpactEffectServiceServicer(object):
     """Interface exported by the server.
+    A simple the function of ImpactEffect for test
     """
 
+    def cal_mass(self, request, context):
+        """calculate the mass of impactor
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def cal_Kinetic_energy(self, request, context):
-        """A simple the function of ImpactEffect for test
-        calculte the Kinetic_energy of the impactor
+        """calculte the Kinetic_energy of the impactor
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -513,6 +526,11 @@ class ImpactEffectServiceServicer(object):
 
 def add_ImpactEffectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'cal_mass': grpc.unary_unary_rpc_method_handler(
+                    servicer.cal_mass,
+                    request_deserializer=impactEffect__pb2.cal_mass_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_mass_response.SerializeToString,
+            ),
             'cal_Kinetic_energy': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_Kinetic_energy,
                     request_deserializer=impactEffect__pb2.cal_Kinetic_energy_request.FromString,
@@ -742,7 +760,25 @@ def add_ImpactEffectServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ImpactEffectService(object):
     """Interface exported by the server.
+    A simple the function of ImpactEffect for test
     """
+
+    @staticmethod
+    def cal_mass(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_mass',
+            impactEffect__pb2.cal_mass_request.SerializeToString,
+            impactEffect__pb2.cal_mass_response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def cal_Kinetic_energy(request,

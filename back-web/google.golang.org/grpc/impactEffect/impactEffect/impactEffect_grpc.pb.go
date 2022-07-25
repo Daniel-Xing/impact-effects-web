@@ -22,7 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ImpactEffectServiceClient interface {
-	// A simple the function of ImpactEffect for test
+	// calculate the mass of impactor
+	CalMass(ctx context.Context, in *CalMassRequest, opts ...grpc.CallOption) (*CalMassResponse, error)
 	// calculte the Kinetic_energy of the impactor
 	Cal_KineticEnergy(ctx context.Context, in *Cal_KineticEnergyRequest, opts ...grpc.CallOption) (*Cal_KineticEnergyResponse, error)
 	// calculate the Kinetic_energy of the impactor
@@ -79,6 +80,15 @@ type impactEffectServiceClient struct {
 
 func NewImpactEffectServiceClient(cc grpc.ClientConnInterface) ImpactEffectServiceClient {
 	return &impactEffectServiceClient{cc}
+}
+
+func (c *impactEffectServiceClient) CalMass(ctx context.Context, in *CalMassRequest, opts ...grpc.CallOption) (*CalMassResponse, error) {
+	out := new(CalMassResponse)
+	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_mass", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *impactEffectServiceClient) Cal_KineticEnergy(ctx context.Context, in *Cal_KineticEnergyRequest, opts ...grpc.CallOption) (*Cal_KineticEnergyResponse, error) {
@@ -481,7 +491,8 @@ func (c *impactEffectServiceClient) Cal_WaveAmplitudeLowerLimit(ctx context.Cont
 // All implementations must embed UnimplementedImpactEffectServiceServer
 // for forward compatibility
 type ImpactEffectServiceServer interface {
-	// A simple the function of ImpactEffect for test
+	// calculate the mass of impactor
+	CalMass(context.Context, *CalMassRequest) (*CalMassResponse, error)
 	// calculte the Kinetic_energy of the impactor
 	Cal_KineticEnergy(context.Context, *Cal_KineticEnergyRequest) (*Cal_KineticEnergyResponse, error)
 	// calculate the Kinetic_energy of the impactor
@@ -537,6 +548,9 @@ type ImpactEffectServiceServer interface {
 type UnimplementedImpactEffectServiceServer struct {
 }
 
+func (UnimplementedImpactEffectServiceServer) CalMass(context.Context, *CalMassRequest) (*CalMassResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CalMass not implemented")
+}
 func (UnimplementedImpactEffectServiceServer) Cal_KineticEnergy(context.Context, *Cal_KineticEnergyRequest) (*Cal_KineticEnergyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cal_KineticEnergy not implemented")
 }
@@ -680,6 +694,24 @@ type UnsafeImpactEffectServiceServer interface {
 
 func RegisterImpactEffectServiceServer(s grpc.ServiceRegistrar, srv ImpactEffectServiceServer) {
 	s.RegisterService(&ImpactEffectService_ServiceDesc, srv)
+}
+
+func _ImpactEffectService_CalMass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CalMassRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImpactEffectServiceServer).CalMass(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/impactEffect.ImpactEffectService/cal_mass",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImpactEffectServiceServer).CalMass(ctx, req.(*CalMassRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _ImpactEffectService_Cal_KineticEnergy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -1481,6 +1513,10 @@ var ImpactEffectService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "impactEffect.ImpactEffectService",
 	HandlerType: (*ImpactEffectServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "cal_mass",
+			Handler:    _ImpactEffectService_CalMass_Handler,
+		},
 		{
 			MethodName: "cal_Kinetic_energy",
 			Handler:    _ImpactEffectService_Cal_KineticEnergy_Handler,
