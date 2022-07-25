@@ -401,7 +401,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_anglefac_response(anglefac=anglefac)
 
     def cal_wdiameter(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_wdiameter --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -418,7 +418,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_wdiameter_response(wdiameter=wdiameter)
 
     def cal_transient_crater_diameter(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_transient_crater_diameter --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -435,7 +435,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_transient_crater_diameter_response(Dtr=Dtr)
 
     def cal_depthr(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_depthr --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -452,7 +452,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_depthr_response(depthr=depthr)
 
     def cal_cdiamater(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_cdiamater --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -469,7 +469,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_cdiamater_response(cdiameter=cdiameter)
 
     def cal_depthfr(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_depthfr --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -486,7 +486,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_depthfr_response(depthfr=depthfr)
 
     def cal_vCrater(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_vCrater --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -503,7 +503,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_vCrater_response(vCrater=vCrater)
 
     def cal_vratio(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_vratio --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -520,7 +520,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_vratio_response(vratio=vratio)
 
     def cal_vCrater_vRation(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_vCrater_vRation --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -537,7 +537,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_vCrater_vRation_response(vCrater=vCrater, vratio=vratio)
 
     def cal_vMelt(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_vMelt --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -554,7 +554,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_vMelt_response(vMelt=vMelt)
 
     def cal_mratio_and_mcratio(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_mratio_and_mcratio --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -571,7 +571,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_mratio_and_mcratio_response(mratio=mratio, mcratio=mcratio)
 
     def cal_eject_arrival(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_eject_arrival --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -588,7 +588,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_eject_arrival_response(ejecta_arrival=ejecta_arrival)
 
     def cal_ejecta_thickness(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_ejecta_thickness --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -605,7 +605,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_ejecta_thickness_response(ejecta_thickness=ejecta_thickness)
 
     def cal_d_frag(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_d_frag --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -622,7 +622,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_d_frag_response(d_frag=d_frag)
 
     def cal_themal(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_themal --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -655,7 +655,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
                                                     thermal_power=thermal_power_)
 
     def cal_magnitude(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_magnitude --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -672,7 +672,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_magnitude_response(magnitude=magnitude)
 
     def cal_magnitude2(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_magnitude2 --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -689,7 +689,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_magnitude2_response(eff_mag=eff_mag, seismic_arrival=seismic_arrival)
 
     def cal_shock_arrival(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_shock_arrival --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -706,7 +706,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_shock_arrival_response(shock_arrival=shock_arrival)
 
     def cal_vmax(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_vmax --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -723,7 +723,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_vmax_response(vmax=vmax, opressure=opressure)
 
     def cal_shock_damage(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_shock_damage --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -740,7 +740,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_shock_damage_response(shock_damage=shock_damage)
 
     def cal_dec_level(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_dec_level --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -757,7 +757,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_dec_level_response(dec_level=dec_level)
 
     def cal_TsunamiArrivalTime(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_TsunamiArrivalTime --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -774,7 +774,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_TsunamiArrivalTime_response(TsunamiArrivalTime=TsunamiArrivalTime)
 
     def cal_WaveAmplitudeUpperLimit(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_WaveAmplitudeUpperLimit --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
@@ -791,7 +791,7 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
         return impactEffect_pb2.cal_WaveAmplitudeUpperLimit_response(WaveAmplitudeUpperLimit=WaveAmplitudeUpperLimit)
 
     def cal_WaveAmplitudeLowerLimit(self, request, context):
-        print("-------------- cal_i_factor --------------")
+        print("-------------- cal_WaveAmplitudeLowerLimit --------------")
         # impactor = request.impactor
         impactor = Impactor(diameter=request.impactor.diameter,
                             density=request.impactor.density,
