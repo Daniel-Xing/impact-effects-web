@@ -1,10 +1,5 @@
-from concurrent import futures
-from curses.ascii import alt
-import imp
 import logging
-import math
-from secrets import choice
-import time
+from concurrent import futures
 
 import grpc
 import impactEffect_pb2
@@ -467,6 +462,23 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
                                   type=function_type)
 
         return impactEffect_pb2.cal_cdiamater_response(cdiameter=cdiameter)
+
+    def cal_brecciaThickness(self, request, context):
+        print("-------------- cal_brecciaThickness --------------")
+        # impactor = request.impactor
+        impactor = Impactor(diameter=request.impactor.diameter,
+                            density=request.impactor.density,
+                            velocity=request.impactor.velocity,
+                            theta=request.impactor.theta)
+        target = Target(depth=request.targets.depth,
+                        distance=request.targets.distance,
+                        density=request.targets.density)
+        function_type = Choices.Collins
+
+        brecciaThickness = cal_brecciaThickness(impactor=impactor, target=target,
+                                                type=function_type)
+
+        return impactEffect_pb2.cal_brecciaThickness_response(brecciaThickness=brecciaThickness)
 
     def cal_depthfr(self, request, context):
         print("-------------- cal_depthfr --------------")

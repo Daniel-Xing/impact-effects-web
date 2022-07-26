@@ -53,6 +53,7 @@ type ImpactEffectServiceClient interface {
 	CalTransientCraterDiameter(ctx context.Context, in *CalTransientCraterDiameterRequest, opts ...grpc.CallOption) (*CalTransientCraterDiameterResponse, error)
 	CalDepthr(ctx context.Context, in *CalDepthrRequest, opts ...grpc.CallOption) (*CalDepthrResponse, error)
 	CalCdiamater(ctx context.Context, in *CalCdiamaterRequest, opts ...grpc.CallOption) (*CalCdiamaterResponse, error)
+	CalBrecciaThickness(ctx context.Context, in *CalBrecciaThicknessRequest, opts ...grpc.CallOption) (*CalBrecciaThicknessResponse, error)
 	CalDepthfr(ctx context.Context, in *CalDepthfrRequest, opts ...grpc.CallOption) (*CalDepthfrResponse, error)
 	CalVCrater(ctx context.Context, in *CalVCraterRequest, opts ...grpc.CallOption) (*CalVCraterResponse, error)
 	CalVratio(ctx context.Context, in *CalVratioRequest, opts ...grpc.CallOption) (*CalVratioResponse, error)
@@ -316,6 +317,15 @@ func (c *impactEffectServiceClient) CalCdiamater(ctx context.Context, in *CalCdi
 	return out, nil
 }
 
+func (c *impactEffectServiceClient) CalBrecciaThickness(ctx context.Context, in *CalBrecciaThicknessRequest, opts ...grpc.CallOption) (*CalBrecciaThicknessResponse, error) {
+	out := new(CalBrecciaThicknessResponse)
+	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_brecciaThickness", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *impactEffectServiceClient) CalDepthfr(ctx context.Context, in *CalDepthfrRequest, opts ...grpc.CallOption) (*CalDepthfrResponse, error) {
 	out := new(CalDepthfrResponse)
 	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/cal_depthfr", in, out, opts...)
@@ -522,6 +532,7 @@ type ImpactEffectServiceServer interface {
 	CalTransientCraterDiameter(context.Context, *CalTransientCraterDiameterRequest) (*CalTransientCraterDiameterResponse, error)
 	CalDepthr(context.Context, *CalDepthrRequest) (*CalDepthrResponse, error)
 	CalCdiamater(context.Context, *CalCdiamaterRequest) (*CalCdiamaterResponse, error)
+	CalBrecciaThickness(context.Context, *CalBrecciaThicknessRequest) (*CalBrecciaThicknessResponse, error)
 	CalDepthfr(context.Context, *CalDepthfrRequest) (*CalDepthfrResponse, error)
 	CalVCrater(context.Context, *CalVCraterRequest) (*CalVCraterResponse, error)
 	CalVratio(context.Context, *CalVratioRequest) (*CalVratioResponse, error)
@@ -625,6 +636,9 @@ func (UnimplementedImpactEffectServiceServer) CalDepthr(context.Context, *CalDep
 }
 func (UnimplementedImpactEffectServiceServer) CalCdiamater(context.Context, *CalCdiamaterRequest) (*CalCdiamaterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalCdiamater not implemented")
+}
+func (UnimplementedImpactEffectServiceServer) CalBrecciaThickness(context.Context, *CalBrecciaThicknessRequest) (*CalBrecciaThicknessResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CalBrecciaThickness not implemented")
 }
 func (UnimplementedImpactEffectServiceServer) CalDepthfr(context.Context, *CalDepthfrRequest) (*CalDepthfrResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalDepthfr not implemented")
@@ -1164,6 +1178,24 @@ func _ImpactEffectService_CalCdiamater_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ImpactEffectService_CalBrecciaThickness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CalBrecciaThicknessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImpactEffectServiceServer).CalBrecciaThickness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/impactEffect.ImpactEffectService/cal_brecciaThickness",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImpactEffectServiceServer).CalBrecciaThickness(ctx, req.(*CalBrecciaThicknessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ImpactEffectService_CalDepthfr_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CalDepthfrRequest)
 	if err := dec(in); err != nil {
@@ -1616,6 +1648,10 @@ var ImpactEffectService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "cal_cdiamater",
 			Handler:    _ImpactEffectService_CalCdiamater_Handler,
+		},
+		{
+			MethodName: "cal_brecciaThickness",
+			Handler:    _ImpactEffectService_CalBrecciaThickness_Handler,
 		},
 		{
 			MethodName: "cal_depthfr",

@@ -1,0 +1,10 @@
+name: functions-servers
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+ - pip
+ - ipython
+ - numpy
+ - pip:
+   - -r requirements.txt

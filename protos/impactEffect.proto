@@ -83,6 +83,8 @@ service ImpactEffectService {
   
   rpc cal_cdiamater(cal_cdiamater_request) returns (cal_cdiamater_response) {}
   
+  rpc cal_brecciaThickness(cal_brecciaThickness_request) returns (cal_brecciaThickness_response) {}
+
   rpc cal_depthfr(cal_depthfr_request) returns (cal_depthfr_response) {}
   
   rpc cal_vCrater(cal_vCrater_request) returns (cal_vCrater_response) {}
@@ -501,6 +503,20 @@ message cal_cdiamater_response {
   float cdiameter = 1;
 }
 
+
+message cal_brecciaThickness_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+  float Dtr = 3;
+  float depthr = 4;
+  float cdiameter = 5;
+
+  int32 choice = 256;
+}
+
+message cal_brecciaThickness_response {
+  float brecciaThickness = 1;
+}
 
 
 message cal_depthfr_request {

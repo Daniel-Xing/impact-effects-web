@@ -146,6 +146,11 @@ class ImpactEffectServiceStub(object):
                 request_serializer=impactEffect__pb2.cal_cdiamater_request.SerializeToString,
                 response_deserializer=impactEffect__pb2.cal_cdiamater_response.FromString,
                 )
+        self.cal_brecciaThickness = channel.unary_unary(
+                '/impactEffect.ImpactEffectService/cal_brecciaThickness',
+                request_serializer=impactEffect__pb2.cal_brecciaThickness_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.cal_brecciaThickness_response.FromString,
+                )
         self.cal_depthfr = channel.unary_unary(
                 '/impactEffect.ImpactEffectService/cal_depthfr',
                 request_serializer=impactEffect__pb2.cal_depthfr_request.SerializeToString,
@@ -409,6 +414,12 @@ class ImpactEffectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def cal_brecciaThickness(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def cal_depthfr(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -655,6 +666,11 @@ def add_ImpactEffectServiceServicer_to_server(servicer, server):
                     servicer.cal_cdiamater,
                     request_deserializer=impactEffect__pb2.cal_cdiamater_request.FromString,
                     response_serializer=impactEffect__pb2.cal_cdiamater_response.SerializeToString,
+            ),
+            'cal_brecciaThickness': grpc.unary_unary_rpc_method_handler(
+                    servicer.cal_brecciaThickness,
+                    request_deserializer=impactEffect__pb2.cal_brecciaThickness_request.FromString,
+                    response_serializer=impactEffect__pb2.cal_brecciaThickness_response.SerializeToString,
             ),
             'cal_depthfr': grpc.unary_unary_rpc_method_handler(
                     servicer.cal_depthfr,
@@ -1202,6 +1218,23 @@ class ImpactEffectService(object):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_cdiamater',
             impactEffect__pb2.cal_cdiamater_request.SerializeToString,
             impactEffect__pb2.cal_cdiamater_response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def cal_brecciaThickness(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_brecciaThickness',
+            impactEffect__pb2.cal_brecciaThickness_request.SerializeToString,
+            impactEffect__pb2.cal_brecciaThickness_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
