@@ -23,10 +23,38 @@
 package main
 
 import (
+	"back-web/cache"
 	"back-web/controlor"
+	"io"
+	"os"
+
+	"github.com/gin-gonic/gin"
 )
 
-func main() {
+// CollectRoute include all route that implemted, seprate three parts of Admin or User or Reviewer.
+func CollectRoute(r *gin.Engine, foreIP string) *gin.Engine {
+	admin := r.Group("/")
+	{
+		admin.GET("/impact", controlor.ImpactEffect)
+	}
 
-	controlor.ImpactEffect()
+	return r
+}
+
+func main() {
+	redisClient := cache.NewRedisConnection()
+	defer redisClient.Close()
+
+	f, _ := os.Create("gin.log")
+	gin.DefaultWriter = io.MultiWriter(f)
+
+	gin.SetMode(gin.DebugMode)
+	r := CollectRoute(gin.New(), "http://127.0.0.1:9999")
+
+	port := "50012"
+	if port != "" {
+		panic(r.Run(":" + port))
+	}
+
+	panic(r.Run())
 }
