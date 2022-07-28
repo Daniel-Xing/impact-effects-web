@@ -8,8 +8,6 @@ import (
 	"time"
 )
 
-var count int64 = 0
-
 var tr *http.Transport
 
 var (
@@ -26,9 +24,9 @@ func init() {
 func GetRe() {
 	client := &http.Client{
 		Transport: tr,
-		Timeout:   60 * time.Second, // 超时加在这里，是每次调用的超时
+		Timeout:   120 * time.Second,
 	}
-	_, err := client.Get("http://localhost:50012/impact")
+	_, err := client.Get(localURL)
 	// defer client.CloseIdleConnections()
 	if err != nil {
 		log.Println(err)
@@ -42,7 +40,7 @@ func main() {
 	start := time.Now()
 	wg := sync.WaitGroup{}
 
-	for i := 0; i < 50000; i++ {
+	for i := 0; i < 400; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
@@ -52,6 +50,6 @@ func main() {
 
 	wg.Wait()
 
-	fmt.Println(time.Since(start), count)
+	fmt.Println(time.Since(start))
 	return
 }
