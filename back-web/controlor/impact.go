@@ -1,10 +1,12 @@
 package controlor
 
 import (
+	"back-web/cache"
 	"back-web/google.golang.org/grpc/impactEffect/impactEffect"
 	"back-web/rpc"
 	"log"
 	"math"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -28,13 +30,13 @@ func ImpactEffect(ctx *gin.Context) {
 	impactor, target := packImapctEffectArgs()
 
 	// read from cache
-	// redisClient := cache.GetCache()
-	// RedisUtilInstance := cache.RedisUtilInstance(redisClient)
-	// result, err := RedisUtilInstance.HGet("imapctEffect", "111000, 111, 111, 45, 111, 0, 111")
-	// if err == nil && result != "" {
-	// 	log.Println("Read from Redis")
-	// 	return
-	// }
+	redisClient := cache.GetCache()
+	RedisUtilInstance := cache.RedisUtilInstance(redisClient)
+	result, err := RedisUtilInstance.HGet("imapctEffect", "111000, 111, 111, 45, 111, 0, 111")
+	if err == nil && result != "" {
+		log.Println("Read from Redis")
+		return
+	}
 
 	// calculate the ennergy
 	ies, err := rpc.NewImpactEffectRPCService()
@@ -571,9 +573,9 @@ func ImpactEffect(ctx *gin.Context) {
 		log.Println("WaveAmplitudeLowerLimit: ", WaveAmplitudeLowerLimit)
 	}
 
-	// err = RedisUtilInstance.HSetWithExpirationTime("imapctEffect", "111000, 111, 111, 45, 111, 0, 111", "I am here", 60*time.Minute)
-	// if err != nil {
-	// 	log.Println("Set Redis Error")
-	// 	return
-	// }
+	err = RedisUtilInstance.HSetWithExpirationTime("imapctEffect", "111000, 111, 111, 45, 111, 0, 111", "I am here", 60*time.Minute)
+	if err != nil {
+		log.Println("Set Redis Error")
+		return
+	}
 }

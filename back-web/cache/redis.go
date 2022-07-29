@@ -12,10 +12,11 @@ var RedisClient *redis.Client
 // initRedis
 func initRedis() *redis.Client {
 	//redis
-	redisURL := "localhost:6379"
+	redisURL := "127.0.0.1:50051"
 	// 创建Redis连接
 	var client *redis.Client
-	for {
+	maxTryTime := 3
+	for i := 0; i < maxTryTime; i++ {
 		client = redis.NewClient(&redis.Options{
 			Addr:     redisURL,
 			Password: "", // no password set

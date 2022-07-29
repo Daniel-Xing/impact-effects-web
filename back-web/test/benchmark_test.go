@@ -1,10 +1,9 @@
-package main
+package test
 
 import (
-	"fmt"
 	"log"
 	"net/http"
-	"sync"
+	"testing"
 	"time"
 )
 
@@ -26,7 +25,7 @@ func GetRe() {
 		Transport: tr,
 		Timeout:   120 * time.Second,
 	}
-	_, err := client.Get(localURL)
+	_, err := client.Get(remoteURL)
 	// defer client.CloseIdleConnections()
 	if err != nil {
 		log.Println(err)
@@ -36,22 +35,9 @@ func GetRe() {
 	// atomic.AddInt64(&count, 1)
 }
 
-func main() {
-	start := time.Now()
-	wg := sync.WaitGroup{}
-
-	t := 400
-	fmt.Printf("Run request for %d times to with Redis URL: %s \n", t, localURL)
-	for i := 0; i < t; i++ {
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
-			GetRe()
-		}()
+func BenchmarkImpactEffect(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		GetRe()
 	}
-
-	wg.Wait()
-
-	fmt.Println("Time Cost: ", time.Since(start))
-	return
 }
