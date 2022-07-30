@@ -25,8 +25,6 @@ package main
 import (
 	"back-web/cache"
 	"back-web/controlor"
-	"io"
-	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -45,13 +43,10 @@ func main() {
 	redisClient := cache.NewRedisConnection()
 	defer redisClient.Close()
 
-	f, _ := os.Create("gin.log")
-	gin.DefaultWriter = io.MultiWriter(f)
-
 	gin.SetMode(gin.DebugMode)
 	r := CollectRoute(gin.New(), "http://127.0.0.1:9999")
 
-	port := "50012"
+	port := "50052"
 	if port != "" {
 		panic(r.Run(":" + port))
 	}
