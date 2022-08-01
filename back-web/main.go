@@ -25,13 +25,14 @@ package main
 import (
 	"back-web/cache"
 	"back-web/controlor"
+	"back-web/middleware"
 
 	"github.com/gin-gonic/gin"
 )
 
 // CollectRoute include all route that implemted, seprate three parts of Admin or User or Reviewer.
 func CollectRoute(r *gin.Engine, foreIP string) *gin.Engine {
-	admin := r.Group("/")
+	admin := r.Group("/").Use(middleware.CORSMiddleware(foreIP))
 	{
 		admin.GET("/impact", controlor.ImpactEffect)
 	}
