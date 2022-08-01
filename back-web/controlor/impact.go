@@ -3,7 +3,10 @@ package controlor
 import (
 	"back-web/cache"
 	"back-web/google.golang.org/grpc/impactEffect/impactEffect"
+	"back-web/model"
 	"back-web/rpc"
+	"encoding/json"
+	"fmt"
 	"log"
 	"math"
 	"time"
@@ -11,28 +14,31 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func packImapctEffectArgs() (*impactEffect.Impactor, *impactEffect.Targets) {
+func packImapctEffectArgs(ctx *gin.Context) (*impactEffect.Impactor, *impactEffect.Targets) {
+	var requestMap = model.Impact{}
+	json.NewDecoder(ctx.Request.Body).Decode(&requestMap)
+
 	impactor := &impactEffect.Impactor{}
-	impactor.Density = 111000
-	impactor.Diameter = 111
-	impactor.Velocity = 111
-	impactor.Theta = 45
+	impactor.Density = requestMap.ImpactorDensity
+	impactor.Diameter = requestMap.ImpactorDiameter
+	impactor.Velocity = requestMap.ImpactorVelocity
+	impactor.Theta = requestMap.ImpactorTheta
 
 	target := &impactEffect.Targets{}
-	target.Density = 111
-	target.Depth = 0
-	target.Distance = 111
+	target.Density = requestMap.TargetDensity
+	target.Depth = requestMap.TargetDepth
+	target.Distance = requestMap.TargetDistance
 
 	return impactor, target
 }
 
 func ImpactEffect(ctx *gin.Context) {
-	impactor, target := packImapctEffectArgs()
+	impactor, target := packImapctEffectArgs(ctx)
 
 	// read from cache
 	redisClient := cache.GetCache()
 	RedisUtilInstance := cache.RedisUtilInstance(redisClient)
-	result, err := RedisUtilInstance.HGet("imapctEffect", "111000, 111, 111, 45, 111, 0, 111")
+	result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("%f_%f_%f_%f_%f_%f_%f", impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
 	if err == nil && result != "" {
 		log.Println("Read from Redis")
 		return
