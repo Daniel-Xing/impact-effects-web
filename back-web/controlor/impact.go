@@ -5,6 +5,7 @@ import (
 	"back-web/google.golang.org/grpc/impactEffect/impactEffect"
 	"back-web/model"
 	"back-web/rpc"
+	"back-web/util"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -15,6 +16,7 @@ import (
 )
 
 func packImapctEffectArgs(ctx *gin.Context) (*impactEffect.Impactor, *impactEffect.Targets) {
+
 	var requestMap = model.Impact{}
 	json.NewDecoder(ctx.Request.Body).Decode(&requestMap)
 
@@ -33,12 +35,16 @@ func packImapctEffectArgs(ctx *gin.Context) (*impactEffect.Impactor, *impactEffe
 }
 
 func ImpactEffect(ctx *gin.Context) {
+	defer util.Success(ctx, "okokokokokokokoko", "SUCCESS")
+	// log
+	log.Println("get the request")
 	impactor, target := packImapctEffectArgs(ctx)
 
 	// read from cache
 	redisClient := cache.GetCache()
 	RedisUtilInstance := cache.RedisUtilInstance(redisClient)
-	result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("%f_%f_%f_%f_%f_%f_%f", impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
+	result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("%f_%f_%f_%f_%f_%f_%f",
+		impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
 	if err == nil && result != "" {
 		log.Println("Read from Redis")
 		return
@@ -51,6 +57,7 @@ func ImpactEffect(ctx *gin.Context) {
 		return
 	}
 	defer ies.Close()
+
 	// cal_energy
 	_kinetic_energy, err := ies.Cal_KineticEnergy(&impactEffect.Cal_KineticEnergyRequest{
 		Impactor: impactor,
@@ -584,4 +591,5 @@ func ImpactEffect(ctx *gin.Context) {
 		log.Println("Set Redis Error")
 		return
 	}
+
 }

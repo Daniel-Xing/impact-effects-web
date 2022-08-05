@@ -34,7 +34,7 @@ import (
 func CollectRoute(r *gin.Engine, foreIP string) *gin.Engine {
 	admin := r.Group("/").Use(middleware.CORSMiddleware(foreIP))
 	{
-		admin.GET("/impact", controlor.ImpactEffect)
+		admin.POST("/impact", controlor.ImpactEffect)
 	}
 
 	return r
@@ -45,7 +45,7 @@ func main() {
 	defer redisClient.Close()
 
 	gin.SetMode(gin.DebugMode)
-	r := CollectRoute(gin.New(), "http://127.0.0.1:9999")
+	r := CollectRoute(gin.New(), "http://0.0.0.0:9999")
 
 	port := "50052"
 	if port != "" {
