@@ -73,6 +73,7 @@ type ImpactEffectServiceClient interface {
 	Cal_TsunamiArrivalTime(ctx context.Context, in *Cal_TsunamiArrivalTimeRequest, opts ...grpc.CallOption) (*Cal_TsunamiArrivalTimeResponse, error)
 	Cal_WaveAmplitudeUpperLimit(ctx context.Context, in *Cal_WaveAmplitudeUpperLimitRequest, opts ...grpc.CallOption) (*Cal_WaveAmplitudeUpperLimitResponse, error)
 	Cal_WaveAmplitudeLowerLimit(ctx context.Context, in *Cal_WaveAmplitudeLowerLimitRequest, opts ...grpc.CallOption) (*Cal_WaveAmplitudeLowerLimitResponse, error)
+	SimulatorImpact(ctx context.Context, in *SimulatorImpactRequest, opts ...grpc.CallOption) (*SimulatorImpactResponse, error)
 }
 
 type impactEffectServiceClient struct {
@@ -497,6 +498,15 @@ func (c *impactEffectServiceClient) Cal_WaveAmplitudeLowerLimit(ctx context.Cont
 	return out, nil
 }
 
+func (c *impactEffectServiceClient) SimulatorImpact(ctx context.Context, in *SimulatorImpactRequest, opts ...grpc.CallOption) (*SimulatorImpactResponse, error) {
+	out := new(SimulatorImpactResponse)
+	err := c.cc.Invoke(ctx, "/impactEffect.ImpactEffectService/simulatorImpact", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ImpactEffectServiceServer is the server API for ImpactEffectService service.
 // All implementations must embed UnimplementedImpactEffectServiceServer
 // for forward compatibility
@@ -552,6 +562,7 @@ type ImpactEffectServiceServer interface {
 	Cal_TsunamiArrivalTime(context.Context, *Cal_TsunamiArrivalTimeRequest) (*Cal_TsunamiArrivalTimeResponse, error)
 	Cal_WaveAmplitudeUpperLimit(context.Context, *Cal_WaveAmplitudeUpperLimitRequest) (*Cal_WaveAmplitudeUpperLimitResponse, error)
 	Cal_WaveAmplitudeLowerLimit(context.Context, *Cal_WaveAmplitudeLowerLimitRequest) (*Cal_WaveAmplitudeLowerLimitResponse, error)
+	SimulatorImpact(context.Context, *SimulatorImpactRequest) (*SimulatorImpactResponse, error)
 	mustEmbedUnimplementedImpactEffectServiceServer()
 }
 
@@ -696,6 +707,9 @@ func (UnimplementedImpactEffectServiceServer) Cal_WaveAmplitudeUpperLimit(contex
 }
 func (UnimplementedImpactEffectServiceServer) Cal_WaveAmplitudeLowerLimit(context.Context, *Cal_WaveAmplitudeLowerLimitRequest) (*Cal_WaveAmplitudeLowerLimitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cal_WaveAmplitudeLowerLimit not implemented")
+}
+func (UnimplementedImpactEffectServiceServer) SimulatorImpact(context.Context, *SimulatorImpactRequest) (*SimulatorImpactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SimulatorImpact not implemented")
 }
 func (UnimplementedImpactEffectServiceServer) mustEmbedUnimplementedImpactEffectServiceServer() {}
 
@@ -1538,6 +1552,24 @@ func _ImpactEffectService_Cal_WaveAmplitudeLowerLimit_Handler(srv interface{}, c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ImpactEffectService_SimulatorImpact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SimulatorImpactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImpactEffectServiceServer).SimulatorImpact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/impactEffect.ImpactEffectService/simulatorImpact",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImpactEffectServiceServer).SimulatorImpact(ctx, req.(*SimulatorImpactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ImpactEffectService_ServiceDesc is the grpc.ServiceDesc for ImpactEffectService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1728,6 +1760,10 @@ var ImpactEffectService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "cal_WaveAmplitudeLowerLimit",
 			Handler:    _ImpactEffectService_Cal_WaveAmplitudeLowerLimit_Handler,
+		},
+		{
+			MethodName: "simulatorImpact",
+			Handler:    _ImpactEffectService_SimulatorImpact_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

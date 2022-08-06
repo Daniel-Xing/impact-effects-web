@@ -819,6 +819,29 @@ class ImpactEffectService(impactEffect_pb2_grpc.ImpactEffectServiceServicer):
 
         return impactEffect_pb2.cal_WaveAmplitudeLowerLimit_response(WaveAmplitudeLowerLimit=WaveAmplitudeLowerLimit)
 
+    def simulatorImpact(self, request, context):
+        impactor = Impactor(diameter=request.impactor.diameter,
+                            density=request.impactor.density,
+                            velocity=request.impactor.velocity,
+                            theta=request.impactor.theta)
+        target = Target(depth=request.targets.depth,
+                        distance=request.targets.distance,
+                        density=request.targets.density)
+
+        energy_disc, rec_disc, change_disc, atmos_disc, crater_disc, eject_disc, themal_disc, seismic_disc, ejecta_disc, airblast_disc, tsunami_disc = simulateImpactor(
+            impactor=impactor, targets=target)
+        return impactEffect_pb2.simulatorImpact_response(energy_disc=energy_disc,
+                                                         rec_disc=rec_disc,
+                                                         change_disc=change_disc,
+                                                         atmos_disc=atmos_disc,
+                                                         crater_disc=crater_disc,
+                                                         eject_disc=eject_disc,
+                                                         themal_disc=themal_disc,
+                                                         seismic_disc=seismic_disc,
+                                                         ejecta_disc=ejecta_disc,
+                                                         airblast_disc=airblast_disc,
+                                                         tsunami_disc=tsunami_disc)
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -826,6 +849,7 @@ def serve():
         ImpactEffectService(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
+    print("started")
     server.wait_for_termination()
 
 

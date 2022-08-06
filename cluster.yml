@@ -25,7 +25,7 @@ services:
 
   function:
     container_name: function-service
-    image: function-service
+    image: function-service:latest
     networks:
       extnetwork-2:
         ipv4_address: 172.24.0.4

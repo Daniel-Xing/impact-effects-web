@@ -1,16 +1,13 @@
 package controlor
 
 import (
-	"back-web/cache"
 	"back-web/google.golang.org/grpc/impactEffect/impactEffect"
 	"back-web/model"
 	"back-web/rpc"
 	"back-web/util"
 	"encoding/json"
-	"fmt"
 	"log"
 	"math"
-	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -34,6 +31,62 @@ func packImapctEffectArgs(ctx *gin.Context) (*impactEffect.Impactor, *impactEffe
 	return impactor, target
 }
 
+func fackerParams(ctx *gin.Context) (*impactEffect.Impactor, *impactEffect.Targets) {
+	impactor := &impactEffect.Impactor{}
+	impactor.Density = 111
+	impactor.Diameter = 111
+	impactor.Velocity = 111
+	impactor.Theta = 45
+
+	target := &impactEffect.Targets{}
+	target.Density = 111
+	target.Depth = 0
+	target.Distance = 2700
+
+	return impactor, target
+}
+
+func SimulatorImpact(ctx *gin.Context) {
+	log.Println("get the request in simulatorImpact")
+	impactor, target := packImapctEffectArgs(ctx)
+	log.Println("Impactor: ", impactor)
+	log.Println("target: ", target)
+
+	// calculate the ennergy
+	ies, err := rpc.NewImpactEffectRPCService()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	defer ies.Close()
+
+	energy_disc, rec_disc, change_disc, atmos_disc, crater_disc, eject_disc, themal_disc, seismic_disc, ejecta_disc, airblast_disc, tsunami_disc, err := ies.SimulatorImpactor(&impactEffect.SimulatorImpactRequest{
+		Impactor: impactor,
+		Targets:  target,
+	})
+
+	if err != nil {
+		log.Println("error in simulator, ", err)
+		util.Fail(ctx, []string{energy_disc, rec_disc, change_disc, atmos_disc, crater_disc, eject_disc, themal_disc, seismic_disc, ejecta_disc, airblast_disc, tsunami_disc}, "error")
+		return
+	}
+
+	log.Println("energy_disc: ", energy_disc)
+	util.Success(ctx, map[string]string{
+		"energy_disc":   energy_disc,
+		"rec_disc":      rec_disc,
+		"change_disc":   change_disc,
+		"atmos_disc":    atmos_disc,
+		"crater_disc":   crater_disc,
+		"eject_disc":    eject_disc,
+		"themal_disc":   themal_disc,
+		"seismic_disc":  seismic_disc,
+		"ejecta_disc":   ejecta_disc,
+		"airblast_disc": airblast_disc,
+		"tsunami_disc":  tsunami_disc,
+	}, "success")
+}
+
 func ImpactEffect(ctx *gin.Context) {
 	defer util.Success(ctx, "okokokokokokokoko", "SUCCESS")
 	// log
@@ -41,14 +94,14 @@ func ImpactEffect(ctx *gin.Context) {
 	impactor, target := packImapctEffectArgs(ctx)
 
 	// read from cache
-	redisClient := cache.GetCache()
-	RedisUtilInstance := cache.RedisUtilInstance(redisClient)
-	result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("%f_%f_%f_%f_%f_%f_%f",
-		impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
-	if err == nil && result != "" {
-		log.Println("Read from Redis")
-		return
-	}
+	// redisClient := cache.GetCache()
+	// RedisUtilInstance := cache.RedisUtilInstance(redisClient)
+	// result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("%f_%f_%f_%f_%f_%f_%f",
+	// 	impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
+	// if err == nil && result != "" {
+	// 	log.Println("Read from Redis")
+	// 	return
+	// }
 
 	// calculate the ennergy
 	ies, err := rpc.NewImpactEffectRPCService()
@@ -586,10 +639,10 @@ func ImpactEffect(ctx *gin.Context) {
 		log.Println("WaveAmplitudeLowerLimit: ", WaveAmplitudeLowerLimit)
 	}
 
-	err = RedisUtilInstance.HSetWithExpirationTime("imapctEffect", "111000, 111, 111, 45, 111, 0, 111", "I am here", 60*time.Minute)
-	if err != nil {
-		log.Println("Set Redis Error")
-		return
-	}
+	// err = RedisUtilInstance.HSetWithExpirationTime("imapctEffect", "111000, 111, 111, 45, 111, 0, 111", "I am here", 60*time.Minute)
+	// if err != nil {
+	// 	log.Println("Set Redis Error")
+	// 	return
+	// }
 
 }

@@ -24,7 +24,7 @@ Config: TODO： choose a better way
 var (
 	tls                = flag.Bool("tls", false, "Connection uses TLS if true, else plain TCP")
 	caFile             = flag.String("ca_file", "", "The file containing the CA root cert file")
-	serverAddr         = flag.String("addr", "172.24.0.4:50051", "The server address in the format of host:port")
+	serverAddr         = flag.String("addr", "127.0.0.1:50051", "The server address in the format of host:port")
 	serverHostOverride = flag.String("server_host_override", "x.test.example.com", "The server name used to verify the hostname returned by the TLS handshake")
 )
 
@@ -58,6 +58,23 @@ func NewImpactEffectRPCService() (*ImpactEffectRPCService, error) {
 
 func (ies *ImpactEffectRPCService) Close() error {
 	return ies.conn.Close()
+}
+
+func (ies *ImpactEffectRPCService) SimulatorImpactor(req *impactEffect.SimulatorImpactRequest) (
+	string, string, string, string, string, string, string, string, string, string, string, error) {
+	log.Printf("Getting (%f, %f)", req.Impactor.Diameter, req.Impactor.Density)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+	result, err := ies.client.SimulatorImpact(ctx, req)
+	if err != nil {
+		log.Printf("ies.client.Getresult failed: %v \n", err)
+		return "", "", "", "", "", "", "", "", "", "", "", err
+	}
+	log.Println(result)
+
+	return result.GetEnergyDisc(), result.GetRecDisc(), result.GetChangeDisc(), result.GetAtmosDisc(),
+		result.GetCraterDisc(), result.GetEjectDisc(), result.GetThemalDisc(), result.GetSeismicDisc(),
+		result.GetEjectaDisc(), result.GetAirblastDisc(), result.GetTsunamiDisc(), nil
 }
 
 func (ies *ImpactEffectRPCService) Cal_mass(req *impactEffect.CalMassRequest) (float32, error) {

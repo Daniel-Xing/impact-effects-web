@@ -246,6 +246,11 @@ class ImpactEffectServiceStub(object):
                 request_serializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_request.SerializeToString,
                 response_deserializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_response.FromString,
                 )
+        self.simulatorImpact = channel.unary_unary(
+                '/impactEffect.ImpactEffectService/simulatorImpact',
+                request_serializer=impactEffect__pb2.simulatorImpact_request.SerializeToString,
+                response_deserializer=impactEffect__pb2.simulatorImpact_response.FromString,
+                )
 
 
 class ImpactEffectServiceServicer(object):
@@ -534,6 +539,12 @@ class ImpactEffectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def simulatorImpact(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ImpactEffectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -766,6 +777,11 @@ def add_ImpactEffectServiceServicer_to_server(servicer, server):
                     servicer.cal_WaveAmplitudeLowerLimit,
                     request_deserializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_request.FromString,
                     response_serializer=impactEffect__pb2.cal_WaveAmplitudeLowerLimit_response.SerializeToString,
+            ),
+            'simulatorImpact': grpc.unary_unary_rpc_method_handler(
+                    servicer.simulatorImpact,
+                    request_deserializer=impactEffect__pb2.simulatorImpact_request.FromString,
+                    response_serializer=impactEffect__pb2.simulatorImpact_response.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1558,5 +1574,22 @@ class ImpactEffectService(object):
         return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/cal_WaveAmplitudeLowerLimit',
             impactEffect__pb2.cal_WaveAmplitudeLowerLimit_request.SerializeToString,
             impactEffect__pb2.cal_WaveAmplitudeLowerLimit_response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def simulatorImpact(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/impactEffect.ImpactEffectService/simulatorImpact',
+            impactEffect__pb2.simulatorImpact_request.SerializeToString,
+            impactEffect__pb2.simulatorImpact_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -122,6 +122,8 @@ service ImpactEffectService {
   rpc cal_WaveAmplitudeUpperLimit(cal_WaveAmplitudeUpperLimit_request) returns (cal_WaveAmplitudeUpperLimit_response) {}
   
   rpc cal_WaveAmplitudeLowerLimit(cal_WaveAmplitudeLowerLimit_request) returns (cal_WaveAmplitudeLowerLimit_response) {}
+
+  rpc simulatorImpact(simulatorImpact_request) returns (simulatorImpact_response) {}
 }
 
 message Impactor {
@@ -794,4 +796,22 @@ message cal_WaveAmplitudeLowerLimit_response {
   float WaveAmplitudeLowerLimit = 1;
 }
 
+message simulatorImpact_request {
+  Impactor impactor = 1;
+  Targets targets = 2;
+}
+
+message simulatorImpact_response {
+  string energy_disc = 1;
+  string rec_disc = 2; 
+  string change_disc = 3;
+  string atmos_disc = 4;
+  string crater_disc = 5;
+  string eject_disc = 6;
+  string themal_disc = 7;
+  string seismic_disc = 8;
+  string ejecta_disc = 9;
+  string airblast_disc = 10;
+  string tsunami_disc = 11;
+}
 
