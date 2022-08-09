@@ -14,14 +14,14 @@
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="150px" class="demo-ruleForm">
           <!-- Impactor Diameter -->
           <el-form-item label="Distance from Impact" required>
-            <el-col :span=1>
+            <!-- <el-col :span=1>
               <el-tooltip>
                 <div slot="content">Distance from Impact, Distance from Impact, Distance from Impact, Distance from
                   Impact,
                   Distance from Impact, Distance from Impact, Distance from Impact, Distance from Impact</div>
                 <i class="el-icon-question icon-color"></i>
               </el-tooltip>
-            </el-col>
+            </el-col> -->
             <el-col :span=13>
               <el-form-item prop="DistancefromImpact">
                 <el-input v-model.number="ruleForm.DistancefromImpact"></el-input>
@@ -35,13 +35,13 @@
             </el-col>
           </el-form-item>
           <el-form-item label="Projectile Diameter" required>
-            <el-col :span=1>
+            <!-- <el-col :span=1>
               <el-tooltip>
                 <div slot="content">Impactor Diameter is a. Impactor Diameter is a. Impactor Diameter is a. Impactor
                   Diameter is a. Impactor Diameter is a.</div>
                 <i class="el-icon-question icon-color"></i>
               </el-tooltip>
-            </el-col>
+            </el-col> -->
             <el-col :span=13>
               <el-form-item prop="ImpactorDiameter">
                 <el-input v-model.number="ruleForm.ImpactorDiameter"></el-input>
@@ -57,13 +57,13 @@
           </el-form-item>
 
           <el-form-item label="Projectile Density" required>
-            <el-col :span=1>
+            <!-- <el-col :span=1>
               <el-tooltip>
                 <div slot="content">Impactor Density Impactor Density Impactor Density Impactor Density Impactor Density
                   Impactor Density Impactor Density</div>
                 <i class="el-icon-question icon-color"></i>
               </el-tooltip>
-            </el-col>
+            </el-col> -->
             <el-col :span=13>
               <el-form-item prop="ImpactorDensity">
                 <el-input v-model.number="ruleForm.ImpactorDensity"></el-input>
@@ -77,7 +77,7 @@
           </el-form-item>
 
           <el-form-item label="Impactor Velocity" required>
-            <el-col :span=1>
+            <!-- <el-col :span=1>
               <el-tooltip>
                 <div slot="content">This is the velocity of the projectile before it enters the atmosphere. The minimum
                   impact velocity on Earth is 11 km/s. Typical impact velocities are 17 km/s for asteroids and 51 km/s
@@ -85,7 +85,7 @@
                   comets. The maximum Earth impact velocity for objects orbiting the sun is 72 km/s.</div>
                 <i class="el-icon-question icon-color"></i>
               </el-tooltip>
-            </el-col>
+            </el-col> -->
             <el-col :span=13>
               <el-form-item prop="ImpactorVelocity">
                 <el-input v-model.number="ruleForm.ImpactorVelocity"></el-input>
@@ -100,13 +100,13 @@
           </el-form-item>
 
           <el-form-item label="Impactor Angle" required>
-            <el-col :span=1>
+            <!-- <el-col :span=1>
               <el-tooltip>
                 <div slot="content">Impactor Diameter is a. Impactor Diameter is a. Impactor Diameter is a. Impactor
                   Diameter is a. Impactor Diameter is a.</div>
                 <i class="el-icon-question icon-color"></i>
               </el-tooltip>
-            </el-col>
+            </el-col> -->
             <el-col :span=13>
               <el-form-item prop="ImpactorAngle">
                 <el-input v-model.number="ruleForm.ImpactorAngle"></el-input>
@@ -299,8 +299,11 @@ export default {
 
           var target_density = 2500;
           var target_depth = 0;
-          if (this.resetForm.TargerDensity == "Crystalline Rock") {
+          console.log("Target: ", this.ruleForm.TargerDensity)
+          if (this.ruleForm.TargerDensity == "Crystalline Rock") {
             target_density = 2750;
+          } else if (this.ruleForm.TargerDensity == "Sedimentary Rock") {
+            target_density = 2500;
           } else {
             target_depth = Number(this.ruleForm.WaterDepth)
             target_density = 1000;
@@ -309,31 +312,35 @@ export default {
           ImpactService(impactor_density, impactor_diameter, impactor_velocity,
             impactor_degree, target_density, target_depth, target_distance)
             .then(data => {
-              console.log("request");
-              console.log(data.data);
-              this.Energydiscription = (data.data.energy_disc + data.data.rec_disc).split("/n");
-              this.GlobalChangesdiscription = data.data.change_disc.split("/n");
+              if (data.message == "success") {
+                console.log("request");
+                console.log(data.data);
+                this.Energydiscription = (data.data.energy_disc + data.data.rec_disc).split("/n");
+                this.GlobalChangesdiscription = data.data.change_disc.split("/n");
 
-              this.AtmosphericShow = data.data.atmos_disc != '';
-              this.Atmosphericdiscription = data.data.atmos_disc.split("/n");
+                this.AtmosphericShow = data.data.atmos_disc != '';
+                this.Atmosphericdiscription = data.data.atmos_disc.split("/n");
 
-              this.craterShow = data.data.crater_disc != '';
-              this.Craterdiscription = data.data.crater_disc.split("/n");
+                this.craterShow = data.data.crater_disc != '';
+                this.Craterdiscription = data.data.crater_disc.split("/n");
 
-              this.ejectaShow = data.data.ejecta_disc != '';
-              this.Ejectadiscription = data.data.ejecta_disc.split("/n");
+                this.ejectaShow = data.data.ejecta_disc != '';
+                this.Ejectadiscription = data.data.ejecta_disc.split("/n");
 
-              this.thermalShow = data.data.themal_disc != '';
-              this.Themaldiscription = data.data.themal_disc.split("/n");
+                this.thermalShow = data.data.themal_disc != '';
+                this.Themaldiscription = data.data.themal_disc.split("/n");
 
-              this.seismicShow = data.data.seismic_disc != '';
-              this.Seismicdiscription = data.data.seismic_disc.split("/n");
+                this.seismicShow = data.data.seismic_disc != '';
+                this.Seismicdiscription = data.data.seismic_disc.split("/n");
 
-              this.AirBlastShow = data.data.airblast_disc != '';
-              this.Airdiscription = data.data.airblast_disc.split("/n");
+                this.AirBlastShow = data.data.airblast_disc != '';
+                this.Airdiscription = data.data.airblast_disc.split("/n");
 
-              this.TsunamiShow = data.data.tsunami_disc != '';
-              this.Tsunamidiscription = data.data.tsunami_disc.split("/n");
+                this.TsunamiShow = data.data.tsunami_disc != '';
+                this.Tsunamidiscription = data.data.tsunami_disc.split("/n");
+              } else {
+                alert(data.message + "\n please retry!");
+              }
             })
         } else {
           console.log('error submit!!');

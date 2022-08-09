@@ -56,6 +56,19 @@ func SimulatorImpact(ctx *gin.Context) {
 	ies, err := rpc.NewImpactEffectRPCService()
 	if err != nil {
 		log.Println(err)
+		util.Fail(ctx, map[string]string{
+			"energy_disc":   "",
+			"rec_disc":      "",
+			"change_disc":   "",
+			"atmos_disc":    "",
+			"crater_disc":   "",
+			"eject_disc":    "",
+			"themal_disc":   "",
+			"seismic_disc":  "",
+			"ejecta_disc":   "",
+			"airblast_disc": "",
+			"tsunami_disc":  "",
+		}, "RPC Connect Error")
 		return
 	}
 	defer ies.Close()
@@ -68,6 +81,19 @@ func SimulatorImpact(ctx *gin.Context) {
 	if err != nil {
 		log.Println("error in simulator, ", err)
 		util.Fail(ctx, []string{energy_disc, rec_disc, change_disc, atmos_disc, crater_disc, eject_disc, themal_disc, seismic_disc, ejecta_disc, airblast_disc, tsunami_disc}, "error")
+		util.Fail(ctx, map[string]string{
+			"energy_disc":   "",
+			"rec_disc":      "",
+			"change_disc":   "",
+			"atmos_disc":    "",
+			"crater_disc":   "",
+			"eject_disc":    "",
+			"themal_disc":   "",
+			"seismic_disc":  "",
+			"ejecta_disc":   "",
+			"airblast_disc": "",
+			"tsunami_disc":  "",
+		}, err.Error())
 		return
 	}
 
