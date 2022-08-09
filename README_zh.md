@@ -1,6 +1,6 @@
 # Impact Effect Web
 
-> [English](./doc/README_En.md) | 中文
+> [English](./README.md) | 中文
 
 ![Docker Build Status badge](https://img.shields.io/badge/docker%20build-passing-brightgreen)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
