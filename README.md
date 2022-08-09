@@ -4,7 +4,7 @@
 
 ![Docker Build Status badge](https://img.shields.io/badge/docker%20build-passing-brightgreen)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-Impact-Effect-Web项目是基于[Impact-Effect](https://github.com/acse-dx121/impact-effects)构建的小行星/彗星撞击模拟系统。根据用户给定的参数，Web程序会给出可能的相应的撞击后果。
+Impact-Effect-Web项目是基于[Impact-Effect](https://github.com/acse-dx121/impact-effects)构建的小行星/彗星撞击模拟系统，由[# Professor Gareth Collins](http://www.imperial.ac.uk/people/g.collins) 以及[Home - Dr Thomas M Davison](https://www.imperial.ac.uk/people/thomas.davison) 指导构建。根据用户给定的参数，Web程序会给出可能的相应的撞击后果。
 项目基于前后端分离架构，前端基于Vue.js构建，后端基于Golang&Python 构建，支持docker-compose快速部署。
 
 ## :crystal_ball: Visuals
@@ -97,16 +97,10 @@ npm install
 npm run dev
 ```
 
-## 🚩 Usage
+## 🚩  License
 
-#### 🖼 Annotation Platform
+[MIT](https://opensource.org/licenses/MIT)
 
-- 初始化用户名：admin 密码：admin
+Copyright (c) 2013-present, Yuxi (Evan) You
 
-### 🖥 Monitor
 
-- 入口 ： http://localhost:8888
-- 初始化数据库
-  - URL：http://172.23.0.2:8086
-  - 用户名免密为空
-- 选取默认面板进入系统
