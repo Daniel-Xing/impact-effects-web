@@ -1,4 +1,4 @@
-name: functions-servers
+name: functions-service
 channels:
   - defaults
   - conda-forge

@@ -10,82 +10,94 @@ Impact-Effect-Web项目是基于[Impact-Effect](https://github.com/acse-dx121/im
 ## :crystal_ball: Visuals
 
 **Annotation Platform**
-
+![fore-end-show](doc/img/fore-end-show.png)
 
 **Architecture**
 ![webArch](doc/img/webArch.png)
 
-
-**Monitor**
-
-
 ## 🍞 Features
-- 面对场景为小规模多人图片/视频数据标注，支持多人在线标注数据，支持任务划分、权限管理等等
-- 支持多种图片数据标注需求，例如矩形和多边形标注等等
 
-##  🍕 Requirements
+- 支持用户自定义输入数据，计算相关撞击结果。
+- 支持Docker Compose 安装
 
+## 🍕 Requirements
 
-### Monitor
+### Back-end
 
-- docker-ce
-- docker-compose
-
-### Annotation Platform
-
-#### Go + Vue.js
-
-- Golang version >= 1.13
+- python > 3.7
+- Golang >= 1.14
 - Gin v1
 - Gorm v1
-- Mysql Version == 5.7 or 8.0
-详细文档在[back-end](./server-golang/README.md)
+- Redis
+- GRPC
+- Docker(optional)
 
-##  🚍 Installation
+### Fore-end
 
-### 🚀 Quick Start (local)
+- node.js
+- npm/cnpm
+- vue.js/webPack/etc
 
-####  Annotation Platform
+## 🚍 Installation
 
-**Preparation**
+### 🚀 Quick Start (Docker)
 
-- 确保安装docker 以及 docker-compose
-
-- 克隆代码库, 修改配置并运行
-
-```shell
-git clone https://github.com/xz1220/DIG-Data-Annotation-Platform.git
-# 修改前端配置并运行
-cd DIG-Data-Annotation-Platform/front-end/src/model/ && vim Service.js // 修改HOST 对应后端IP地址 
-cnpm install && cnpm run build 
-# 修改后端配置并运行
-cd DIG-Data-Annotation-Platform/server-golang/ && vim main.go
-# 修改第107行 r := CollectRoute(gin.New(), "http://127.0.0.1:9999")， 将IP替换为前端IP
-docker-compose -f ./doc/labelproject-golang.yml # 启动mysql & redis 镜像
-go run main.go # 启动后端程序
-```
-
-**Installation By docker-compose**
-在front-end和server-golang的目录下，都存放着Dockerfile文件，方便容器化前后端。可自定义修改labelproject-golang.yml文件，实现一键部署。
-```shell
-docker build -t <your imageName:tag> .
-```
-
-#### Monitor 
-
-**Preparation** 
-
-- 确保安装docker 以及 docker-compose
-
-**Installation**
+后端所有服务被容器化，项目在根目录下提供了一个cluster.yml文件。可以支持使用Docker-compose进行一键启动.
 
 ```shell
-git clone https://github.com/xz1220/LabelDoc.git 
-cd LabelDoc/monitor
-docker-compose -f monitor.yml up
+docker-compose -f cluster.yml up // create the cluster
+docker-compose -f cluster.yml down //distory the cluster
 ```
 
-##  🚩 **Usage**
+前端服务由于需要访问后台服务，容器化后台时已指定固定IP地址，因此一般来说不需要进行修改即可运行。
+
+```bash
+cd front-web
+npm install
+npm run dev
+```
+
+### manul install
+
+**克隆项目** 首先将项目整体克隆下来
+
+```bash
+# clone the project
+git clone https://github.com/acse-dx121/impact-effects-web.git
+```
+
+**Function Service** 进入function service目录下构建项目, service 将监听50051端口。请确保防火墙端口开发，否则访问不到服务。
+
+```bash
+cd function-service
+# create the virtural env
+conda env create -f environment.yml
+# activate env
+conda activate functions-service
+# run the service
+python service.py
+
+
+```
+
+**Back-end Service** 进入back-web目录下运行后端程序，服务将监听50052端口。请确保防火墙端口开发，否则访问不到服务。另外，如果手动修改了函数服务以及redis服务的监听端口，需要进入相应文件中进行修改。
+
+```bash
+# make sure you already install golang
+cd back-web && go mode tidy 
+# run the service
+go run main.go
+```
+
+**Fore-end Service** 进入Front-web 目录下运行前端程序，服务将监听9999端口。同样的，确保防火墙设置正确，以及后端服务的端口号正确。
+
+```bash
+cd front-web
+npm install
+npm run dev
+```
+
+## 🚩 Usage
 
 #### 🖼 Annotation Platform
 
@@ -98,5 +110,3 @@ docker-compose -f monitor.yml up
   - URL：http://172.23.0.2:8086
   - 用户名免密为空
 - 选取默认面板进入系统
-
-
