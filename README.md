@@ -1,11 +1,12 @@
 # Impact Effect Web
 
-> [English](./doc/README_En.md) | 中文
+> English | [中文](./README_zh.md)
 
 ![Docker Build Status badge](https://img.shields.io/badge/docker%20build-passing-brightgreen)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-Impact-Effect-Web项目是基于[Impact-Effect](https://github.com/acse-dx121/impact-effects)构建的小行星/彗星撞击模拟系统，由[# Professor Gareth Collins](http://www.imperial.ac.uk/people/g.collins) 以及[Home - Dr Thomas M Davison](https://www.imperial.ac.uk/people/thomas.davison) 指导构建。根据用户给定的参数，Web程序会给出可能的相应的撞击后果。
-项目基于前后端分离架构，前端基于Vue.js构建，后端基于Golang&Python 构建，支持docker-compose快速部署。
+Impact-effect-web project is an asteroid/comet Impact simulation system based on [Impact-Effect](https://github.com/acse-dx121/impact-effects) under the guidance of [Professor Gareth Collins](http://www.imperial.ac.uk/people/g.collins) and [Dr Thomas M Guide to build Davison](https://www.imperial.ac.uk/people/thomas.davison). According to the parameters given by the user, the Web program will give the possible corresponding impact consequences.
+
+The project is based on the front and back end separation architecture, the front end is built based on vue.js, the back end is built based on Golang&Python, and docker-compose is supported for rapid deployment.
 
 ## :crystal_ball: Visuals
 
@@ -17,8 +18,11 @@ Impact-Effect-Web项目是基于[Impact-Effect](https://github.com/acse-dx121/im
 
 ## 🍞 Features
 
-- 支持用户自定义输入数据，计算相关撞击结果。
-- 支持Docker Compose 安装
+- It supports user-defined input data and computes relevant impact results.
+- Docker Compose installation is supported
+  - Higher service stability: The container can be restarted immediately after exiting. After the host crashes, it can quickly move to another machine.​
+  - Good isolation: Similar to Python's virtual environment, it is also running in a container in a completely isolated environment. Users do not need to run an additional configuration for the application.​
+  - Easy to expand:  Once the container is constructed successfully, it is very easy to run multiple applications and form a cluster.​
 
 ## 🍕 Requirements
 
@@ -42,14 +46,14 @@ Impact-Effect-Web项目是基于[Impact-Effect](https://github.com/acse-dx121/im
 
 ### 🚀 Quick Start (Docker)
 
-后端所有服务被容器化，项目在根目录下提供了一个cluster.yml文件。可以支持使用Docker-compose进行一键启动.
+All backend services are containerized, and the project provides a cluster.yml file in the root directory. One-click startup with docker-compose is supported.
 
 ```shell
 docker-compose -f cluster.yml up // create the cluster
 docker-compose -f cluster.yml down //distory the cluster
 ```
 
-前端服务由于需要访问后台服务，容器化后台时已指定固定IP地址，因此一般来说不需要进行修改即可运行。
+Since the front-end service needs to access the background service, the fixed IP address is specified when the background is containerized, so generally speaking, it can run without modification.
 
 ```bash
 cd front-web
@@ -59,14 +63,14 @@ npm run dev
 
 ### manul install
 
-**克隆项目** 首先将项目整体克隆下来
+**克隆项目** First clone the project
 
 ```bash
 # clone the project
 git clone https://github.com/acse-dx121/impact-effects-web.git
 ```
 
-**Function Service** 进入function service目录下构建项目, service 将监听50051端口。请确保防火墙端口开发，否则访问不到服务。
+**Function Service** Go to the Function service directory and build the project. Service will listen on port 50051. Make sure the firewall port is developed, otherwise you will not be able to access the service.
 
 ```bash
 cd function-service
@@ -80,7 +84,7 @@ python service.py
 
 ```
 
-**Back-end Service** 进入back-web目录下运行后端程序，服务将监听50052端口。请确保防火墙端口开发，否则访问不到服务。另外，如果手动修改了函数服务以及redis服务的监听端口，需要进入相应文件中进行修改。
+**Back-end Service** Go to the back-web directory and run the backend application. The server will listen on port 50052. Make sure the firewall port is developed, otherwise you will not be able to access the service. In addition, if you manually changed the listening port of the function service and Redis service, you need to enter the corresponding file to make changes.
 
 ```bash
 # make sure you already install golang
@@ -89,7 +93,7 @@ cd back-web && go mode tidy
 go run main.go
 ```
 
-**Fore-end Service** 进入Front-web 目录下运行前端程序，服务将监听9999端口。同样的，确保防火墙设置正确，以及后端服务的端口号正确。
+**Fore-end Service** Go to the front-web directory and run the frontend application. The server will listen on port 9999. Also, make sure the firewall is set up correctly, and the port number for the backend service is correct.
 
 ```bash
 cd front-web
