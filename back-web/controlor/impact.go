@@ -104,13 +104,18 @@ func SimulatorImpactWithRedis(ctx *gin.Context) {
 	result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("simluator_%f_%f_%f_%f_%f_%f_%f",
 		impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
 	if err == nil && result != "" {
-		log.Println("Read from Redis")
+		log.Println("Read from Redis ", result)
 
 		data, err := JsonToMap(result)
 		if err == nil {
 			util.Success(ctx, data, "success")
 			return
+		} else {
+			log.Println("JsonError")
 		}
+
+		return
+
 	}
 
 	// calculate the ennergy
