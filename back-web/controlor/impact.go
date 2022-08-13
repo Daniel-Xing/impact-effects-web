@@ -108,6 +108,7 @@ func SimulatorImpactWithRedis(ctx *gin.Context) {
 
 		data, err := JsonToMap(result)
 		if err == nil {
+			log.Println("Json To Map Success")
 			util.Success(ctx, data, "success")
 			return
 		} else {
