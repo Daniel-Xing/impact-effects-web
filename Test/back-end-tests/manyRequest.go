@@ -37,7 +37,7 @@ func GetRe(URL string) {
 		log.Println(err)
 		return
 	}
-
+	client.CloseIdleConnections()
 	// atomic.AddInt64(&count, 1)
 }
 
