@@ -51,8 +51,8 @@ func fackerParams(ctx *gin.Context) (*impactEffect.Impactor, *impactEffect.Targe
 
 func SimulatorImpact(ctx *gin.Context) {
 	log.Println("get the request in simulatorImpact")
-	// impactor, target := packImapctEffectArgs(ctx)
-	impactor, target := fackerParams(ctx)
+	impactor, target := packImapctEffectArgs(ctx)
+	// impactor, target := fackerParams(ctx)
 	log.Println("Impactor: ", impactor)
 	log.Println("target: ", target)
 
