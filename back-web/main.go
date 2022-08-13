@@ -5,26 +5,27 @@
 package main
 
 import (
+	"back-web/cache"
 	"back-web/controlor"
-	"back-web/middleware"
 
 	"github.com/gin-gonic/gin"
 )
 
 // CollectRoute include all route that implemted, seprate three parts of Admin or User or Reviewer.
 func CollectRoute(r *gin.Engine, foreIP string) *gin.Engine {
-	admin := r.Group("/").Use(middleware.CORSMiddleware(foreIP))
+	admin := r.Group("/")
 	{
 		admin.POST("/impact", controlor.ImpactEffect)
 		admin.POST("/simulator", controlor.SimulatorImpact)
+		admin.POST("/simulatorWithRedis", controlor.SimulatorImpactWithRedis)
 	}
 
 	return r
 }
 
 func main() {
-	// redisClient := cache.NewRedisConnection()
-	// defer redisClient.Close()
+	redisClient := cache.NewRedisConnection()
+	defer redisClient.Close()
 
 	gin.SetMode(gin.DebugMode)
 	r := CollectRoute(gin.New(), "http://0.0.0.0:9999")

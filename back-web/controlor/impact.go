@@ -1,13 +1,16 @@
 package controlor
 
 import (
+	"back-web/cache"
 	"back-web/google.golang.org/grpc/impactEffect/impactEffect"
 	"back-web/model"
 	"back-web/rpc"
 	"back-web/util"
 	"encoding/json"
+	"fmt"
 	"log"
 	"math"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -48,7 +51,8 @@ func fackerParams(ctx *gin.Context) (*impactEffect.Impactor, *impactEffect.Targe
 
 func SimulatorImpact(ctx *gin.Context) {
 	log.Println("get the request in simulatorImpact")
-	impactor, target := packImapctEffectArgs(ctx)
+	// impactor, target := packImapctEffectArgs(ctx)
+	impactor, target := fackerParams(ctx)
 	log.Println("Impactor: ", impactor)
 	log.Println("target: ", target)
 
@@ -85,6 +89,105 @@ func SimulatorImpact(ctx *gin.Context) {
 		"airblast_disc": airblast_disc,
 		"tsunami_disc":  tsunami_disc,
 	}, "success")
+}
+
+func SimulatorImpactWithRedis(ctx *gin.Context) {
+	log.Println("get the request in simulatorImpact")
+	impactor, target := packImapctEffectArgs(ctx)
+	// impactor, target := fackerParams(ctx)
+	log.Println("Impactor: ", impactor)
+	log.Println("target: ", target)
+
+	// read from cache
+	redisClient := cache.GetCache()
+	RedisUtilInstance := cache.RedisUtilInstance(redisClient)
+	result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("simluator_%f_%f_%f_%f_%f_%f_%f",
+		impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
+	if err == nil && result != "" {
+		log.Println("Read from Redis")
+
+		data, err := JsonToMap(result)
+		if err == nil {
+			util.Success(ctx, data, "success")
+			return
+		}
+	}
+
+	// calculate the ennergy
+	ies, err := rpc.NewImpactEffectRPCService()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	defer ies.Close()
+
+	energy_disc, rec_disc, change_disc, atmos_disc, crater_disc, eject_disc, themal_disc, seismic_disc, ejecta_disc, airblast_disc, tsunami_disc, err := ies.SimulatorImpactor(&impactEffect.SimulatorImpactRequest{
+		Impactor: impactor,
+		Targets:  target,
+	})
+
+	if err != nil {
+		log.Println("error in simulator, ", err)
+		util.Fail(ctx, []string{energy_disc, rec_disc, change_disc, atmos_disc, crater_disc, eject_disc, themal_disc, seismic_disc, ejecta_disc, airblast_disc, tsunami_disc}, "error")
+		return
+	}
+
+	data := map[string]string{
+		"energy_disc":   energy_disc,
+		"rec_disc":      rec_disc,
+		"change_disc":   change_disc,
+		"atmos_disc":    atmos_disc,
+		"crater_disc":   crater_disc,
+		"eject_disc":    eject_disc,
+		"themal_disc":   themal_disc,
+		"seismic_disc":  seismic_disc,
+		"ejecta_disc":   ejecta_disc,
+		"airblast_disc": airblast_disc,
+		"tsunami_disc":  tsunami_disc,
+	}
+
+	log.Println("energy_disc: ", energy_disc)
+	util.Success(ctx, data, "success")
+
+	jsonStr, err := MapToJson(data)
+	if err != nil {
+		return
+	}
+	err = RedisUtilInstance.HSetWithExpirationTime("imapctEffect", fmt.Sprintf("simluator_%f_%f_%f_%f_%f_%f_%f",
+		impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density),
+		jsonStr, 600*time.Minute)
+	if err != nil {
+		log.Println("Set Redis Error")
+		return
+	}
+}
+
+// Convert json string to map
+func JsonToMap(jsonStr string) (map[string]string, error) {
+	m := make(map[string]string)
+	err := json.Unmarshal([]byte(jsonStr), &m)
+	if err != nil {
+		fmt.Printf("Unmarshal with error: %+v\n", err)
+		return nil, err
+	}
+
+	for k, v := range m {
+		fmt.Printf("%v: %v\n", k, v)
+	}
+
+	return m, nil
+}
+
+// Convert map json string
+func MapToJson(m map[string]string) (string, error) {
+	jsonByte, err := json.Marshal(m)
+	if err != nil {
+		fmt.Printf("Marshal with error: %+v\n", err)
+		return "", nil
+	}
+
+	return string(jsonByte), nil
+
 }
 
 func ImpactEffect(ctx *gin.Context) {
