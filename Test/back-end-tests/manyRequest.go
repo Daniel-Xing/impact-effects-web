@@ -31,12 +31,13 @@ func GetRe(URL string) {
 		Transport: tr,
 		Timeout:   10 * time.Minute,
 	}
-	_, err := client.Get(URL)
+	content, err := client.Get(URL)
 	// defer client.CloseIdleConnections()
 	if err != nil {
 		log.Println(err)
 		return
 	}
+	fmt.Print(content.Body.Close())
 	client.CloseIdleConnections()
 	// atomic.AddInt64(&count, 1)
 }
