@@ -75,7 +75,7 @@ func SimulatorImpact(ctx *gin.Context) {
 		return
 	}
 
-	log.Println("energy_disc: ", energy_disc)
+	// log.Println("energy_disc: ", energy_disc)
 	util.Success(ctx, map[string]string{
 		"energy_disc":   energy_disc,
 		"rec_disc":      rec_disc,
@@ -104,7 +104,7 @@ func SimulatorImpactWithRedis(ctx *gin.Context) {
 	result, err := RedisUtilInstance.HGet("imapctEffect", fmt.Sprintf("simluator_%f_%f_%f_%f_%f_%f_%f",
 		impactor.Density, impactor.Diameter, impactor.Velocity, impactor.Theta, target.Density, target.Depth, target.Density))
 	if err == nil && result != "" {
-		log.Println("Read from Redis ", result)
+		log.Println("Read from Redis ")
 
 		data, err := JsonToMap(result)
 		if err == nil {
