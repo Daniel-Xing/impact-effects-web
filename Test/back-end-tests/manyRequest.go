@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"sync"
@@ -37,7 +38,13 @@ func GetRe(URL string) {
 		log.Println(err)
 		return
 	}
-	fmt.Print(content.Body.Close())
+
+	body, err := ioutil.ReadAll(content.Body)
+	if err != nil {
+		log.Println("error")
+	}
+	fmt.Println(string(body))
+
 	client.CloseIdleConnections()
 	// atomic.AddInt64(&count, 1)
 }
@@ -51,12 +58,19 @@ func Post(args map[string]interface{}, URL string) {
 	bytesData, _ := json.Marshal(args)
 	req, _ := http.NewRequest("POST", URL, bytes.NewReader(bytesData))
 
-	_, err := client.Do(req)
-	// defer client.CloseIdleConnections()
+	content, err := client.Do(req)
+	defer client.CloseIdleConnections()
 	if err != nil {
 		log.Println(err)
 		return
 	}
+
+	body, err := ioutil.ReadAll(content.Body)
+	if err != nil {
+		log.Println("error")
+	}
+
+	fmt.Println(string(body))
 }
 
 func main() {
