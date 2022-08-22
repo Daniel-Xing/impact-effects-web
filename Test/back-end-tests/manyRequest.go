@@ -33,11 +33,12 @@ func GetRe(URL string) {
 		Timeout:   100 * time.Minute,
 	}
 	content, err := client.Get(URL)
-	// defer client.CloseIdleConnections()
+	defer client.CloseIdleConnections()
 	if err != nil {
 		log.Println(err)
 		return
 	}
+	defer content.Body.Close()
 
 	body, err := ioutil.ReadAll(content.Body)
 	if err != nil {
@@ -60,6 +61,7 @@ func Post(args map[string]interface{}, URL string) {
 
 	content, err := client.Do(req)
 	defer client.CloseIdleConnections()
+	defer content.Body.Close()
 	if err != nil {
 		log.Println(err)
 		return
