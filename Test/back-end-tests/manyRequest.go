@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"sync"
@@ -40,14 +39,11 @@ func GetRe(URL string) {
 	}
 	defer content.Body.Close()
 
-	body, err := ioutil.ReadAll(content.Body)
-	if err != nil {
-		log.Println("error")
-	}
-	fmt.Println(string(body))
-
-	client.CloseIdleConnections()
-	// atomic.AddInt64(&count, 1)
+	// body, err := ioutil.ReadAll(content.Body)
+	// if err != nil {
+	// 	log.Println("error")
+	// }
+	// fmt.Println(string(body))
 }
 
 func Post(args map[string]interface{}, URL string) {
@@ -67,12 +63,12 @@ func Post(args map[string]interface{}, URL string) {
 		return
 	}
 
-	body, err := ioutil.ReadAll(content.Body)
-	if err != nil {
-		log.Println("error")
-	}
+	// body, err := ioutil.ReadAll(content.Body)
+	// if err != nil {
+	// 	log.Println("error")
+	// }
 
-	fmt.Println(string(body))
+	// fmt.Println(string(body))
 }
 
 func main() {
