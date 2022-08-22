@@ -30,7 +30,7 @@ func init() {
 func GetRe(URL string) {
 	client := &http.Client{
 		Transport: tr,
-		Timeout:   10 * time.Minute,
+		Timeout:   100 * time.Minute,
 	}
 	content, err := client.Get(URL)
 	// defer client.CloseIdleConnections()
@@ -52,7 +52,7 @@ func GetRe(URL string) {
 func Post(args map[string]interface{}, URL string) {
 	client := &http.Client{
 		Transport: tr,
-		Timeout:   120 * time.Second,
+		Timeout:   100 * time.Minute,
 	}
 
 	bytesData, _ := json.Marshal(args)
