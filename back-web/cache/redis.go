@@ -26,6 +26,7 @@ func initRedis() *redis.Client {
 		pong, err := client.Ping().Result()
 		log.Println(pong, err)
 		if err != nil {
+			log.Println("Redis connect Error, Retry %d times.", i)
 			continue
 		} else {
 			log.Println("Redis Connect success!")

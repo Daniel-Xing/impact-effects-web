@@ -18,6 +18,7 @@ func CollectRoute(r *gin.Engine, foreIP string) *gin.Engine {
 		admin.POST("/impact", controlor.ImpactEffect)
 		admin.POST("/simulator", controlor.SimulatorImpact)
 		admin.POST("/simulatorWithRedis", controlor.SimulatorImpactWithRedis)
+		admin.POST("/simulatorWithRedis2", controlor.SimulatorImpactWithRedis2)
 	}
 
 	return r

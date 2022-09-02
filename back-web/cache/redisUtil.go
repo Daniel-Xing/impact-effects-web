@@ -72,6 +72,7 @@ func (Redis *redisUtil) HSetWithExpirationTime(key string, filed string, value i
 }
 
 func (Redis *redisUtil) HSet(key string, filed string, value interface{}) error {
+	
 	err := Redis.cache.HSet(key, filed, value).Err()
 	if err != nil {
 		return err
