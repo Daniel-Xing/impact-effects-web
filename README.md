@@ -49,11 +49,16 @@ The project is based on the front and back end separation architecture, the fron
 All backend services are containerized, and the project provides a cluster.yml file in the root directory. One-click startup with docker-compose is supported.
 
 ```shell
+# build images
+cd back-web && docker build -t backend . && cd ..
+cd function-service && docker build -t function-service . && cd ..
+
+# run the cluster
 docker-compose -f cluster.yml up // create the cluster
 docker-compose -f cluster.yml down //distory the cluster
 ```
 
-Since the front-end service needs to access the background service, the fixed IP address is specified when the background is containerized, so generally speaking, it can run without modification.
+Since the front-end service needs to access the background service, you should change the "HOST" in front-web/src/models/Service.js, replace the IP address.
 
 ```bash
 cd front-web
@@ -80,8 +85,6 @@ conda env create -f environment.yml
 conda activate functions-service
 # run the service
 python service.py
-
-
 ```
 
 **Back-end Service** Go to the back-web directory and run the backend application. The server will listen on port 50052. Make sure the firewall port is developed, otherwise you will not be able to access the service. In addition, if you manually changed the listening port of the function service and Redis service, you need to enter the corresponding file to make changes.

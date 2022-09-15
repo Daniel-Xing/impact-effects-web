@@ -1,18 +1,5 @@
 version: '3.3'
 services: 
-  # db: 
-  #   container_name: mysql-golang
-  #   image: danxing/mysql:latest
-  #   environment: 
-  #     MYSQL_ROOT_PASSWORD: 123456
-  #   networks:
-  #     extnetwork-2:
-  #       ipv4_address: 172.24.0.2
-  #   # volumes: 
-  #   #   - "/home/xingzheng/data/mysql/data:/var/lib/mysql:rw"
-  #   ports: 
-  #     - 3306:3306
-
   cache:
     container_name: redis-golang
     image: redis
@@ -31,6 +18,16 @@ services:
         ipv4_address: 172.24.0.4
     ports:
       - 50051:50051
+  
+  backend:
+    container_name: backend
+    image: backend:latest
+    networks:
+      extnetwork-2:
+        ipv4_address: 172.24.0.5
+    ports:
+      - 50052:50052
+  
 
 networks:
    extnetwork-2:
