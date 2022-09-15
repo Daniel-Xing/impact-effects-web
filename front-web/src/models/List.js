@@ -2,7 +2,7 @@ import { ajax, ajaxPost } from "@/models/Service.js";
 
 function ImpactService(impactor_density, impactor_diameter, impactor_velocity, 
     impactor_theta, target_density, target_depth, target_distance) {
-    return ajaxPost("/simulator", {
+    return ajaxPost("/simulatorWithRedis", {
         impactor_density: impactor_density,
         impactor_diameter: impactor_diameter,
         impactor_velocity: impactor_velocity,

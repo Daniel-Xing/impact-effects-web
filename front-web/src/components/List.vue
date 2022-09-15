@@ -298,13 +298,14 @@ export default {
           var impactor_degree = Number(this.ruleForm.ImpactorAngle);
 
           var target_density = 2500;
-          var target_depth = 0;
-          if (this.resetForm.TargerDensity == "Crystalline Rock") {
+          var target_depth = Number(this.ruleForm.WaterDepth);
+          if (this.resetForm.TargerDensity == 'Crystalline Rock') {
             target_density = 2750;
-          } else {
-            target_depth = Number(this.ruleForm.WaterDepth)
-            target_density = 1000;
+          } else if (this.resetForm.TargerDensity == 'Sedimentary Rock') {
+            target_density = 2500;
           }
+
+          console.log(target_density)
 
           ImpactService(impactor_density, impactor_diameter, impactor_velocity,
             impactor_degree, target_density, target_depth, target_distance)

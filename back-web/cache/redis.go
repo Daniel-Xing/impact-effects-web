@@ -12,7 +12,7 @@ var RedisClient *redis.Client
 // initRedis
 func initRedis() *redis.Client {
 	//redis
-	redisURL := "172.24.0.3:6379"
+	redisURL := "127.0.0.1:6379"
 	// 创建Redis连接
 	var client *redis.Client
 	maxTryTime := 3

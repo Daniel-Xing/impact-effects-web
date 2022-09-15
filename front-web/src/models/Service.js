@@ -1,4 +1,4 @@
-const HOST="http://121.36.81.191:50052";
+const HOST="http://0.0.0.0:50052";
 //upload image files(*.png,*.jpe?g)
 const AppendFileAPI = HOST + "/api/appendFile";
 //upload compressed file(*.zip)
