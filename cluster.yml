@@ -25,6 +25,9 @@ services:
     networks:
       extnetwork-2:
         ipv4_address: 172.24.0.5
+    depends_on:
+      - cahce
+      - function
     ports:
       - 50052:50052
   
